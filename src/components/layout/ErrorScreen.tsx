@@ -1,14 +1,12 @@
 import { useRouter } from "@tanstack/react-router";
 import { useEffect } from "react";
 
-import { reportLovableError } from "@/lib/lovable-error-reporting";
-
 /** Shared error boundary screen for the root route. */
 export function ErrorScreen({ error, reset }: { error: Error; reset: () => void }) {
   const router = useRouter();
 
   useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
+    console.error("[App Error]:", error);
   }, [error]);
 
   return (
