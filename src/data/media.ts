@@ -9,6 +9,9 @@ import brandLogo from "@/assets/gallery/Logo.jpg";
 import brandLogoLight from "@/assets/gallery/Lite fonts logo.png";
 import brandLogoDark from "@/assets/gallery/Dark fonts Logo.png";
 import heroCoupleZaffaDance from "@/assets/gallery/hero-couple-zaffa-dance.jpg";
+import heroWeddingPartyPalms from "@/assets/gallery/hero-wedding-party-palms.jpg";
+import cockpitCouple from "@/assets/gallery/cockpit-couple.jpg";
+import fireworksCouplePalms from "@/assets/gallery/fireworks-couple-palms.jpg";
 import couplePortraitBw from "@/assets/gallery/couple-portrait-bw.jpg";
 import tentedWaterfrontReception from "@/assets/gallery/tented-waterfront-reception.jpg";
 import vizcayaVillaEvening from "@/assets/gallery/vizcaya-villa-evening.jpg";
@@ -64,7 +67,7 @@ export const media = {
   brandLogoLight,
   brandLogoDark,
   heroReceptionLift: heroCoupleZaffaDance,
-  heroWeddingPartyPalms: heroCoupleZaffaDance,
+  heroWeddingPartyPalms,
   heroLoopVideo: "/hero-loop.webm",
   heroPoster: heroCoupleZaffaDance,
   marianePortrait,
@@ -78,12 +81,12 @@ export const media = {
   plannerWithCoupleBw: homeReview,
   sweetheartTableToast: candlelitHeadTable,
   tentedBabysbreathReception: tentedLongTable,
-  fireworksCouplePalms: tentedWaterfrontReception,
+  fireworksCouplePalms,
   blushBallroomLongtable: ballroomBlushFlorals,
   eventDancefloorGreen: ballroomDanceFloor,
   venueCancellation,
   homeReview,
-  cockpitCouple: couplePortraitBw,
+  cockpitCouple,
   heroCoupleZaffaDance,
   couplePortraitBw,
   tentedWaterfrontReception,

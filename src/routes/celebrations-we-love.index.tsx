@@ -3,14 +3,14 @@ import { useMemo, useState } from "react";
 
 import { PortfolioFilters } from "@/components/portfolio/PortfolioFilters";
 import { PortfolioGallery } from "@/components/portfolio/PortfolioGallery";
-import { PortfolioStoryCard } from "@/components/portfolio/PortfolioStoryCard";
+import { SocialCelebrationsBento } from "@/components/sections/portfolio/SocialCelebrationsBento";
 import { ClosingCta } from "@/components/sections/shared/ClosingCta";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { gallery, media } from "@/data/media";
-import { portfolioPageCopy, portfolioStories } from "@/data/portfolio";
+import { portfolioPageCopy } from "@/data/portfolio";
 
 export const Route = createFileRoute("/celebrations-we-love/")({
   head: () => ({
@@ -28,6 +28,7 @@ export const Route = createFileRoute("/celebrations-we-love/")({
           "A look at real celebrations, waterfront tents, zaffa entrances, candlelit head tables and the details in between.",
       },
       { property: "og:url", content: "/celebrations-we-love" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/celebrations-we-love" }],
   }),
@@ -52,21 +53,7 @@ function CelebrationsWeLovePage() {
         imageAlt="A couple on the stone stairs of a historic villa at their celebration"
       />
 
-      <Section tone="soft">
-        <Reveal className="max-w-2xl">
-          <Eyebrow>Featured Stories</Eyebrow>
-          <h2 className="display-lg mt-5 text-balance text-emerald">
-            Every wedding tells its own story.
-          </h2>
-        </Reveal>
-        <div className="mt-12 grid gap-6 md:grid-cols-12">
-          {portfolioStories.map((story, i) => (
-            <Reveal key={story.slug} delay={i * 100} className={story.gridSpan}>
-              <PortfolioStoryCard story={story} />
-            </Reveal>
-          ))}
-        </div>
-      </Section>
+      <SocialCelebrationsBento />
 
       <Section>
         <Reveal>

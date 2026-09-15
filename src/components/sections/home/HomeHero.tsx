@@ -6,9 +6,9 @@ import { homeHero } from "@/data/home";
 /** Section 1. [HERO — REAL WEDDING COUPLE / PURE DESIRE / 16:9] */
 export function HomeHero() {
   return (
-    <section className="relative isolate flex min-h-[92svh] items-end overflow-hidden bg-emerald-deep">
+    <section className="relative isolate flex min-h-screen min-h-[100svh] min-h-[100dvh] items-end overflow-hidden bg-emerald-deep">
       <img
-        className="hero-video pointer-events-none absolute inset-0 size-full object-cover"
+        className="hero-video pointer-events-none absolute inset-0 size-full object-cover object-center"
         src={homeHero.image}
         alt={homeHero.imageAlt}
         fetchPriority="high"

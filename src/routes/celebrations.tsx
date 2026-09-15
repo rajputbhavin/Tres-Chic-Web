@@ -1,9 +1,9 @@
-import { createFileRoute } from "@tanstack/react-router";
-
-import { CelebrationShowcase } from "@/components/sections/celebrations/CelebrationShowcase";
+import { createFileRoute } from '@tanstack/react-router'
+import { CelebrationProjectCard } from "@/components/sections/celebrations/CelebrationProjectCard";
 import { EventServices } from "@/components/sections/celebrations/EventServices";
 import { ClosingCta } from "@/components/sections/shared/ClosingCta";
 import { PageHero } from "@/components/ui/PageHero";
+import { celebrationProjects } from "@/data/celebrationProjects";
 import { media } from "@/data/media";
 
 export const Route = createFileRoute("/celebrations")({
@@ -13,14 +13,14 @@ export const Route = createFileRoute("/celebrations")({
       {
         name: "description",
         content:
-          "Engagement parties, bridal and baby showers, milestone birthdays, Bar and Bat Mitzvahs, vow renewals and Sweet 16 celebrations, planned with the same care as a wedding.",
+          "Baby showers, gala awards, and Bar and Bat Mitzvahs, planned with the same care as a wedding.",
       },
       { property: "og:title", content: "Celebrations & Events in Miami | Très CHIC" },
       { property: "og:type", content: "website" },
       {
         property: "og:description",
         content:
-          "Life's other meaningful moments deserve the same care, from engagement parties to Bar and Bat Mitzvahs.",
+          "Life's other meaningful moments deserve the same care, from baby showers to corporate galas and Mitzvahs.",
       },
       { property: "og:url", content: "/celebrations" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -36,12 +36,16 @@ function CelebrationsPage() {
       <PageHero
         eyebrow="Beyond the Wedding"
         headline="Life's other meaningful moments deserve the same care."
-        body="Engagement parties. Bridal and baby showers. Milestone birthdays. Bar and Bat Mitzvahs. Vow renewals. If it's worth celebrating, it's worth doing well."
+        body="Baby showers. Gala awards. Bar and Bat Mitzvahs. Milestone birthdays. If it's worth celebrating, it's worth doing well."
         image={media.eventDancefloorGreen}
         imageAlt="Guests watching a performance beside a custom patterned dance floor"
       />
 
-      <CelebrationShowcase />
+      <div className="flex flex-col">
+        {celebrationProjects.map((project, i) => (
+          <CelebrationProjectCard key={project.id} project={project} index={i} />
+        ))}
+      </div>
 
       <EventServices />
 

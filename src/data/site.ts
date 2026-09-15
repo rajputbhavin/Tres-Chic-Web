@@ -14,6 +14,8 @@ export const site = {
   email: "info@treschiceventplanning.com",
   instagram: "https://www.instagram.com/treschiceventsfl/",
   facebook: "https://www.facebook.com/TresCHICeventsFL",
+  pinterest: "https://www.pinterest.com/TresChicFL/",
+  youtube: "https://www.youtube.com/@treschiceventplanningdesig4523",
   regionsLine: "Miami · Fort Lauderdale · Coral Gables · Boca Raton · Worldwide",
   replyPromise: "Usually a reply within one business day.",
 };

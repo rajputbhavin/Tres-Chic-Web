@@ -19,7 +19,7 @@ headline: "You planned this forever.",
   poster: media.heroPoster,
   image: media.heroWeddingPartyPalms,
   imageAlt:
-    "A bride and groom entering their reception as a live zaffa band drums them onto the floor",
+    "A bride and groom walking joyfully with their wedding party under palm trees in South Florida",
 };
 
 export const homeAcknowledgment = {

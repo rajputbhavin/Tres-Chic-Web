@@ -3,17 +3,16 @@ import { Reveal } from "@/components/ui/Reveal";
 import type { Service } from "@/data/services";
 import { cn } from "@/lib/utils";
 
-/** One wedding service page in the sticky editorial stack. */
+/** One wedding service section with natural, smooth scroll flow. */
 export function ServiceTierSection({ service, index }: { service: Service; index: number }) {
   const flipped = index % 2 === 1;
 
   return (
     <section
       className={cn(
-        "border-t border-border px-6 py-20 md:sticky md:top-[6.5rem] md:px-10 md:py-28 md:shadow-editorial",
-        flipped ? "bg-neutral-soft" : "bg-background",
+        "border-t border-border/70 px-6 py-20 md:px-10 md:py-28 transition-colors duration-300",
+        flipped ? "bg-neutral-soft/70" : "bg-background",
       )}
-      style={{ zIndex: 10 + index }}
     >
       <article
         className="mx-auto grid w-full max-w-6xl items-center gap-x-16 gap-y-10 md:grid-cols-2"

@@ -55,7 +55,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             "Worldwide",
           ],
           founder: { "@type": "Person", name: "Mariane Fahmy" },
-          sameAs: [site.instagram, site.facebook],
+          sameAs: [site.instagram, site.facebook, site.pinterest, site.youtube],
           knowsAbout: [
             "South Asian weddings",
             "Jewish weddings",
