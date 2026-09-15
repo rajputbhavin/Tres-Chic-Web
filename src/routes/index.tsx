@@ -9,6 +9,7 @@ import { HomePortfolioPreview } from "@/components/sections/home/HomePortfolioPr
 import { HomeReviews } from "@/components/sections/home/HomeReviews";
 import { HomeTwoSides } from "@/components/sections/home/HomeTwoSides";
 import { PressStrip } from "@/components/sections/shared/PressStrip";
+import { homeHero } from "@/data/home";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,6 +30,14 @@ export const Route = createFileRoute("/")({
           "Elevated, culturally rich weddings across South Florida and worldwide. Multicultural, interfaith and multi-day celebrations, planned and executed by Mariane Fahmy.",
       },
       { property: "og:url", content: "/" },
+      {
+        property: "og:image",
+        content: homeHero.image,
+      },
+      {
+        name: "twitter:image",
+        content: homeHero.image,
+      },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),

@@ -15,6 +15,7 @@ import { NotFoundScreen } from "@/components/layout/NotFoundScreen";
 import { ScrollRevealManager } from "@/components/layout/ScrollRevealManager";
 import { Toaster } from "@/components/ui/sonner";
 import { site } from "@/data/site";
+import { media } from "@/data/media";
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   head: () => ({
@@ -24,11 +25,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "author", content: site.name },
       { property: "og:site_name", content: site.name },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: media.heroWeddingPartyPalms },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: media.heroWeddingPartyPalms },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "apple-touch-icon", href: "/apple-touch-icon.png" },
     ],
     scripts: [
       {
