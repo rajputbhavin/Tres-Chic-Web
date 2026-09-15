@@ -1,0 +1,398 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+/* Self-hosted brand typefaces */
+@font-face {
+  font-family: "FlechaM";
+  src: url("./assets/fonts/FlechaM-Light.woff") format("woff");
+  font-style: normal;
+  font-weight: 300 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FlechaM";
+  src: url("./assets/fonts/FlechaM-LightItalic.woff") format("woff");
+  font-style: italic;
+  font-weight: 300 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brown LL";
+  src: url("./assets/fonts/BrownLLWeb-Light.woff") format("woff");
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Brown LL";
+  src: url("./assets/fonts/BrownLLWeb-Regular.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * TRÈS CHIC EVENT PLANNING & DESIGN, Design System
+ * Palette: Deep Emerald / Ivory / Warm Taupe / Champagne Gold / Soft Neutral / Near-black
+ * Type: FlechaM (display serif) + Brown LL (body/UI sans)
+ * All colors in oklch. Never hardcode color utilities in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 6px);
+
+  --font-display: "FlechaM", ui-serif, Georgia, serif;
+  --font-italic: "FlechaM", ui-serif, Georgia, serif;
+  --font-sans: "Brown LL", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Brown LL", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand tokens */
+  --color-emerald: var(--emerald);
+  --color-emerald-deep: var(--emerald-deep);
+  --color-emerald-light: var(--emerald-light);
+  --color-ivory: var(--ivory);
+  --color-neutral-soft: var(--neutral-soft);
+  --color-taupe: var(--taupe);
+  --color-gold: var(--gold);
+  --color-ink: var(--ink);
+
+  --shadow-editorial: 0 24px 60px -32px oklch(0.323 0.058 168.3 / 0.28);
+  --shadow-lift: 0 12px 32px -20px oklch(0.218 0 89.9 / 0.35);
+}
+
+:root {
+  --radius: 0.125rem;
+
+  /* Brand */
+  --emerald: oklch(0.323 0.058 168.3);
+  --emerald-deep: oklch(0.25 0.043 169.2);
+  --emerald-light: oklch(0.373 0.069 167.3);
+  --ivory: oklch(0.977 0.01 87.5);
+  --neutral-soft: oklch(0.93 0.016 82.8);
+  --taupe: oklch(0.739 0.039 79);
+  --gold: oklch(0.749 0.09 83.5);
+  --ink: oklch(0.218 0 89.9);
+
+  /* Semantic */
+  --background: oklch(0.977 0.01 87.5);
+  --foreground: oklch(0.218 0 89.9);
+  --card: oklch(0.99 0.006 87.5);
+  --card-foreground: oklch(0.218 0 89.9);
+  --popover: oklch(0.99 0.006 87.5);
+  --popover-foreground: oklch(0.218 0 89.9);
+  --primary: oklch(0.323 0.058 168.3);
+  --primary-foreground: oklch(0.977 0.01 87.5);
+  --secondary: oklch(0.93 0.016 82.8);
+  --secondary-foreground: oklch(0.323 0.058 168.3);
+  --muted: oklch(0.93 0.016 82.8);
+  --muted-foreground: oklch(0.501 0.021 72.9);
+  --accent: oklch(0.749 0.09 83.5);
+  --accent-foreground: oklch(0.25 0.043 169.2);
+  --destructive: oklch(0.505 0.166 27.3);
+  --destructive-foreground: oklch(0.977 0.01 87.5);
+  --border: oklch(0.884 0.017 82.8);
+  --input: oklch(0.884 0.017 82.8);
+  --ring: oklch(0.739 0.039 79);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    font-weight: 400;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  blockquote {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 1.12;
+    letter-spacing: 0.01em;
+  }
+
+  ::selection {
+    background-color: var(--color-emerald);
+    color: var(--color-ivory);
+  }
+}
+
+/* ---------- Typographic utilities ---------- */
+
+@utility font-italic {
+  font-family: var(--font-italic);
+  font-style: italic;
+}
+
+@utility font-body {
+  font-family: var(--font-body);
+}
+
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+@utility display-xl {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 6vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+@utility display-2xl {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 6vw, 5.75rem);
+  line-height: 1.02;
+  font-weight: 400;
+}
+
+@utility display-lg {
+  font-family: var(--font-display);
+  font-size: clamp(1.875rem, 4vw, 2.875rem);
+  line-height: 1.14;
+  font-weight: 400;
+}
+
+@utility display-md {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.4vw, 1.875rem);
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+@utility lede {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+}
+
+@utility caption {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted-foreground);
+}
+
+@utility rule-gold {
+  &::after {
+    content: "";
+    display: block;
+    width: 3rem;
+    height: 1px;
+    margin-top: 1.25rem;
+    background-color: var(--color-gold);
+  }
+}
+
+/* ---------- Motion ---------- */
+
+@utility reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+@utility reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* Sitewide editorial entrance. Applied by ScrollRevealManager only to copy
+   that is not already inside a purpose-built Reveal or interactive region. */
+.site-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--site-reveal-delay, 0ms);
+  will-change: opacity, transform;
+}
+
+.site-reveal.site-reveal-in,
+.site-reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+@utility hero-drift {
+  animation: hero-drift 24s ease-in-out infinite alternate;
+}
+
+@keyframes hero-drift {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.09);
+  }
+}
+
+@utility scroll-pulse {
+  animation: scroll-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes scroll-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@utility celebration-image-reveal {
+  animation: celebration-image-reveal 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes celebration-image-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility event-arrow-flight {
+  animation: event-arrow-flight 720ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes event-arrow-flight {
+  0% {
+    opacity: 0;
+    transform: translateX(-1.5rem);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(0.25rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .site-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ---------- Hero body delayed reveal ---------- */
+
+.hero-body-delay {
+  opacity: 0;
+  animation: hero-body-rise 900ms ease-out 3s both;
+}
+
+@keyframes hero-body-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-body-delay {
+    opacity: 1;
+    animation: none;
+  }
+}
+
+/* ---------- Hero scrim ----------
+   A neutral, image-preserving gradient anchored to the bottom of the frame so
+   ivory copy reads cleanly without shifting the photograph's colour. */
+
+.hero-scrim {
+  background:
+    linear-gradient(
+      to top,
+      rgb(0 0 0 / 0.72) 0%,
+      rgb(0 0 0 / 0.5) 26%,
+      rgb(0 0 0 / 0.18) 55%,
+      rgb(0 0 0 / 0.04) 78%,
+      transparent 100%
+    ),
+    linear-gradient(to bottom, rgb(0 0 0 / 0.28) 0%, transparent 32%);
+}
+
+/* Hero background video: never surface native chrome or a play button. */
+.hero-video::-webkit-media-controls,
+.hero-video::-webkit-media-controls-panel,
+.hero-video::-webkit-media-controls-start-playback-button,
+.hero-video::-webkit-media-controls-play-button,
+.hero-video::-webkit-media-controls-overlay-play-button {
+  display: none !important;
+  opacity: 0 !important;
+  -webkit-appearance: none;
+  appearance: none;
+}
