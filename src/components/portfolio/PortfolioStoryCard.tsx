@@ -7,8 +7,7 @@ import { cn } from "@/lib/utils";
 export function PortfolioStoryCard({ story }: { story: PortfolioStory }) {
   return (
     <Link
-      to="/celebrations-we-love/$slug"
-      params={{ slug: story.slug }}
+      to="/celebrations-we-love"
       className="group flex flex-col"
     >
       <h3 className="order-1 display-md text-emerald md:order-2 md:mt-4">{story.title}</h3>

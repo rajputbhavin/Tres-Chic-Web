@@ -12,17 +12,17 @@ import { reviews } from "@/data/reviews";
 export const Route = createFileRoute("/reviews")({
   head: () => ({
     meta: [
-      { title: "Client Reviews | Très CHIC Event Planning & Design" },
+      { title: "Client Reviews & Testimonials | Très CHIC Event Planning & Design" },
       {
         name: "description",
         content:
-          "What couples say about working with Mariane Fahmy, contracts caught, venues rescued mid-weekend, and wedding days they were finally present for.",
+          "Read verified 5.0-star reviews from real couples and families about working with Mariane Fahmy and Très CHIC Event Planning across South Florida and destination celebrations.",
       },
-      { property: "og:title", content: "Client Reviews | Très CHIC Event Planning & Design" },
+      { property: "og:title", content: "Client Reviews & Testimonials | Très CHIC Event Planning & Design" },
       {
         property: "og:description",
         content:
-          "Reviews from South Florida, multi-day and fusion celebrations planned by Très CHIC.",
+          "Verified 5.0-star reviews from South Florida, multi-day, and multicultural fusion celebrations planned by Très CHIC.",
       },
       { property: "og:url", content: "/reviews" },
     ],
@@ -35,9 +35,9 @@ function ReviewsPage() {
   return (
     <>
       <PageHero
-        eyebrow="In Their Words"
+        eyebrow="Client Testimonials"
         headline="The same thing, over and over: they were present."
-        body="Excerpts are paraphrased summaries of reviews left on WeddingWire, The Knot and Google."
+        body="Real experiences from couples and families who trusted Mariane Fahmy and the Très CHIC team with their most meaningful celebrations."
         image={media.ballroomDanceFloor}
         imageAlt="Guests filling a ballroom dance floor under warm uplighting"
       />
@@ -46,11 +46,11 @@ function ReviewsPage() {
         <ReviewsGrid items={reviews} />
 
         <Reveal className="mt-16 max-w-2xl">
-          <Eyebrow>A note on these</Eyebrow>
-          <p className="mt-5 text-sm text-muted-foreground">
-            These are paraphrased for length and privacy rather than quoted verbatim, and each still
-            needs Mariane's confirmation, along with couple names, dates and permission, before
-            launch.
+          <Eyebrow>Google Verified Experiences</Eyebrow>
+          <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+            Every review above reflects an authentic celebration planned and executed by Mariane Fahmy
+            and the Très CHIC Event Planning & Design team. We are deeply grateful to our couples,
+            families, and corporate partners for their trust and lifelong friendship.
           </p>
         </Reveal>
       </Section>

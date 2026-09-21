@@ -23,22 +23,33 @@ const rawEventImages = import.meta.glob<string>("../assets/Events/*/*.webp", {
   import: "default",
 });
 
-function getSortedEventImages(folderName: string): string[] {
-  return Object.entries(rawEventImages)
-    .filter(([path]) => path.includes(folderName))
+function getSortedEventImages(folderName: string): { featuredImage: string; images: string[] } {
+  const entries = Object.entries(rawEventImages).filter(([path]) => path.includes(folderName));
+
+  const mainEntry = entries.find(([path]) => /main/i.test(path));
+
+  const numberedEntries = entries
+    .filter(([path]) => !/main/i.test(path))
     .sort(([pathA], [pathB]) => {
       const matchA = pathA.match(/(\d+)\.?\.webp$/);
       const matchB = pathB.match(/(\d+)\.?\.webp$/);
       const numA = matchA && matchA[1] ? parseInt(matchA[1], 10) : 0;
       const numB = matchB && matchB[1] ? parseInt(matchB[1], 10) : 0;
       return numA - numB;
-    })
-    .map(([, src]) => src);
+    });
+
+  const featuredImage = mainEntry ? mainEntry[1] : (numberedEntries[0] ? numberedEntries[0][1] : "");
+
+  const images = mainEntry
+    ? [mainEntry[1], ...numberedEntries.map(([, src]) => src)]
+    : numberedEntries.map(([, src]) => src);
+
+  return { featuredImage, images };
 }
 
-const babyShowerImages = getSortedEventImages("Baby shower Photo Gallery");
-const galaImages = getSortedEventImages("Gala & Awards Event Gallery");
-const mitzvahImages = getSortedEventImages("Mitzvahs Photo Gallery");
+const babyShower = getSortedEventImages("Baby shower Photo Gallery");
+const gala = getSortedEventImages("Gala & Awards Event Gallery");
+const mitzvah = getSortedEventImages("Mitzvahs Photo Gallery");
 
 export const celebrationProjects: CelebrationProject[] = [
   {
@@ -52,53 +63,53 @@ export const celebrationProjects: CelebrationProject[] = [
     overviewParagraph:
       "A delightful garden celebration designed to welcome new beginnings with playful elegance and bespoke warmth. Soft pastel florals, hand painted storybook details, tiered artisanal confections, and tailored seating created an intimate afternoon surrounded by loved ones and timeless charm.",
     folderName: "Baby shower Photo Gallery",
-    featuredImage: babyShowerImages[0] || "",
-    images: babyShowerImages,
+    featuredImage: babyShower.featuredImage,
+    images: babyShower.images,
     highlights: [
       "Custom floral carriage centerpiece surrounded by delicate pastel garden blooms",
       "Artisanal multi tier dessert presentation with personalized storybook confections",
       "Intimate garden estate seating framed with soft blush linens and custom stationery",
-      "Bespoke welcome drinks and curated tablescapes designed for meaningful connection",
+      "Curated welcome mocktail bar and afternoon tea service flow",
     ],
   },
   {
     id: "gala-awards",
     number: "02",
     category: "gala",
-    categoryLabel: "Gala & Awards",
-    title: "Gala and Awards",
-    subtitle: "Black Tie Corporate and Philanthropic Evening",
-    location: "Miami Historic Grand Ballroom",
+    categoryLabel: "Gala & Corporate",
+    title: "Gala & Awards",
+    subtitle: "Architectural Ballroom Black-Tie Evening",
+    location: "Downtown Miami Luxury Venue",
     overviewParagraph:
-      "A grand black tie celebration crafted for high profile honorees and discerning guests. Architectural lighting, towering floral centerpieces, gilded table settings, and dynamic ballroom staging set the stage for an unforgettable evening of recognition and celebration.",
+      "An elevated black tie gala balancing corporate prestige with breathtaking aesthetic ambiance. Dramatic statement lighting, precision multi course dining choreography, and an electric live stage presentation delivered an unforgettable evening for esteemed honorees and guests.",
     folderName: "Gala & Awards Event Gallery",
-    featuredImage: galaImages[0] || "",
-    images: galaImages,
+    featuredImage: gala.featuredImage,
+    images: gala.images,
     highlights: [
-      "Architectural uplighting and spotlight production synchronized with award presentations",
-      "Towering floral centerpieces interwoven with opulent golden candelabras",
-      "Seamless multi hundred guest registration and VIP hospitality lounge coordination",
-      "Full room transformation with polished ballroom dance floor and live stage choreography",
+      "Precision stage design and dynamic audiovisual production choreography",
+      "Grand ballroom architectural uplighting synchronized with live awards program",
+      "Seamless VIP red carpet arrival and high volume champagne hospitality",
+      "Multi course gourmet banquet service executed with flawless timing",
     ],
   },
   {
-    id: "bar-bat-mitzvahs",
+    id: "mitzvah-moments",
     number: "03",
     category: "mitzvah",
-    categoryLabel: "Bar & Bat Mitzvahs",
+    categoryLabel: "Mitzvahs",
     title: "Mitzvah Moments",
-    subtitle: "Vibrant Heritage and Nightclub Extravaganza",
-    location: "South Florida Luxury Venue",
+    subtitle: "Neon Glow Celebration & Traditional Simcha",
+    location: "South Florida Country Club",
     overviewParagraph:
-      "An unforgettable celebration uniting meaningful tradition with high octane entertainment. From the dignified ceremonial tributes to the luminous nightclub dance floor with live interactive performers, every detail kept guests of all generations engaged and celebrating together.",
+      "A high octane celebration honoring tradition while dialing up the fun. Featuring interactive custom dessert lounges, dynamic live DJ entertainment, and immersive themed decor that kept the dance floor packed and guests of every age smiling all night long.",
     folderName: "Mitzvahs Photo Gallery",
-    featuredImage: mitzvahImages[0] || "",
-    images: mitzvahImages,
+    featuredImage: mitzvah.featuredImage,
+    images: mitzvah.images,
     highlights: [
-      "Seamless ceremonial transition from family heritage tributes to an electric party",
-      "Luminous custom LED staging with interactive performers and live festival sound",
-      "Customized lounge pods with personalized graphic branding and festive favor displays",
-      "Dynamic dining and dessert pacing tailored for both adults and young guests",
+      "High energy live DJ interactive dance floor programming and giveaways",
+      "Custom youth mocktail lounge and immersive LED glow decor installations",
+      "Meaningful traditional hora, candle lighting, and family tribute staging",
+      "Interactive dessert action stations and personalized late night bites",
     ],
   },
 ];

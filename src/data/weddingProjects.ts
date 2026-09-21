@@ -22,25 +22,39 @@ const rawImages = import.meta.glob<string>("../assets/weddings/*/*.webp", {
   import: "default",
 });
 
-function getSortedImagesForFolder(folderName: string): string[] {
-  return Object.entries(rawImages)
-    .filter(([path]) => path.includes(folderName))
+function getProjectImagesForFolder(folderName: string): { featuredImage: string; images: string[] } {
+  const entries = Object.entries(rawImages).filter(([path]) => path.includes(folderName));
+
+  // Find image that user designated as "main" (e.g. "main 1.webp")
+  const mainEntry = entries.find(([path]) => /main/i.test(path));
+
+  // Sort other numbered images numerically (1.webp, 2.webp, 3.webp, etc.)
+  const numberedEntries = entries
+    .filter(([path]) => !/main/i.test(path))
     .sort(([pathA], [pathB]) => {
       const matchA = pathA.match(/(\d+)\.webp$/);
       const matchB = pathB.match(/(\d+)\.webp$/);
       const numA = matchA && matchA[1] ? parseInt(matchA[1], 10) : 0;
       const numB = matchB && matchB[1] ? parseInt(matchB[1], 10) : 0;
       return numA - numB;
-    })
-    .map(([, src]) => src);
+    });
+
+  const featuredImage = mainEntry ? mainEntry[1] : (numberedEntries[0] ? numberedEntries[0][1] : "");
+
+  // In the photo ribbon and lightbox, put the main featured image first, followed by all others
+  const images = mainEntry
+    ? [mainEntry[1], ...numberedEntries.map(([, src]) => src)]
+    : numberedEntries.map(([, src]) => src);
+
+  return { featuredImage, images };
 }
 
-const carolinaImages = getSortedImagesForFolder("Carolina & Ash Romantic Coral Gables Wedding Photos");
-const edenRocImages = getSortedImagesForFolder("Eden Roc Laura & Chris's Wedding Photos");
-const judeShulaImages = getSortedImagesForFolder("Jude & Elee Shula's Wedding Photos");
-const leahBocaImages = getSortedImagesForFolder("Leah & Jake's Intimate Boca wedding photos");
-const leilaVizcayaImages = getSortedImagesForFolder("Leila & Tarek Vizcaya Wedding Photos");
-const luxuryTentImages = getSortedImagesForFolder("Luxury Tent Wedding Photos");
+const carolina = getProjectImagesForFolder("Carolina & Ash Romantic Coral Gables Wedding Photos");
+const edenRoc = getProjectImagesForFolder("Eden Roc Laura & Chris's Wedding Photos");
+const judeShula = getProjectImagesForFolder("Jude & Elee Shula's Wedding Photos");
+const leahBoca = getProjectImagesForFolder("Leah & Jake's Intimate Boca wedding photos");
+const leilaVizcaya = getProjectImagesForFolder("Leila & Tarek Vizcaya Wedding Photos");
+const luxuryTent = getProjectImagesForFolder("Luxury Tent Wedding Photos");
 
 export const weddingProjects: WeddingProject[] = [
   {
@@ -54,8 +68,8 @@ export const weddingProjects: WeddingProject[] = [
     overviewParagraph:
       "Set beneath the sunlit banyan canopy of Coral Gables, this celebration brought together timeless floral artistry and classic South Florida elegance. Guests experienced an intimate garden ceremony followed by an open air dinner under strings of golden light, with lush ivory florals and bespoke tabletop curation.",
     folderName: "Carolina & Ash Romantic Coral Gables Wedding Photos",
-    featuredImage: carolinaImages[0] || "",
-    images: carolinaImages,
+    featuredImage: carolina.featuredImage,
+    images: carolina.images,
     highlights: [
       "Full day wedding coordination with seamless multi vendor timeline execution",
       "Custom botanical ceremony arch and romantic candlelit tablescapes",
@@ -74,8 +88,8 @@ export const weddingProjects: WeddingProject[] = [
     overviewParagraph:
       "An oceanfront luxury celebration at the iconic Eden Roc Miami Beach. The design balanced ocean breezes with architectural glamour, featuring statement suspended floral chandeliers, elevated guest hospitality, and an electric reception that carried through the night.",
     folderName: "Eden Roc Laura & Chris's Wedding Photos",
-    featuredImage: edenRocImages[0] || "",
-    images: edenRocImages,
+    featuredImage: edenRoc.featuredImage,
+    images: edenRoc.images,
     highlights: [
       "Oceanfront terrace ceremony staging with coastal wind contingency care",
       "Grand ballroom transformation featuring custom suspended floral chandeliers",
@@ -94,8 +108,8 @@ export const weddingProjects: WeddingProject[] = [
     overviewParagraph:
       "Rich in family heritage and infectious joy, this celebration illuminated the grand ballroom at Shulas. From the live zaffa entrance and traditional drummers to the lavish banquet, every ritual was planned and executed with effortless grace and vibrant warmth.",
     folderName: "Jude & Elee Shula's Wedding Photos",
-    featuredImage: judeShulaImages[0] || "",
-    images: judeShulaImages,
+    featuredImage: judeShula.featuredImage,
+    images: judeShula.images,
     highlights: [
       "High energy grand Zaffa entrance featuring live drummers and horn players",
       "Opulent multicultural ballroom staging and synchronized spotlight design",
@@ -114,8 +128,8 @@ export const weddingProjects: WeddingProject[] = [
     overviewParagraph:
       "Understated luxury and editorial beauty defined this private Boca Raton celebration. Soft blush florals, textured natural linens, and personalized styling touches created an intimate ambiance where the couple and their closest guests could truly savor each moment.",
     folderName: "Leah & Jake's Intimate Boca wedding photos",
-    featuredImage: leahBocaImages[0] || "",
-    images: leahBocaImages,
+    featuredImage: leahBoca.featuredImage,
+    images: leahBoca.images,
     highlights: [
       "Bespoke editorial styling focused on fine tabletop details and custom stationery",
       "Tailored botanical floral artistry with delicate garden rose arrangements",
@@ -134,8 +148,8 @@ export const weddingProjects: WeddingProject[] = [
     overviewParagraph:
       "An architectural dream framed by the historic estate of Vizcaya Museum and Gardens. The celebration featured a sunset ceremony on the stone terraces, dramatic courtyard dining, and exquisite floral installations designed to complement panoramic views of Biscayne Bay.",
     folderName: "Leila & Tarek Vizcaya Wedding Photos",
-    featuredImage: leilaVizcayaImages[0] || "",
-    images: leilaVizcayaImages,
+    featuredImage: leilaVizcaya.featuredImage,
+    images: leilaVizcaya.images,
     highlights: [
       "Historic estate navigation adhering strictly to Vizcaya preservation protocols",
       "Sunset courtyard ceremony framed by Mediterranean architectural elegance",
@@ -154,8 +168,8 @@ export const weddingProjects: WeddingProject[] = [
     overviewParagraph:
       "A masterclass in custom tent engineering and high design on the South Florida shoreline. Suspended crystal chandeliers glowed beneath a transparent canopy while cascading greenery and sweeping sunset ocean views transformed an open lawn into a world class ballroom.",
     folderName: "Luxury Tent Wedding Photos",
-    featuredImage: luxuryTentImages[0] || "",
-    images: luxuryTentImages,
+    featuredImage: luxuryTent.featuredImage,
+    images: luxuryTent.images,
     highlights: [
       "Complex clear span tent engineering with custom flooring and climate control",
       "Suspended crystal chandeliers interwoven with lush overhead greenery",

@@ -106,23 +106,33 @@ export const homeReviews = {
   testimonials: [
     {
       quote:
-        "Mariane was amazing! She created a plan and executed it perfectly. Whenever an issue came up she handled it without us knowing. She is assertive and so kind. She really made our vision come to life and eased all our stresses. I 1000% recommend!!!",
-      attribution: "Wedding client",
+        "We had an absolutely amazing experience working with Mariane Fahmy and the Très CHIC team! Every interaction we had with her made us feel confident that our wedding was in great hands. Everything came together beautifully.",
+      attribution: "Omar Bashi · Verified Google Review",
     },
     {
       quote:
-        "Mariane planned my family's New Year's Eve party. She was more than any of us could have ever asked for. Every small request was fulfilled within hours. She decorated our backyard so beautifully, I hardly recognized it. She is truly talented at her job and cares so much about her clients. She will always go the extra mile. Absolutely recommend her service for your event.",
-      attribution: "Private event client",
+        "Every detail was thoughtful, intentional, and so perfectly aligned with us that it genuinely felt like she had copy-pasted our dream wedding straight from our brains. Our entire wedding weekend felt like a dream from start to finish.",
+      attribution: "Rima & Armaan · Wedding Couple",
     },
     {
       quote:
-        "Mariane was amazing! She exceeded our expectations in bringing our Mitzvah vision to life. She is kind, patient, and pays close attention to every detail. She worked within our tight budget and made the room look incredible! It definitely had the wow factor! I highly recommend her team for any event.",
-      attribution: "Mitzvah client",
+        "Within days of reviewing our vendor contracts, Mariane spotted multiple discrepancies that had gone unnoticed, saving us thousands of dollars. Her wedding day timeline was a true work of art.",
+      attribution: "Sarah & Avrahm Reindorf · Local Guide Review",
     },
     {
       quote:
-        "Mariane was a true joy to work with! I knew from the first call that she would be the one to help make my vision come to life, and my goodness, was I right! She made us feel so heard the entire process and always settled any stress throughout the way for me. Our wedding could not have been more perfect, our dream come true. Mariane and her team ran the show with such attention to detail, grace, and professionalism and I could not be more grateful! I recommend her to ANYONE! She really is the best. We are over the moon.",
-      attribution: "Wedding client",
+        "Mariane didn’t just plan our wedding, she understood me. When our plans shifted from an intimate event to a much larger celebration, she handled everything with calm confidence and executed it flawlessly.",
+      attribution: "Zoe Giardina · Wedding Client",
+    },
+    {
+      quote:
+        "On the day of the wedding, Mariane and her phenomenal team stood by us like family. With their flawless coordinating and organizing, the day felt like a dream!",
+      attribution: "Nadra Mabrouk · Multicultural Celebration",
+    },
+    {
+      quote:
+        "From start to finish, her attention to detail was impeccable—nothing was overlooked, and every element felt thoughtfully curated. Her level of professionalism made the process smooth and stress-free.",
+      attribution: "M. R. · Private Celebration Client",
     },
   ],
   link: { label: "Read More Reviews", to: "/reviews" },
