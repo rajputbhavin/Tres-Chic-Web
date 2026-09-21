@@ -25,7 +25,7 @@ export type NavItem = { label: string; to: string };
 /** Header order, approved with Mariane. Start Planning renders as the button. */
 export const primaryNav: NavItem[] = [
   { label: "Home", to: "/" },
-  { label: "Meet Mariane", to: "/mariane" },
+  { label: "Meet Mariane", to: "/about" },
   { label: "The Experience", to: "/the-experience" },
   { label: "Weddings", to: "/weddings" },
   { label: "Events", to: "/celebrations" },

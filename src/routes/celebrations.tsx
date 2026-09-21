@@ -1,9 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { CelebrationProjectCard } from "@/components/sections/celebrations/CelebrationProjectCard";
+import { CelebrationShowcase } from "@/components/sections/celebrations/CelebrationShowcase";
 import { EventServices } from "@/components/sections/celebrations/EventServices";
 import { ClosingCta } from "@/components/sections/shared/ClosingCta";
 import { PageHero } from "@/components/ui/PageHero";
-import { celebrationProjects } from "@/data/celebrationProjects";
 import { media } from "@/data/media";
 
 export const Route = createFileRoute("/celebrations")({
@@ -41,11 +40,7 @@ function CelebrationsPage() {
         imageAlt="Guests watching a performance beside a custom patterned dance floor"
       />
 
-      <div className="flex flex-col">
-        {celebrationProjects.map((project, i) => (
-          <CelebrationProjectCard key={project.id} project={project} index={i} />
-        ))}
-      </div>
+      <CelebrationShowcase />
 
       <EventServices />
 

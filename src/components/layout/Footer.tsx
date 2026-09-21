@@ -2,7 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 
 import { primaryNav, site, utilityNav } from "@/data/site";
-import brandLogoLight from "@/assets/gallery/Lite fonts logo.png";
+import brandLogo from "@/assets/gallery/Logo.png";
 
 function PinterestIcon({ className = "size-5" }: { className?: string }) {
   return (
@@ -28,9 +28,9 @@ export function Footer() {
           <div>
             <Link to="/" className="inline-block transition-opacity hover:opacity-90" aria-label={`${site.name}, home`}>
               <img
-                src={brandLogoLight}
+                src={brandLogo}
                 alt={site.name}
-                className="h-20 w-auto max-w-[280px] object-contain drop-shadow-md md:h-28 md:max-w-[320px]"
+                className="h-24 w-auto object-contain drop-shadow-md md:h-32 lg:h-36"
               />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-ivory/75">{site.tagline}</p>

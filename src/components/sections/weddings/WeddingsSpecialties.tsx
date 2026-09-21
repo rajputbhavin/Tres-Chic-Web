@@ -13,7 +13,7 @@ const bands = [weddingsMulticultural, weddingsDestination];
  */
 export function WeddingsSpecialties() {
   return (
-    <Section tone="soft">
+    <Section tone="soft" className="border-t border-border/80">
       <div className="grid gap-14 md:grid-cols-2 md:gap-10">
         {bands.map((band, i) => (
           <Reveal key={band.eyebrow} delay={i * 120} className="flex flex-col">

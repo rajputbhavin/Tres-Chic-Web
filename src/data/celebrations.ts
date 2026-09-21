@@ -1,8 +1,15 @@
-import { socialCelebrationPhotos as social } from "@/data/socialCelebrations";
+import engagementPartiesImg from "@/assets/social-celebrations/Engagement Parties.webp";
+import bridalBabyShowersImg from "@/assets/social-celebrations/Bridal & Baby Showers.webp";
+import milestoneBirthdaysImg from "@/assets/social-celebrations/Milestone Birthdays.webp";
+import barBatMitzvahsImg from "@/assets/social-celebrations/Bar & Bat Mitzvahs.webp";
+import vowRenewalsImg from "@/assets/social-celebrations/Vow Renewals.webp";
+import sweet16CelebrationsImg from "@/assets/social-celebrations/Sweet 16 Celebrations.webp";
+import otherOccasionsImg from "@/assets/social-celebrations/And other meaningful occasions, ask us..webp";
 
 export type CelebrationShowcase = {
   title: string;
-  images: Array<{ src: string; alt: string }>;
+  image: string;
+  alt: string;
 };
 
 export type EventService = {
@@ -30,75 +37,41 @@ export const eventServices: EventService[] = [
   },
 ];
 
-/** Curated, compact galleries for the interactive Events page showcase. */
+/** Curated showcases paired with the client's dedicated celebration photography. */
 export const celebrationShowcases: CelebrationShowcase[] = [
   {
     title: "Engagement Parties",
-    images: [
-      { src: social.birthday119, alt: "Black and gold social celebration dining room" },
-      { src: social.birthday15, alt: "White floral centerpiece with black and gold place settings" },
-      { src: social.birthday31, alt: "Outdoor lounge arranged for an intimate social event" },
-      { src: social.birthday68, alt: "Black and gold place setting with custom details" },
-      { src: social.birthday42, alt: "Elegant lounge and photo backdrop for a social celebration" },
-    ],
+    image: engagementPartiesImg,
+    alt: "Engagement Parties celebration by Très CHIC",
   },
   {
     title: "Bridal & Baby Showers",
-    images: [
-      { src: social.showerTable, alt: "Pink and ivory baby shower dessert table" },
-      { src: social.showerDesserts, alt: "Assorted shower desserts displayed with floral details" },
-      { src: social.showerCastle, alt: "Pink storybook dessert display for a baby shower" },
-      { src: social.showerCarriage, alt: "Floral carriage centerpiece for a shower" },
-      { src: social.showerDetails, alt: "Pastel shower table with layered decorative details" },
-    ],
+    image: bridalBabyShowersImg,
+    alt: "Bridal & Baby Showers celebration by Très CHIC",
   },
   {
     title: "Milestone Birthdays",
-    images: [
-      { src: social.birthday3, alt: "Illuminated 50th birthday backdrop with black and gold balloons" },
-      { src: social.birthday40, alt: "Black and gold dance floor beneath a balloon installation" },
-      { src: social.birthday8, alt: "Milestone birthday dining room with balloon ceiling" },
-      { src: social.birthday9, alt: "Black and gold milestone birthday tablescape" },
-      { src: social.birthday41, alt: "Personalized milestone birthday display" },
-    ],
+    image: milestoneBirthdaysImg,
+    alt: "Milestone Birthdays celebration by Très CHIC",
   },
   {
     title: "Bar & Bat Mitzvahs",
-    images: [
-      { src: social.mitzvahSign, alt: "Personalized Bar Mitzvah dessert and favor display" },
-      { src: social.mitzvahRoom, alt: "Bar Mitzvah reception room prepared for guests" },
-      { src: social.mitzvahTable, alt: "Striped Bar Mitzvah tablescape with personalized details" },
-      { src: social.mitzvahDining, alt: "Bar Mitzvah dining room with colorful uplighting" },
-      { src: social.mitzvahReception, alt: "Social celebration reception with a custom stage" },
-    ],
+    image: barBatMitzvahsImg,
+    alt: "Bar & Bat Mitzvahs celebration by Très CHIC",
   },
   {
     title: "Vow Renewals",
-    images: [
-      { src: social.birthday14, alt: "Refined black and gold dining room for a social celebration" },
-      { src: social.birthday21, alt: "Balloon-filled dining space designed for a meaningful occasion" },
-      { src: social.birthday63, alt: "Candlelit tables beneath a black and gold balloon installation" },
-      { src: social.showerRoom, alt: "Bright intimate venue with delicately styled tables" },
-    ],
+    image: vowRenewalsImg,
+    alt: "Vow Renewals celebration by Très CHIC",
   },
   {
     title: "Sweet 16 Celebrations",
-    images: [
-      { src: social.birthday53, alt: "Black and gold social celebration lounge and dance floor" },
-      { src: social.birthday22, alt: "Dining table beneath an abundant balloon installation" },
-      { src: social.birthday4, alt: "Illuminated milestone number framed by balloons" },
-      { src: social.showerDesserts, alt: "Colorful sweets displayed for a social celebration" },
-      { src: social.mitzvahDining, alt: "Festive event room with colorful uplighting" },
-    ],
+    image: sweet16CelebrationsImg,
+    alt: "Sweet 16 Celebrations celebration by Très CHIC",
   },
   {
     title: "And other meaningful occasions, ask us.",
-    images: [
-      { src: social.birthday119, alt: "An immersive black and gold social celebration" },
-      { src: social.mitzvahTable, alt: "Personalized table design for a family celebration" },
-      { src: social.showerCarriage, alt: "Floral centerpiece created for a meaningful occasion" },
-      { src: social.birthday31, alt: "Outdoor lounge set for guests" },
-      { src: social.showerDetails, alt: "Pastel celebration details with flowers and balloons" },
-    ],
+    image: otherOccasionsImg,
+    alt: "Meaningful social occasions planned and designed by Très CHIC",
   },
 ];

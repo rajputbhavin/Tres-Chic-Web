@@ -13,26 +13,47 @@ export function ExperienceProcessStack() {
         <ProcessTimeline />
       </div>
 
-      <div className="space-y-16 md:space-y-24">
+      <div className="space-y-12 md:space-y-16">
         {processSteps.map((step) => (
-          <article key={step.n} className="overflow-hidden border-t border-border bg-background">
-            <div className="grid md:min-h-[34rem] md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-              <div className="contents md:flex md:flex-col md:justify-between md:gap-10 md:px-12 md:py-14 lg:px-16">
-                <p className="px-6 pt-9 font-display text-3xl text-gold sm:px-10 md:px-0 md:pt-0">{step.n}</p>
-                <div className="contents md:block md:max-w-xl">
-                  <h2 className="px-6 pt-3 display-lg text-emerald sm:px-10 md:px-0 md:pt-0">{step.title}</h2>
-                  <div className="order-4 mx-6 my-6 h-px w-12 bg-gold sm:mx-10 md:mx-0" aria-hidden />
-                  <p className="order-5 px-6 pb-10 lede text-muted-foreground sm:px-10 md:px-0 md:pb-0">{step.body}</p>
+          <article
+            key={step.n}
+            className="overflow-hidden rounded-xs border border-gold/35 bg-gradient-to-br from-neutral-soft/50 via-background to-neutral-soft/30 shadow-sm transition-all duration-500 hover:border-gold/60 hover:shadow-md"
+          >
+            <div className="grid gap-8 p-6 sm:p-8 md:min-h-[26rem] md:grid-cols-12 md:items-center md:gap-10 lg:gap-14 lg:p-12">
+              {/* Left Column: Details */}
+              <div className="flex flex-col justify-center md:col-span-6 lg:col-span-7">
+                {/* Clean Gold Numeral */}
+                <p className="font-display text-4xl sm:text-5xl font-normal text-gold leading-none">
+                  {step.n}
+                </p>
+
+                {/* Main Title */}
+                <h2 className="display-lg mt-4 text-emerald font-display text-balance">
+                  {step.title}
+                </h2>
+
+                {/* Gold Accent Divider */}
+                <div className="my-6 flex items-center gap-2.5" aria-hidden="true">
+                  <div className="h-px w-14 bg-gold" />
+                  <span className="size-1.5 rotate-45 bg-gold" />
                 </div>
+
+                {/* Description Body */}
+                <p className="text-base sm:text-lg leading-relaxed text-foreground/85 font-normal">
+                  {step.body}
+                </p>
               </div>
 
-              <div className="relative order-3 min-h-72 overflow-hidden md:order-none md:row-span-2 md:min-h-full">
-                <img
-                  src={step.image}
-                  alt={step.imageAlt}
-                  loading="lazy"
-                  className="absolute inset-0 size-full object-cover"
-                />
+              {/* Right Column: Clean Framed Image (Zero text overlay) */}
+              <div className="md:col-span-6 lg:col-span-5">
+                <div className="group relative h-72 sm:h-96 md:h-[24rem] lg:h-[26rem] overflow-hidden rounded-xs border border-border/80 bg-black/5 shadow-md">
+                  <img
+                    src={step.image}
+                    alt={step.imageAlt}
+                    loading="lazy"
+                    className="size-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                  />
+                </div>
               </div>
             </div>
           </article>

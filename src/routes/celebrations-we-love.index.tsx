@@ -4,13 +4,17 @@ import { useMemo, useState } from "react";
 import { PortfolioFilters } from "@/components/portfolio/PortfolioFilters";
 import { PortfolioGallery } from "@/components/portfolio/PortfolioGallery";
 import { SocialCelebrationsBento } from "@/components/sections/portfolio/SocialCelebrationsBento";
+import { CelebrationProjectCard } from "@/components/sections/celebrations/CelebrationProjectCard";
 import { ClosingCta } from "@/components/sections/shared/ClosingCta";
+import { WeddingProjectCard } from "@/components/sections/weddings/WeddingProjectCard";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
+import { celebrationProjects } from "@/data/celebrationProjects";
 import { gallery, media } from "@/data/media";
 import { portfolioPageCopy } from "@/data/portfolio";
+import { weddingProjects } from "@/data/weddingProjects";
 
 export const Route = createFileRoute("/celebrations-we-love/")({
   head: () => ({
@@ -52,6 +56,22 @@ function CelebrationsWeLovePage() {
         image={media.vizcayaStairsCouple}
         imageAlt="A couple on the stone stairs of a historic villa at their celebration"
       />
+
+      <div className="flex flex-col">
+        {weddingProjects.map((project, i) => (
+          <WeddingProjectCard key={project.id} project={project} index={i} />
+        ))}
+      </div>
+
+      <div className="flex flex-col">
+        {celebrationProjects.map((project, i) => (
+          <CelebrationProjectCard
+            key={project.id}
+            project={project}
+            index={weddingProjects.length + i}
+          />
+        ))}
+      </div>
 
       <SocialCelebrationsBento />
 

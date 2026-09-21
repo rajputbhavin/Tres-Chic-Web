@@ -1,10 +1,11 @@
 import { createFileRoute } from "@tanstack/react-router";
 
 import { ClosingCta } from "@/components/sections/shared/ClosingCta";
-import { WeddingProjectCard } from "@/components/sections/weddings/WeddingProjectCard";
+import { ServiceTierSection } from "@/components/sections/weddings/ServiceTierSection";
+import { WeddingsSpecialties } from "@/components/sections/weddings/WeddingsSpecialties";
 import { PageHero } from "@/components/ui/PageHero";
 import { media } from "@/data/media";
-import { weddingProjects } from "@/data/weddingProjects";
+import { services } from "@/data/services";
 
 export const Route = createFileRoute("/weddings")({
   head: () => ({
@@ -34,19 +35,21 @@ function WeddingsPage() {
       <PageHero
         eyebrow="Wedding Planning & Design"
         headline="Full and partial planning, design and coordination, built around how much you actually want to hold."
-        body="Explore our featured real wedding celebrations across South Florida and beyond, from historic Vizcaya and oceanfront luxury to grand multicultural estates."
+        body="However involved you want to be, the outcome is the same: a wedding that feels entirely yours, and a day you're actually present for."
         image={media.blushBallroomLongtable}
         imageAlt="A blush and ivory ballroom set with long banquet tables and candlelight"
       />
 
       <div className="flex flex-col">
-        {weddingProjects.map((project, i) => (
-          <WeddingProjectCard key={project.id} project={project} index={i} />
+        {services.map((service, i) => (
+          <ServiceTierSection key={service.slug} service={service} index={i} />
         ))}
       </div>
 
+      <WeddingsSpecialties />
+
       <ClosingCta
-        headline="Ready to design your own unforgettable celebration? Let's talk."
+        headline="Not sure which fits? That's exactly what the first conversation is for."
         tone="ivory"
       />
     </>

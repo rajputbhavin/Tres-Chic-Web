@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SplatRouteImport } from './routes/$'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as CelebrationsRouteImport } from './routes/celebrations'
 import { Route as DestinationWeddingsRouteImport } from './routes/destination-weddings'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -32,6 +33,11 @@ const IndexRoute = IndexRouteImport.update({
 const SplatRoute = SplatRouteImport.update({
   id: '/$',
   path: '/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CelebrationsRoute = CelebrationsRouteImport.update({
@@ -98,6 +104,7 @@ const CelebrationsWeLoveSlugRoute = CelebrationsWeLoveSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/about': typeof AboutRoute
   '/celebrations': typeof CelebrationsRoute
   '/destination-weddings': typeof DestinationWeddingsRoute
   '/faq': typeof FaqRoute
@@ -114,6 +121,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/about': typeof AboutRoute
   '/celebrations': typeof CelebrationsRoute
   '/destination-weddings': typeof DestinationWeddingsRoute
   '/faq': typeof FaqRoute
@@ -131,6 +139,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
+  '/about': typeof AboutRoute
   '/celebrations': typeof CelebrationsRoute
   '/destination-weddings': typeof DestinationWeddingsRoute
   '/faq': typeof FaqRoute
@@ -149,6 +158,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/$'
+    | '/about'
     | '/celebrations'
     | '/destination-weddings'
     | '/faq'
@@ -165,6 +175,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/$'
+    | '/about'
     | '/celebrations'
     | '/destination-weddings'
     | '/faq'
@@ -181,6 +192,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/$'
+    | '/about'
     | '/celebrations'
     | '/destination-weddings'
     | '/faq'
@@ -198,6 +210,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
+  AboutRoute: typeof AboutRoute
   CelebrationsRoute: typeof CelebrationsRoute
   DestinationWeddingsRoute: typeof DestinationWeddingsRoute
   FaqRoute: typeof FaqRoute
@@ -226,6 +239,13 @@ declare module '@tanstack/react-router' {
       path: '/$'
       fullPath: '/$'
       preLoaderRoute: typeof SplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/celebrations': {
@@ -318,6 +338,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
+  AboutRoute: AboutRoute,
   CelebrationsRoute: CelebrationsRoute,
   DestinationWeddingsRoute: DestinationWeddingsRoute,
   FaqRoute: FaqRoute,

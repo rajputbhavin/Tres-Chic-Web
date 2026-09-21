@@ -8,31 +8,14 @@ import { Section } from "@/components/ui/Section";
 import { celebrationShowcases } from "@/data/celebrations";
 import { cn } from "@/lib/utils";
 
-const fiveImageLayout = [
-  "col-start-1 col-span-7 row-start-1 row-span-8",
-  "col-start-8 col-span-5 row-start-1 row-span-5",
-  "col-start-8 col-span-5 row-start-6 row-span-3",
-  "col-start-1 col-span-5 row-start-9 row-span-4",
-  "col-start-6 col-span-7 row-start-9 row-span-4",
-];
-
-const fourImageLayout = [
-  "col-start-1 col-span-7 row-start-1 row-span-7",
-  "col-start-8 col-span-5 row-start-1 row-span-7",
-  "col-start-1 col-span-5 row-start-8 row-span-5",
-  "col-start-6 col-span-7 row-start-8 row-span-5",
-];
-
 const revealDelays = ["delay-0", "delay-75", "delay-100", "delay-150", "delay-200"];
 
-/** Event index paired with a bounded, responsive editorial image mosaic. */
+/** Event index paired with dedicated high-resolution celebration photography. */
 export function CelebrationShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
   const active = celebrationShowcases[activeIndex] ?? celebrationShowcases[0];
 
   if (!active) return null;
-
-  const layout = active.images.length === 4 ? fourImageLayout : fiveImageLayout;
 
   return (
     <Section>
@@ -91,26 +74,23 @@ export function CelebrationShowcase() {
             id="celebration-gallery"
             role="tabpanel"
             aria-label={`${active.title} gallery`}
-            className="h-[32rem] overflow-hidden bg-neutral-soft sm:h-[38rem] lg:absolute lg:inset-0 lg:h-auto"
+            className="relative h-[24rem] sm:h-[32rem] lg:h-full min-h-[28rem] overflow-hidden rounded-xs border border-border/70 bg-neutral-soft shadow-md group"
           >
-            <div key={active.title} className="grid h-full grid-cols-12 grid-rows-12 gap-2 sm:gap-3">
-              {active.images.map((image, index) => (
-                <figure
-                  key={image.src}
-                  className={cn(
-                    "celebration-image-reveal min-h-0 overflow-hidden",
-                    layout[index],
-                    revealDelays[index],
-                  )}
-                >
-                  <img
-                    src={image.src}
-                    alt={image.alt}
-                    loading={activeIndex === 0 ? "eager" : "lazy"}
-                    className="h-full w-full object-cover transition-transform duration-700 ease-out hover:scale-[1.025] motion-reduce:transition-none"
-                  />
-                </figure>
-              ))}
+            <img
+              key={active.title}
+              src={active.image}
+              alt={active.alt}
+              loading={activeIndex === 0 ? "eager" : "lazy"}
+              className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 pointer-events-none" />
+            <div className="absolute bottom-5 left-6 right-6 flex items-center justify-between pointer-events-none">
+              <span className="text-xs uppercase tracking-[0.18em] text-ivory font-medium">
+                {active.title}
+              </span>
+              <span className="text-xs uppercase tracking-[0.16em] text-gold font-medium">
+                Très CHIC
+              </span>
             </div>
           </div>
         </Reveal>

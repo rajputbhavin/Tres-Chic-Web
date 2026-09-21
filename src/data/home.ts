@@ -34,7 +34,7 @@ export const homeTwoSides = {
     "Before Très CHIC, I spent two decades in corporate leadership, running operations, managing people, solving problems under pressure. Before that, I was the one planning events for friends, family and church, because I couldn't help noticing the details everyone else missed.",
     "I built Très CHIC because I didn't want to choose between the two. My clients get both: the eye that sees the beauty, and the mind that's already three steps ahead on the logistics.",
   ],
-  link: { label: "Read my story", to: "/mariane" },
+  link: { label: "Read my story", to: "/about" },
   portrait: {
     src: media.marianePortrait,
     alt: "Mariane Fahmy, founder of Très CHIC Event Planning & Design",

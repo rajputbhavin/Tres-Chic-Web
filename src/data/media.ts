@@ -51,6 +51,8 @@ import middleEasternWeddings from "@/assets/gallery/Middle Eastern Weddings.jpg"
 import interfaithFusionWeddings from "@/assets/gallery/Interfaith & fusion weddings.jpg";
 import westernDestinationWeddings from "@/assets/gallery/Western & destination weddings.jpg";
 import multiDayCelebrations from "@/assets/gallery/Multi-day, multi-family celebrations.jpg";
+import multiculturalFusionWeddings from "@/assets/gallery/Multicultural & Fusion Weddings.jpg";
+import nearOrFar from "@/assets/gallery/Near or Far.jpg";
 
 export type MediaItem = {
   slug: string;
@@ -77,6 +79,8 @@ export const media = {
   interfaithFusionWeddings,
   westernDestinationWeddings,
   multiDayCelebrations,
+  multiculturalFusionWeddings,
+  nearOrFar,
   vizcayaStairsCouple: venueCancellation,
   plannerWithCoupleBw: homeReview,
   sweetheartTableToast: candlelitHeadTable,
