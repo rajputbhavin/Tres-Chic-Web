@@ -44,7 +44,7 @@ function CelebrationsPage() {
 
       <EventServices />
 
-      <ClosingCta headline="What are you celebrating?" />
+      <ClosingCta headline="What are you celebrating?" tone="white" />
     </>
   );
 }

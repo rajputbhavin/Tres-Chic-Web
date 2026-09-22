@@ -19,7 +19,7 @@ export function Section({
   id,
 }: {
   children: ReactNode;
-  className?: string;
+  className?: string | undefined;
   tone?: SectionTone;
   id?: string;
 }) {

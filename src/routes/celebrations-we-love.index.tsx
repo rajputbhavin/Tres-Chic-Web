@@ -57,36 +57,52 @@ function CelebrationsWeLovePage() {
         imageAlt="A couple on the stone stairs of a historic villa at their celebration"
       />
 
-      <div className="flex flex-col">
-        {weddingProjects.map((project, i) => (
-          <WeddingProjectCard key={project.id} project={project} index={i} />
-        ))}
-      </div>
-
-      <div className="flex flex-col">
-        {celebrationProjects.map((project, i) => (
-          <CelebrationProjectCard
-            key={project.id}
-            project={project}
-            index={weddingProjects.length + i}
-          />
-        ))}
-      </div>
-
-      <SocialCelebrationsBento />
-
-      <Section>
+      <Section className={active === "couples" || active === "events" ? "pb-6 md:pb-10" : ""}>
         <Reveal>
           <Eyebrow>{portfolioPageCopy.browseLabel}</Eyebrow>
           <PortfolioFilters active={active} onChange={setActive} />
         </Reveal>
 
-        <PortfolioGallery items={items} />
+        {active !== "couples" && active !== "events" && (
+          <>
+            <PortfolioGallery items={items} />
 
-        {items.length === 0 ? (
-          <p className="mt-12 text-muted-foreground">{portfolioPageCopy.emptyState}</p>
-        ) : null}
+            {items.length === 0 ? (
+              <div className="mt-14 rounded-xs border border-dashed border-gold/40 bg-neutral-soft/50 py-16 px-6 text-center">
+                <p className="font-display text-xl text-emerald">Curated Imagery Coming Soon</p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Photography for this celebration category is currently being curated from our archives.
+                </p>
+              </div>
+            ) : null}
+          </>
+        )}
       </Section>
+
+      {/* Tab: Couples (6 Wedding Projects) */}
+      {active === "couples" && (
+        <div className="flex flex-col">
+          {weddingProjects.map((project, i) => (
+            <WeddingProjectCard key={project.id} project={project} index={i} />
+          ))}
+        </div>
+      )}
+
+      {/* Tab: Events (3 Event Projects + Social Celebrations) */}
+      {active === "events" && (
+        <div className="flex flex-col">
+          {celebrationProjects.map((project, i) => (
+            <CelebrationProjectCard
+              key={project.id}
+              project={project}
+              index={i}
+            />
+          ))}
+          <div className="pt-6">
+            <SocialCelebrationsBento />
+          </div>
+        </div>
+      )}
 
       <ClosingCta headline={portfolioPageCopy.closingHeadline} tone="soft" />
     </>

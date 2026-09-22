@@ -5,10 +5,14 @@ import { traditionArt, traditions } from "@/data/traditions";
 
 /** Two-column grid of named cultural expertise with supporting imagery. */
 export function TraditionsGrid() {
+  const items = traditions.filter(
+    (tradition) => tradition.slug !== "western-destination" && tradition.slug !== "multi-day",
+  );
+
   return (
     <Section tone="soft">
       <div className="grid gap-x-8 gap-y-14 md:grid-cols-2">
-        {traditions.map((tradition, i) => {
+        {items.map((tradition, i) => {
           const art = traditionArt[tradition.slug];
           return (
             <Reveal key={tradition.slug} delay={(i % 2) * 120} className="flex flex-col">
