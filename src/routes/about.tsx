@@ -35,9 +35,10 @@ function AboutPage() {
         eyebrow="Meet the Founder"
         headline="I used to be the bride who couldn't stop being the planner."
         body="That day changed how I think about every celebration I've planned since."
-        image={media.tentedBabysbreathReception}
-        imageAlt="A tented reception filled with baby's breath and candlelight"
+        image={media.aboutHero}
+        imageAlt="Historic bank vault doorway adorned with flowers and warm lighting leading into a lavish celebration space"
         overlay
+        fullScreen
       />
 
       <MarianeStory />

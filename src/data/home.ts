@@ -5,9 +5,36 @@
  */
 
 import { media } from "@/data/media";
+import heroMain from "@/assets/social-celebrations/Home Hero/hero-wedding-party-palms.webp";
+import hero1 from "@/assets/social-celebrations/Home Hero/1.webp";
+import hero2 from "@/assets/social-celebrations/Home Hero/2.webp";
+import hero3 from "@/assets/social-celebrations/Home Hero/3.webp";
+import hero4 from "@/assets/social-celebrations/Home Hero/4.webp";
+import hero5 from "@/assets/social-celebrations/Home Hero/5.webp";
+import hero6 from "@/assets/social-celebrations/Home Hero/6.webp";
+import hero7 from "@/assets/social-celebrations/Home Hero/7.webp";
+import hero8 from "@/assets/social-celebrations/Home Hero/8.webp";
+import hero9 from "@/assets/social-celebrations/Home Hero/9.webp";
+import hero10 from "@/assets/social-celebrations/Home Hero/10.webp";
+import hero11 from "@/assets/social-celebrations/Home Hero/11.webp";
+
+export const homeHeroImages = [
+  heroMain,
+  hero1,
+  hero2,
+  hero3,
+  hero4,
+  hero5,
+  hero6,
+  hero7,
+  hero8,
+  hero9,
+  hero10,
+  hero11,
+];
 
 export const homeHero = {
-headline: "You planned this forever.",
+  headline: "You planned this forever.",
   headlineSecond: "You deserve to live it.",
   body: "Très CHIC designs and executes elevated, culturally rich celebrations, so you experience your wedding instead of managing it.",
   /**
@@ -17,7 +44,8 @@ headline: "You planned this forever.",
    */
   video: media.heroLoopVideo,
   poster: media.heroPoster,
-  image: media.heroWeddingPartyPalms,
+  image: heroMain,
+  images: homeHeroImages,
   imageAlt:
     "A bride and groom walking joyfully with their wedding party under palm trees in South Florida",
 };

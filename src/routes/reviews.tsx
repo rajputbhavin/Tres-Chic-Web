@@ -38,8 +38,9 @@ function ReviewsPage() {
         eyebrow="Client Testimonials"
         headline="The same thing, over and over: they were present."
         body="Real experiences from couples and families who trusted Mariane Fahmy and the Très CHIC team with their most meaningful celebrations."
-        image={media.ballroomDanceFloor}
-        imageAlt="Guests filling a ballroom dance floor under warm uplighting"
+        image={media.clientTestimonialsHero}
+        imageAlt="Bride and groom embracing closely in a dramatic lighting setting with reflections and prism flare"
+        fullScreen
       />
 
       <Section>

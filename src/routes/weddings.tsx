@@ -36,8 +36,9 @@ function WeddingsPage() {
         eyebrow="Wedding Planning & Design"
         headline="Full and partial planning, design and coordination, built around how much you actually want to hold."
         body="However involved you want to be, the outcome is the same: a wedding that feels entirely yours, and a day you're actually present for."
-        image={media.blushBallroomLongtable}
-        imageAlt="A blush and ivory ballroom set with long banquet tables and candlelight"
+        image={media.weddingHero}
+        imageAlt="Bride and groom smiling at their sweetheart table during toasts surrounded by guests"
+        fullScreen
       />
 
       <div className="flex flex-col">

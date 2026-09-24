@@ -9,7 +9,7 @@ import brandLogo from "@/assets/gallery/Logo.jpg";
 import brandLogoLight from "@/assets/gallery/Lite fonts logo.png";
 import brandLogoDark from "@/assets/gallery/Dark fonts Logo.png";
 import heroCoupleZaffaDance from "@/assets/gallery/hero-couple-zaffa-dance.jpg";
-import heroWeddingPartyPalms from "@/assets/gallery/hero-wedding-party-palms.jpg";
+import heroWeddingPartyPalms from "@/assets/social-celebrations/Home Hero/hero-wedding-party-palms.webp";
 import cockpitCouple from "@/assets/gallery/cockpit-couple.jpg";
 import fireworksCouplePalms from "@/assets/gallery/fireworks-couple-palms.jpg";
 import couplePortraitBw from "@/assets/gallery/couple-portrait-bw.jpg";
@@ -53,13 +53,35 @@ import westernDestinationWeddings from "@/assets/gallery/Western & destination w
 import multiDayCelebrations from "@/assets/gallery/Multi-day, multi-family celebrations.jpg";
 import multiculturalFusionWeddings from "@/assets/gallery/Multicultural & Fusion Weddings.jpg";
 import nearOrFar from "@/assets/gallery/Near or Far.jpg";
+import destinationHero from "@/assets/social-celebrations/Destination-hero.webp";
+import multiculturalHero from "@/assets/social-celebrations/Multicultural-hero.webp";
+import clientTestimonialsHero from "@/assets/social-celebrations/Client Testimonials-hero.webp";
+import questionsHero from "@/assets/social-celebrations/Questions-hero.webp";
+import portfolioHero from "@/assets/social-celebrations/Portfolio-hero.webp";
+import celebrationsHero from "@/assets/social-celebrations/celebrations-HERO.webp";
+import aboutHero from "@/assets/social-celebrations/About-hero.webp";
+import weddingHero from "@/assets/social-celebrations/Wedding-hero.webp";
+import { allTypesOfWeddingsItems } from "./typesOfWeddingsMedia";
 
 export type MediaItem = {
   slug: string;
   src: string;
   alt: string;
   caption: string;
-  category: "reception" | "tablescape" | "detail" | "ceremony" | "entertainment" | "venue" | "celebration" | "portrait";
+  category:
+    | "reception"
+    | "tablescape"
+    | "detail"
+    | "ceremony"
+    | "entertainment"
+    | "venue"
+    | "celebration"
+    | "portrait"
+    | "south-asian"
+    | "destination"
+    | "fusion"
+    | "middle-eastern"
+    | "jewish";
   tradition?: string;
   orientation: "landscape" | "portrait";
 };
@@ -81,6 +103,14 @@ export const media = {
   multiDayCelebrations,
   multiculturalFusionWeddings,
   nearOrFar,
+  destinationHero,
+  multiculturalHero,
+  clientTestimonialsHero,
+  questionsHero,
+  portfolioHero,
+  celebrationsHero,
+  aboutHero,
+  weddingHero,
   vizcayaStairsCouple: venueCancellation,
   plannerWithCoupleBw: homeReview,
   sweetheartTableToast: candlelitHeadTable,
@@ -125,6 +155,7 @@ export const media = {
 };
 
 export const gallery: MediaItem[] = [
+  ...allTypesOfWeddingsItems,
   {
     slug: "hero-couple-zaffa-dance",
     src: heroCoupleZaffaDance,

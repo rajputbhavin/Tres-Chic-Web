@@ -39,8 +39,9 @@ function DestinationPage() {
         eyebrow="Destination Weddings"
         headline="Local to South Florida. At home wherever your celebration takes us."
         body="Whether you're flying your whole world into Miami, Fort Lauderdale, Coral Gables or Boca, or asking Très CHIC to travel with you somewhere else entirely, the process stays just as organized, just as personal."
-        image={media.tentedWaterfrontReception}
-        imageAlt="A clear-top tented waterfront reception lit by candlelight at dusk"
+        image={media.destinationHero}
+        imageAlt="Bride and groom celebrating together on a pink velvet couch"
+        fullScreen
       />
 
       <Section>

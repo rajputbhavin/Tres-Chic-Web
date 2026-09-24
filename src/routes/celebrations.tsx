@@ -36,8 +36,9 @@ function CelebrationsPage() {
         eyebrow="Beyond the Wedding"
         headline="Life's other meaningful moments deserve the same care."
         body="Baby showers. Gala awards. Bar and Bat Mitzvahs. Milestone birthdays. If it's worth celebrating, it's worth doing well."
-        image={media.eventDancefloorGreen}
-        imageAlt="Guests watching a performance beside a custom patterned dance floor"
+        image={media.celebrationsHero}
+        imageAlt="A lavish celebratory dining setup with glowing candelabras and lush floral centerpieces"
+        fullScreen
       />
 
       <CelebrationShowcase />

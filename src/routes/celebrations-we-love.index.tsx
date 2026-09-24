@@ -53,8 +53,9 @@ function CelebrationsWeLovePage() {
         eyebrow={portfolioPageCopy.eyebrow}
         headline={portfolioPageCopy.headline}
         body={portfolioPageCopy.body}
-        image={media.vizcayaStairsCouple}
-        imageAlt="A couple on the stone stairs of a historic villa at their celebration"
+        image={media.portfolioHero}
+        imageAlt="A bride in a tiered ruffle gown and groom in a white tuxedo celebrate with guests on the ballroom dance floor"
+        fullScreen
       />
 
       <Section className={active === "couples" || active === "events" ? "pb-6 md:pb-10" : ""}>

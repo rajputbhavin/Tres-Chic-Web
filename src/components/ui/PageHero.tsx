@@ -1,4 +1,7 @@
+import { ChevronDown } from "lucide-react";
+
 import { Reveal } from "@/components/ui/Reveal";
+import { cn } from "@/lib/utils";
 
 /** Editorial page hero used by every inner page. */
 export function PageHero({
@@ -8,6 +11,9 @@ export function PageHero({
   image,
   imageAlt,
   overlay = true,
+  fullScreen = false,
+  className,
+  imageClassName,
 }: {
   eyebrow: string;
   headline: string;
@@ -16,14 +22,28 @@ export function PageHero({
   imageAlt?: string;
   /** Slight dark scrim over the image to keep ivory text readable. */
   overlay?: boolean;
+  fullScreen?: boolean;
+  className?: string;
+  imageClassName?: string;
 }) {
   return (
-    <header className="relative isolate min-h-[68vh] md:min-h-[78vh] flex flex-col justify-end overflow-hidden bg-emerald text-ivory">
+    <header
+      className={cn(
+        "relative isolate flex flex-col justify-end overflow-hidden bg-emerald text-ivory",
+        fullScreen
+          ? "min-h-screen min-h-[100svh] min-h-[100dvh]"
+          : "min-h-[68vh] md:min-h-[78vh]",
+        className
+      )}
+    >
       {image ? (
         <img
           src={image}
           alt={imageAlt ?? ""}
-          className="absolute inset-0 size-full object-cover object-center"
+          className={cn(
+            "absolute inset-0 size-full object-cover object-center",
+            imageClassName
+          )}
         />
       ) : null}
       {overlay ? (
@@ -64,6 +84,16 @@ export function PageHero({
           ) : null}
         </Reveal>
       </div>
+
+      {fullScreen ? (
+        <div
+          className="pointer-events-none absolute bottom-8 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 md:flex"
+          aria-hidden
+        >
+          <span className="scroll-pulse h-10 w-px bg-ivory/50" />
+          <ChevronDown className="scroll-pulse size-4 text-ivory/60" />
+        </div>
+      ) : null}
     </header>
   );
 }

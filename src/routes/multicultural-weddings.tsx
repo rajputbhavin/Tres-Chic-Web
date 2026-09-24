@@ -40,8 +40,9 @@ function MulticulturalPage() {
         eyebrow="Multicultural & Fusion Weddings"
         headline="Your families don't need to choose. Neither does your wedding."
         body="I have a particular passion for South Asian, Middle Eastern, Jewish, interfaith and fusion celebrations, weddings where multiple cultures, families and traditions come together in one story."
-        image={media.zaffaProcession}
-        imageAlt="A zaffa procession with drummers leading a bride and groom into their celebration"
+        image={media.multiculturalHero}
+        imageAlt="A groom in a tuxedo placing a wedding ring on his bride's hand adorned with intricate henna and mehndi art"
+        fullScreen
       />
 
       <Section>

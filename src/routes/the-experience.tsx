@@ -36,6 +36,7 @@ function ExperiencePage() {
         body="Here's exactly what working with Très CHIC looks like, from our first conversation to the morning after."
         image={media.fireworksCouplePalms}
         imageAlt="A couple beneath fireworks and palm trees at the close of the night"
+        fullScreen
       />
 
       <ExperienceProcessStack />

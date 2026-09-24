@@ -50,8 +50,9 @@ function FaqPage() {
         eyebrow="Questions"
         headline="The things couples ask us most."
         body="If your question isn't here, ask it directly, you'll hear back from Mariane."
-        image={media.invitationSuiteRings}
-        imageAlt="An invitation suite styled with wedding rings and ribbon"
+        image={media.questionsHero}
+        imageAlt="Clear-top tented wedding reception illuminated with bistro lights, checkered dance floor and elegant floral arrangements"
+        fullScreen
       />
 
       <Section>
