@@ -33,7 +33,7 @@ export function HomeHero() {
   }, [prefersReducedMotion]);
 
   return (
-    <section className="relative isolate flex min-h-screen min-h-[100svh] min-h-[100dvh] items-center justify-center overflow-hidden bg-emerald-deep">
+    <section className="relative isolate flex min-h-screen min-h-[100svh] min-h-[100dvh] items-end overflow-hidden bg-emerald-deep">
       {/* Background Image Carousel / Slideshow with Responsive Mobile WebP Support */}
       <div className="pointer-events-none absolute inset-0 size-full overflow-hidden" aria-hidden="true">
         {homeHero.images.map((src, index) => {
@@ -64,14 +64,14 @@ export function HomeHero() {
 
       <div className="hero-scrim pointer-events-none absolute inset-0 z-10" aria-hidden />
 
-      <div className="relative z-20 mx-auto w-full max-w-6xl px-6 py-20 text-center md:px-10 md:py-28">
+      <div className="relative z-20 mx-auto w-full max-w-6xl px-6 pt-36 pb-20 text-center md:px-10 md:pb-28">
         <Reveal className="mx-auto w-full">
-          <h1 className="display-2xl mx-auto max-w-5xl text-ivory drop-shadow-md">
+          <h1 className="display-2xl mx-auto max-w-5xl text-ivory drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
             {homeHero.headline}
             <br />
             {homeHero.headlineSecond}
           </h1>
-          <p className="hero-body-delay lede mx-auto mt-7 max-w-xl text-ivory/95 drop-shadow-sm">{homeHero.body}</p>
+          <p className="hero-body-delay lede mx-auto mt-7 max-w-xl text-ivory drop-shadow-[0_1px_8px_rgba(0,0,0,0.85)]">{homeHero.body}</p>
         </Reveal>
       </div>
 

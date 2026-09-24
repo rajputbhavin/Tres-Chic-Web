@@ -15,7 +15,7 @@ export function ClosingCta({
 }) {
   if (tone === "white") {
     return (
-      <section className="bg-white px-6 py-20 md:px-10 md:py-28 border-t border-border/60 text-center">
+      <section className="bg-[#faf7f0] px-6 py-20 md:px-10 md:py-28 border-t border-border/60 text-center">
         <Reveal className="mx-auto max-w-2xl">
           <h2 className="display-lg text-balance text-emerald">{headline}</h2>
           {body ? <p className="lede mt-6 text-muted-foreground">{body}</p> : null}
