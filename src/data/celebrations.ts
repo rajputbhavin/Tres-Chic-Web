@@ -1,10 +1,9 @@
-import engagementPartiesImg from "@/assets/social-celebrations/Engagement Parties.webp";
-import bridalBabyShowersImg from "@/assets/social-celebrations/Bridal & Baby Showers.webp";
+import engagementPartiesImg from "@/assets/gallery/E-Engagement.webp";
+import bridalBabyShowersImg from "@/assets/gallery/E-Baby Shower.webp";
 import milestoneBirthdaysImg from "@/assets/social-celebrations/Milestone Birthdays.webp";
-import barBatMitzvahsImg from "@/assets/social-celebrations/Bar & Bat Mitzvahs.webp";
-import vowRenewalsImg from "@/assets/social-celebrations/Vow Renewals.webp";
-import sweet16CelebrationsImg from "@/assets/social-celebrations/Sweet 16 Celebrations.webp";
-import otherOccasionsImg from "@/assets/social-celebrations/And other meaningful occasions, ask us..webp";
+import barBatMitzvahsImg from "@/assets/gallery/E-BarMitzvah.webp";
+import vowRenewalsImg from "@/assets/gallery/E-Vows Renewals.webp";
+import otherOccasionsImg from "@/assets/gallery/E-Other.webp";
 
 export type CelebrationShowcase = {
   title: string;
@@ -23,7 +22,7 @@ export const eventServices: EventService[] = [
   {
     title: "Event Planning & Coordination",
     investment: "Custom proposal",
-    body: "Hands-on planning and coordination for engagement parties, showers, milestone birthdays, Bar and Bat Mitzvahs, vow renewals, Sweet 16 celebrations and other meaningful occasions.",
+    body: "Hands-on planning and coordination for engagement parties, showers, milestone birthdays, Bar and Bat Mitzvahs, vow renewals and other meaningful occasions.",
   },
   {
     title: "Event Design & Decor",
@@ -63,11 +62,6 @@ export const celebrationShowcases: CelebrationShowcase[] = [
     title: "Vow Renewals",
     image: vowRenewalsImg,
     alt: "Vow Renewals celebration by Très CHIC",
-  },
-  {
-    title: "Sweet 16 Celebrations",
-    image: sweet16CelebrationsImg,
-    alt: "Sweet 16 Celebrations celebration by Très CHIC",
   },
   {
     title: "And other meaningful occasions, ask us.",

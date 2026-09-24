@@ -77,6 +77,6 @@ export const traditionArt: Record<string, TraditionArt> = {
   },
   "multi-day": {
     src: media.multiDayCelebrations,
-    alt: "Multi-day multi-family celebrations with grand reception ballroom",
+    alt: "Multi-day multi-family celebrations with traditional couple attire",
   },
 };

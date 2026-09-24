@@ -25,8 +25,8 @@ export const services: Service[] = [
       "Couples who are busy, out of town, planning a multi-day or multicultural celebration, or who simply don't want wedding planning to become a second job.",
     prefixBuiltFor: true,
     image: {
-      src: media.tentedWaterfrontReception,
-      alt: "A candlelit tented waterfront reception at dusk",
+      src: media.fullServicePlanning,
+      alt: "Full-service wedding planning celebration by Très CHIC",
     },
   },
   {

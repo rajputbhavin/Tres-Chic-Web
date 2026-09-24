@@ -18,7 +18,7 @@ export const faqs: Faq[] = [
   {
     question: "Do you only plan weddings?",
     answer:
-      "No. Alongside weddings we plan engagement parties, bridal and baby showers, milestone birthdays, Bar and Bat Mitzvahs, vow renewals and Sweet 16 celebrations.",
+      "No. Alongside weddings we plan engagement parties, bridal and baby showers, milestone birthdays, Bar and Bat Mitzvahs, and vow renewals.",
   },
   {
     question: "We're a multicultural or interfaith couple. Will our traditions be understood?",

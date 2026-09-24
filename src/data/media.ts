@@ -14,6 +14,8 @@ import cockpitCouple from "@/assets/gallery/cockpit-couple.jpg";
 import fireworksCouplePalms from "@/assets/gallery/fireworks-couple-palms.jpg";
 import couplePortraitBw from "@/assets/gallery/couple-portrait-bw.jpg";
 import tentedWaterfrontReception from "@/assets/gallery/tented-waterfront-reception.jpg";
+import fullServicePlanning from "@/assets/gallery/Full-Service Planning.webp";
+import finalDetailsLogistics from "@/assets/gallery/Final Details & Logistics.webp";
 import vizcayaVillaEvening from "@/assets/gallery/vizcaya-villa-evening.jpg";
 import ballroomSuspendedFlorals from "@/assets/gallery/ballroom-suspended-florals.jpg";
 import gardenReceptionTallFlorals from "@/assets/gallery/garden-reception-tall-florals.jpg";
@@ -51,7 +53,7 @@ import middleEasternWeddings from "@/assets/gallery/Middle Eastern Weddings.jpg"
 import interfaithFusionWeddings from "@/assets/gallery/Interfaith & fusion weddings.jpg";
 import westernDestinationWeddings from "@/assets/gallery/Western & destination weddings.jpg";
 import multiDayCelebrations from "@/assets/gallery/Multi-day, multi-family celebrations.jpg";
-import multiculturalFusionWeddings from "@/assets/gallery/Multicultural & Fusion Weddings.jpg";
+import multiculturalFusionWeddings from "@/assets/gallery/Multicultural & Fusion Weddings Perfect.webp";
 import nearOrFar from "@/assets/gallery/Near or Far.jpg";
 import destinationHero from "@/assets/social-celebrations/Destination-hero.webp";
 import multiculturalHero from "@/assets/social-celebrations/Multicultural-hero.webp";
@@ -95,12 +97,12 @@ export const media = {
   heroLoopVideo: "/hero-loop.webm",
   heroPoster: heroCoupleZaffaDance,
   marianePortrait,
-  southAsianCeremony: southAsianCelebrations,
+  southAsianCeremony: multiDayCelebrations,
   chuppahCeremony: jewishWeddings,
   middleEasternWeddings,
   interfaithFusionWeddings,
   westernDestinationWeddings,
-  multiDayCelebrations,
+  multiDayCelebrations: southAsianCelebrations,
   multiculturalFusionWeddings,
   nearOrFar,
   destinationHero,
@@ -124,6 +126,8 @@ export const media = {
   heroCoupleZaffaDance,
   couplePortraitBw,
   tentedWaterfrontReception,
+  fullServicePlanning,
+  finalDetailsLogistics,
   vizcayaVillaEvening,
   ballroomSuspendedFlorals,
   gardenReceptionTallFlorals,

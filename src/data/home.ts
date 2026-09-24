@@ -18,8 +18,20 @@ import hero9 from "@/assets/social-celebrations/Home Hero/9.webp";
 import hero10 from "@/assets/social-celebrations/Home Hero/10.webp";
 import hero11 from "@/assets/social-celebrations/Home Hero/11.webp";
 
+import mobileHero1 from "@/assets/social-celebrations/Home Hero/mobile hero/1.webp";
+import mobileHero2 from "@/assets/social-celebrations/Home Hero/mobile hero/2.webp";
+import mobileHero3 from "@/assets/social-celebrations/Home Hero/mobile hero/3.webp";
+import mobileHero4 from "@/assets/social-celebrations/Home Hero/mobile hero/4.webp";
+import mobileHero5 from "@/assets/social-celebrations/Home Hero/mobile hero/5.webp";
+import mobileHero6 from "@/assets/social-celebrations/Home Hero/mobile hero/6.webp";
+import mobileHero7 from "@/assets/social-celebrations/Home Hero/mobile hero/7.webp";
+import mobileHero8 from "@/assets/social-celebrations/Home Hero/mobile hero/8.webp";
+import mobileHero9 from "@/assets/social-celebrations/Home Hero/mobile hero/9.webp";
+import mobileHero10 from "@/assets/social-celebrations/Home Hero/mobile hero/10.webp";
+import mobileHero11 from "@/assets/social-celebrations/Home Hero/mobile hero/11.webp";
+import mobileHero12 from "@/assets/social-celebrations/Home Hero/mobile hero/12.webp";
+
 export const homeHeroImages = [
-  heroMain,
   hero1,
   hero2,
   hero3,
@@ -31,6 +43,22 @@ export const homeHeroImages = [
   hero9,
   hero10,
   hero11,
+  heroMain,
+];
+
+export const homeHeroMobileImages = [
+  mobileHero1,
+  mobileHero2,
+  mobileHero3,
+  mobileHero4,
+  mobileHero5,
+  mobileHero6,
+  mobileHero7,
+  mobileHero8,
+  mobileHero9,
+  mobileHero10,
+  mobileHero11,
+  mobileHero12,
 ];
 
 export const homeHero = {
@@ -44,10 +72,11 @@ export const homeHero = {
    */
   video: media.heroLoopVideo,
   poster: media.heroPoster,
-  image: heroMain,
+  image: hero1,
   images: homeHeroImages,
+  mobileImages: homeHeroMobileImages,
   imageAlt:
-    "A bride and groom walking joyfully with their wedding party under palm trees in South Florida",
+    "Luxury wedding celebration design by Très CHIC Event Planning & Design",
 };
 
 export const homeAcknowledgment = {

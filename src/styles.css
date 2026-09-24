@@ -369,20 +369,35 @@
 }
 
 /* ---------- Hero scrim ----------
-   A neutral, image-preserving gradient anchored to the bottom of the frame so
-   ivory copy reads cleanly without shifting the photograph's colour. */
+   A rich, cinematic overlay ensuring centered ivory copy reads with pristine
+   contrast across all slides while preserving the brilliance of Mariane's photography. */
 
 .hero-scrim {
   background:
+    radial-gradient(ellipse at center, rgb(0 0 0 / 0.45) 0%, rgb(0 0 0 / 0.65) 100%),
     linear-gradient(
-      to top,
-      rgb(0 0 0 / 0.72) 0%,
-      rgb(0 0 0 / 0.5) 26%,
-      rgb(0 0 0 / 0.18) 55%,
-      rgb(0 0 0 / 0.04) 78%,
-      transparent 100%
-    ),
-    linear-gradient(to bottom, rgb(0 0 0 / 0.28) 0%, transparent 32%);
+      to bottom,
+      rgb(0 0 0 / 0.55) 0%,
+      rgb(0 0 0 / 0.3) 35%,
+      rgb(0 0 0 / 0.45) 70%,
+      rgb(0 0 0 / 0.68) 100%
+    );
+}
+
+/* Mobile focal points for home hero carousel images where subjects are offset horizontally */
+@media (max-width: 767px) {
+  .hero-img-focus-2 {
+    object-position: 75% center !important;
+  }
+  .hero-img-focus-4 {
+    object-position: 28% center !important;
+  }
+  .hero-img-focus-6 {
+    object-position: 72% center !important;
+  }
+  .hero-img-focus-8 {
+    object-position: 36% center !important;
+  }
 }
 
 /* Hero background video: never surface native chrome or a play button. */

@@ -14,17 +14,17 @@ import { media } from "@/data/media";
 export const portfolioFilters = [
   { id: "all", label: "All" },
   { id: "couples", label: "Couples" },
+  { id: "south-asian", label: "South Asian Weddings" },
+  { id: "destination", label: "Destination Weddings" },
+  { id: "fusion", label: "Fusion Weddings" },
+  { id: "middle-eastern", label: "Middle Eastern Weddings" },
+  { id: "jewish", label: "Jewish Weddings" },
   { id: "events", label: "Events" },
   { id: "reception", label: "Receptions" },
   { id: "ceremony", label: "Ceremonies" },
   { id: "tablescape", label: "Tablescapes" },
   { id: "detail", label: "Details" },
   { id: "entertainment", label: "Entertainment" },
-  { id: "south-asian", label: "South Asian Weddings" },
-  { id: "destination", label: "Destination Weddings" },
-  { id: "fusion", label: "Fusion Weddings" },
-  { id: "middle-eastern", label: "Middle Eastern Weddings" },
-  { id: "jewish", label: "Jewish Weddings" },
 ] as const;
 
 export type PortfolioStorySection = { heading: string; body: string };

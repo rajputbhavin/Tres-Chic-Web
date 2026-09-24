@@ -10,16 +10,18 @@ export function HomeHero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const prefersReducedMotion = usePrefersReducedMotion();
 
-  // Preload all carousel images into browser cache on mount
+  // Preload relevant carousel images into browser cache on mount for instant 4G loading
   useEffect(() => {
-    if (!homeHero.images) return;
-    homeHero.images.forEach((src) => {
+    const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches;
+    const listToPreload = isMobile && homeHero.mobileImages?.length ? homeHero.mobileImages : homeHero.images;
+    if (!listToPreload) return;
+    listToPreload.forEach((src) => {
       const img = new Image();
       img.src = src;
     });
   }, []);
 
-  // Advance image every 1 second (1000ms)
+  // Advance image every 3 seconds
   useEffect(() => {
     if (prefersReducedMotion || !homeHero.images || homeHero.images.length <= 1) return;
 
@@ -31,37 +33,45 @@ export function HomeHero() {
   }, [prefersReducedMotion]);
 
   return (
-    <section className="relative isolate flex min-h-screen min-h-[100svh] min-h-[100dvh] items-end overflow-hidden bg-emerald-deep">
-      {/* Background Image Carousel / Slideshow */}
+    <section className="relative isolate flex min-h-screen min-h-[100svh] min-h-[100dvh] items-center justify-center overflow-hidden bg-emerald-deep">
+      {/* Background Image Carousel / Slideshow with Responsive Mobile WebP Support */}
       <div className="pointer-events-none absolute inset-0 size-full overflow-hidden" aria-hidden="true">
         {homeHero.images.map((src, index) => {
           const isActive = index === currentIndex;
+          const mobileSrc = homeHero.mobileImages?.[index];
           return (
-            <img
+            <picture
               key={src}
-              className={`hero-video pointer-events-none absolute inset-0 size-full object-cover object-center transition-opacity duration-500 ease-in-out will-change-[opacity] ${
+              className={`hero-video pointer-events-none absolute inset-0 size-full transition-opacity duration-500 ease-in-out will-change-[opacity] ${
                 isActive ? "z-[2] opacity-100" : "z-[1] opacity-0"
               }`}
-              src={src}
-              alt={index === 0 ? homeHero.imageAlt : ""}
-              fetchPriority={index === 0 ? "high" : "low"}
-              loading="eager"
-              decoding="async"
-            />
+            >
+              {mobileSrc ? (
+                <source media="(max-width: 767px)" srcSet={mobileSrc} type="image/webp" />
+              ) : null}
+              <img
+                className="size-full object-cover object-center"
+                src={src}
+                alt={index === 0 ? homeHero.imageAlt : ""}
+                fetchPriority={index === 0 ? "high" : "low"}
+                loading="eager"
+                decoding="async"
+              />
+            </picture>
           );
         })}
       </div>
 
       <div className="hero-scrim pointer-events-none absolute inset-0 z-10" aria-hidden />
 
-      <div className="relative z-20 mx-auto w-full max-w-6xl px-6 pt-40 pb-24 text-center md:px-10 md:pb-32">
+      <div className="relative z-20 mx-auto w-full max-w-6xl px-6 py-20 text-center md:px-10 md:py-28">
         <Reveal className="mx-auto w-full">
-          <h1 className="display-2xl mx-auto max-w-5xl text-ivory">
+          <h1 className="display-2xl mx-auto max-w-5xl text-ivory drop-shadow-md">
             {homeHero.headline}
             <br />
             {homeHero.headlineSecond}
           </h1>
-          <p className="hero-body-delay lede mx-auto mt-7 max-w-xl text-ivory/90">{homeHero.body}</p>
+          <p className="hero-body-delay lede mx-auto mt-7 max-w-xl text-ivory/95 drop-shadow-sm">{homeHero.body}</p>
         </Reveal>
       </div>
 

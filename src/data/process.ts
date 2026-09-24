@@ -35,8 +35,8 @@ export const processSteps: ProcessStep[] = [
     n: "04",
     title: "Final Details & Logistics",
     body: "As your date approaches, the plan tightens: timelines confirmed, vendors locked, floor plans finalized, contingencies considered. You should be doing less by now, not more.",
-    image: media.candlelitHeadTable,
-    imageAlt: "A candlelit head table finalized down to the last detail",
+    image: media.finalDetailsLogistics,
+    imageAlt: "Bride and groom with vintage car and fountain during wedding day logistics",
   },
   {
     n: "05",
