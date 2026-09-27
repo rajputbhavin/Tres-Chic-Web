@@ -163,13 +163,13 @@ export const homeReviews = {
   testimonials: [
     {
       quote:
-        "We had an absolutely amazing experience working with Mariane Fahmy and the Très CHIC team! Every interaction we had with her made us feel confident that our wedding was in great hands. Everything came together beautifully.",
-      attribution: "Omar Bashi · Verified Google Review",
+        "Every detail was thoughtful, intentional, and so perfectly aligned with us that it genuinely felt like she had copy-pasted our dream wedding straight from our brains. Our entire wedding weekend felt like a dream from start to finish.",
+      attribution: "Rima & Armaan · Wedding Couple",
     },
     {
       quote:
-        "Every detail was thoughtful, intentional, and so perfectly aligned with us that it genuinely felt like she had copy-pasted our dream wedding straight from our brains. Our entire wedding weekend felt like a dream from start to finish.",
-      attribution: "Rima & Armaan · Wedding Couple",
+        "We had an absolutely amazing experience working with Mariane Fahmy and the Très CHIC team! Every interaction we had with her made us feel confident that our wedding was in great hands. Everything came together beautifully.",
+      attribution: "Omar Bashi · Verified Google Review",
     },
     {
       quote:

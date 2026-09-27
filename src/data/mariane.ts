@@ -48,8 +48,8 @@ export const marianeOffDuty = {
   eyebrow: "Off Duty",
   headline: "Everything I fall in love with eventually shows up in a detail.",
   body: "When I'm not working, you'll find me traveling, discovering new restaurants, or getting lost in a beautiful hotel lobby I'll probably steal ideas from later. I love fashion, interiors and anything that makes me look twice. None of it is unrelated to the work, every trip, every meal, every space I fall in love with eventually shows up in a detail at someone's wedding.",
-image: {
-    src: media.cockpitCouple,
-    alt: "Mariane and her husband in the cockpit of a Delta aircraft at night",
+  image: {
+    src: media.mariane2,
+    alt: "Mariane Fahmy, founder of Très CHIC Event Planning & Design",
   },
 };

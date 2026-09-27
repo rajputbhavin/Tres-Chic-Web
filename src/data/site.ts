@@ -16,7 +16,7 @@ export const site = {
   facebook: "https://www.facebook.com/TresCHICeventsFL",
   pinterest: "https://www.pinterest.com/TresChicFL/",
   youtube: "https://www.youtube.com/@treschiceventplanningdesig4523",
-  regionsLine: "Miami · Fort Lauderdale · Coral Gables · Boca Raton · Worldwide",
+  regionsLine: "South Florida · Miami · Fort Lauderdale · Coral Gables · Boca Raton · Worldwide",
   replyPromise: "Usually a reply within one business day.",
 };
 

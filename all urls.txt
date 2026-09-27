@@ -1,0 +1,111 @@
+# ==============================================================================
+# TRÈS CHIC EVENT PLANNING & DESIGN - ALL WEBSITE URLS
+# ==============================================================================
+
+# ==============================================================================
+# 1. CORE & BRAND PAGES
+# ==============================================================================
+https://treschiceventplanning.com/
+https://treschiceventplanning.com/about
+https://treschiceventplanning.com/gallery
+https://treschiceventplanning.com/media
+https://treschiceventplanning.com/testimonials
+https://treschiceventplanning.com/contact-us
+https://treschiceventplanning.com/subscribe
+
+# ==============================================================================
+# 2. SERVICES & PLANNING TIERS
+# ==============================================================================
+https://treschiceventplanning.com/services
+https://treschiceventplanning.com/wedding-services
+https://treschiceventplanning.com/full-planning-service
+https://treschiceventplanning.com/partial-planning-service
+https://treschiceventplanning.com/coordination-service
+https://treschiceventplanning.com/event-services
+https://treschiceventplanning.com/custom-decor
+https://treschiceventplanning.com/zaffa-entertainment
+https://treschiceventplanning.com/featured-weddings
+
+# ==============================================================================
+# 3. BLOG POSTS & REAL WEDDING / EVENT STORIES
+# ==============================================================================
+https://treschiceventplanning.com/blog/f/head-in-the-clouds-baby-shower
+https://treschiceventplanning.com/f/head-in-the-clouds-baby-shower
+https://treschiceventplanning.com/f/a-baby-shower-fit-for-a-princess
+https://treschiceventplanning.com/f/the-ultimate-girly-baby-shower
+https://treschiceventplanning.com/f/sandras-bridal-shower--january-9th-2021
+https://treschiceventplanning.com/f/jacqueline-roberts-nigerian-wedding--july-24-2021
+https://treschiceventplanning.com/f/aimen-sarsour-mai-hammad--luxe-white-wedding
+https://treschiceventplanning.com/blog/f/aimen-sarsour-mai-hammad--luxe-white-wedding
+https://treschiceventplanning.com/f/mrs-mrs-burnett--epic-ballroom-wedding
+https://treschiceventplanning.com/blog/f/mrs-mrs-burnett--epic-ballroom-wedding
+https://treschiceventplanning.com/f/carolina-ash--november-10th-2018
+https://treschiceventplanning.com/f/laura-christopher--november-3rd-2018
+https://treschiceventplanning.com/f/hiram-agustin--march-17th-2018
+https://treschiceventplanning.com/f/fariha-atumash--july-3rd-2021
+https://treschiceventplanning.com/f/diana-andres--february-8th-2020
+https://treschiceventplanning.com/blog/f/diana-andres--february-8th-2020
+https://treschiceventplanning.com/blog/f/megan-brad--november-20-2020
+https://treschiceventplanning.com/f/backyard-or-dream-reception
+https://treschiceventplanning.com/blog/f/backyard-or-dream-reception
+https://treschiceventplanning.com/f/the-ultimate-romantic-moody-venue
+https://treschiceventplanning.com/blog/f/the-ultimate-romantic-moody-venue
+https://treschiceventplanning.com/f/the-inspiration-behind-tres-chic-event-planning-design
+https://treschiceventplanning.com/blog/f/the-inspiration-behind-tres-chic-event-planning-design
+https://treschiceventplanning.com/f/5-timeless-updos-we-adore
+https://treschiceventplanning.com/blog/f/5-timeless-updos-we-adore
+https://treschiceventplanning.com/f/tips-on-wedding-planning
+https://treschiceventplanning.com/f/have-the-once-in-a-lifetime-event-now
+https://treschiceventplanning.com/f/trés-chic-and-the-team-are-very-excited
+
+# ==============================================================================
+# 4. BLOG CATEGORY & FILTER ARCHIVES
+# ==============================================================================
+https://treschiceventplanning.com/blog
+https://treschiceventplanning.com/blog?blogcategory=Weddings
+https://treschiceventplanning.com/blog?blogcategory=Weddings&blog=y
+https://treschiceventplanning.com/blog?blogcategory=Wedding+Planning
+https://treschiceventplanning.com/blog?blogcategory=Event+Planning
+https://treschiceventplanning.com/blog?blogcategory=Bridal+Hair&blog=y
+https://treschiceventplanning.com/blog?blogcategory=Baby+Showers
+https://treschiceventplanning.com/blog?blogcategory=COVID+
+https://treschiceventplanning.com/blog?blogcategory=2020+weddings
+https://treschiceventplanning.com/?blogcategory=2018+Weddings
+https://treschiceventplanning.com/?blogcategory=2020+weddings
+https://treschiceventplanning.com/?blogcategory=Baby+Showers
+https://treschiceventplanning.com/?blogcategory=COVID+
+https://treschiceventplanning.com/?blogcategory=Event+Planning
+
+# Tagged Story Variations:
+https://treschiceventplanning.com/f/head-in-the-clouds-baby-shower?blogcategory=Baby+Showers
+https://treschiceventplanning.com/f/head-in-the-clouds-baby-shower?blogcategory=Bridal+Hair
+https://treschiceventplanning.com/f/head-in-the-clouds-baby-shower?blogcategory=Event+Planning
+https://treschiceventplanning.com/f/a-baby-shower-fit-for-a-princess?blogcategory=Baby+Showers
+https://treschiceventplanning.com/f/a-baby-shower-fit-for-a-princess?blogcategory=South+Florida+Planner
+https://treschiceventplanning.com/f/sandras-bridal-shower--january-9th-2021?blogcategory=Bridal+Shower
+https://treschiceventplanning.com/blog/f/sandras-bridal-shower--january-9th-2021?blogcategory=Wedding+Planning
+https://treschiceventplanning.com/f/jacqueline-roberts-nigerian-wedding--july-24-2021?blogcategory=Off+Beat+Bride
+https://treschiceventplanning.com/f/jacqueline-roberts-nigerian-wedding--july-24-2021?blogcategory=Venues
+https://treschiceventplanning.com/f/aimen-sarsour-mai-hammad--luxe-white-wedding?blogcategory=Weddings
+https://treschiceventplanning.com/f/mrs-mrs-burnett--epic-ballroom-wedding?blogcategory=Venues
+https://treschiceventplanning.com/f/carolina-ash--november-10th-2018?blogcategory=Wedding+Planning
+https://treschiceventplanning.com/f/hiram-agustin--march-17th-2018?blogcategory=2018+Weddings
+https://treschiceventplanning.com/f/fariha-atumash--july-3rd-2021?blogcategory=COVID+
+https://treschiceventplanning.com/f/diana-andres--february-8th-2020?blogcategory=2020+weddings
+https://treschiceventplanning.com/f/diana-andres--february-8th-2020?blogcategory=Event+Planning
+https://treschiceventplanning.com/f/megan-brad--november-20-2020?blogcategory=Bridal+Hair
+https://treschiceventplanning.com/f/backyard-or-dream-reception?blogcategory=COVID+
+https://treschiceventplanning.com/f/the-ultimate-romantic-moody-venue?blogcategory=Venues
+https://treschiceventplanning.com/f/the-ultimate-romantic-moody-venue?blogcategory=Weddings
+https://treschiceventplanning.com/f/the-inspiration-behind-tres-chic-event-planning-design?blogcategory=2020+weddings
+https://treschiceventplanning.com/f/the-inspiration-behind-tres-chic-event-planning-design?blogcategory=Event+Planning
+https://treschiceventplanning.com/f/the-inspiration-behind-tres-chic-event-planning-design?blogcategory=Wedding+Planning
+https://treschiceventplanning.com/blog/f/the-inspiration-behind-tres-chic-event-planning-design?blogcategory=Wedding+Planning
+https://treschiceventplanning.com/f/5-timeless-updos-we-adore?blogcategory=2020+weddings
+https://treschiceventplanning.com/f/5-timeless-updos-we-adore?blogcategory=Bridal+Hair
+https://treschiceventplanning.com/blog/f/tips-on-wedding-planning?blogcategory=Event+Planning
+https://treschiceventplanning.com/blog/f/have-the-once-in-a-lifetime-event-now?blogcategory=Wedding+Planning
+https://treschiceventplanning.com/blog/f/have-the-once-in-a-lifetime-event-now?blogcategory=Weddings
+https://treschiceventplanning.com/f/trés-chic-and-the-team-are-very-excited?blogcategory=Weddings
+https://treschiceventplanning.com/blog/f/trés-chic-and-the-team-are-very-excited?blogcategory=Wedding+Planning
+https://treschiceventplanning.com/blog/f/trés-chic-and-the-team-are-very-excited?blogcategory=Weddings

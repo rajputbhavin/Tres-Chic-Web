@@ -71,7 +71,7 @@ export const portfolioStories: PortfolioStory[] = [
   {
     slug: "a-vizcaya-wedding",
     title: "A Vizcaya Wedding",
-    location: "Villa Vizcaya, Miami",
+    location: "Vizcaya Museum, Miami",
     hook: "A historic villa, dressed for one night only.",
     image: {
       src: media.vizcayaVillaEvening,
@@ -86,7 +86,7 @@ export const portfolioStories: PortfolioStory[] = [
   {
     slug: "a-cultural-fusion-celebration",
     title: "A Cultural Fusion Celebration",
-    location: "The Bath Club, Miami Beach",
+    location: "Vizcaya Museum, Miami",
     hook: "The zaffa came down the staircase first. Everything else followed.",
     image: {
       src: media.zaffaProcession,

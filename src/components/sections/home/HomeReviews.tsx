@@ -14,12 +14,12 @@ export function HomeReviews() {
   const total = homeReviews.testimonials.length;
   const reducedMotion = usePrefersReducedMotion();
 
-  // Auto-play: cycles automatically every 5.5 seconds ("khud ghumte rahe")
+  // Auto-play: cycles automatically every 2 seconds as requested
   useEffect(() => {
     if (reducedMotion) return;
     const interval = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % total);
-    }, 5500);
+    }, 2000);
     return () => window.clearInterval(interval);
   }, [activeIndex, reducedMotion, total]);
 
@@ -58,7 +58,7 @@ export function HomeReviews() {
                 key={testimonial.quote}
                 aria-hidden={index !== activeIndex}
                 className={cn(
-                  "col-start-1 row-start-1 transition-all duration-700 ease-out motion-reduce:transition-none",
+                  "col-start-1 row-start-1 transition-all duration-500 ease-out motion-reduce:transition-none",
                   index === activeIndex
                     ? "translate-y-0 opacity-100"
                     : "pointer-events-none translate-y-2 opacity-0",

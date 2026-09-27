@@ -11,6 +11,7 @@ import brandLogoDark from "@/assets/gallery/Dark fonts Logo.png";
 import heroCoupleZaffaDance from "@/assets/gallery/hero-couple-zaffa-dance.jpg";
 import heroWeddingPartyPalms from "@/assets/social-celebrations/Home Hero/hero-wedding-party-palms.webp";
 import cockpitCouple from "@/assets/gallery/cockpit-couple.jpg";
+import mariane2 from "@/assets/gallery/mariane-2.webp";
 import fireworksCouplePalms from "@/assets/gallery/fireworks-couple-palms.jpg";
 import couplePortraitBw from "@/assets/gallery/couple-portrait-bw.jpg";
 import tentedWaterfrontReception from "@/assets/gallery/tented-waterfront-reception.jpg";
@@ -123,6 +124,7 @@ export const media = {
   venueCancellation,
   homeReview,
   cockpitCouple,
+  mariane2,
   heroCoupleZaffaDance,
   couplePortraitBw,
   tentedWaterfrontReception,
@@ -199,17 +201,17 @@ export const gallery: MediaItem[] = [
   {
     slug: "ballroom-suspended-florals",
     src: ballroomSuspendedFlorals,
-    alt: "Ballroom with a suspended white and greenery floral installation above a head table, guests seated in violet light",
-    caption: "A suspended floral installation over the head table",
+    alt: "A stunning palm-lined wedding aisle with glowing pillar candles under an evening sky",
+    caption: "A Stunning Palm Lined Wedding Aisle",
     category: "reception",
-    tradition: "Interfaith & Fusion",
+    tradition: "Tropical Elegance",
     orientation: "landscape",
   },
   {
     slug: "garden-reception-tall-florals",
     src: gardenReceptionTallFlorals,
-    alt: "Outdoor garden reception with tall blush and ivory floral centerpieces and ghost chairs",
-    caption: "Garden dining under the trees",
+    alt: "A joyful bride and groom surrounded by flowers celebrating their wedding ceremony",
+    caption: "A Joyful Celebration Surrounded by Flowers",
     category: "reception",
     tradition: "Western",
     orientation: "landscape",
@@ -217,8 +219,8 @@ export const gallery: MediaItem[] = [
   {
     slug: "candlelit-head-table",
     src: candlelitHeadTable,
-    alt: "Long head table covered in candlelight, blush roses, gold flatware and glassware",
-    caption: "Candlelight down the length of the table",
+    alt: "Outdoor wedding celebration on a white dance floor surrounded by palm trees and guests",
+    caption: "Where Every Moment Feels Magical",
     category: "tablescape",
     orientation: "landscape",
   },
