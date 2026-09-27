@@ -3,6 +3,7 @@ import { ChevronDown } from "lucide-react";
 
 import { Reveal } from "@/components/ui/Reveal";
 import type { MediaItem } from "@/data/media";
+import { cn } from "@/lib/utils";
 
 const INITIAL_BATCH = 24;
 const BATCH_SIZE = 24;
@@ -25,13 +26,18 @@ export function PortfolioGallery({ items }: { items: MediaItem[] }) {
         {visibleItems.map((item, i) => (
           <Reveal key={item.slug} delay={Math.min(i % BATCH_SIZE, 8) * 50} className="break-inside-avoid">
             <figure className="group">
-              <div className="overflow-hidden bg-neutral-soft/50">
+              <div
+                className={cn(
+                  "overflow-hidden bg-neutral-soft/70 relative rounded-xs shadow-xs",
+                  item.orientation === "portrait" ? "aspect-[3/4]" : "aspect-[4/3]",
+                )}
+              >
                 <img
                   src={item.src}
                   alt={item.alt}
-                  loading={i < 6 ? "eager" : "lazy"}
+                  loading={i < 4 ? "eager" : "lazy"}
                   decoding="async"
-                  className="w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
+                  className="size-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.03]"
                 />
               </div>
               <figcaption className="caption mt-3 normal-case tracking-normal">

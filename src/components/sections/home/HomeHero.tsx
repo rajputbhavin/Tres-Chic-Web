@@ -10,16 +10,18 @@ export function HomeHero() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const prefersReducedMotion = usePrefersReducedMotion();
 
-  // Preload relevant carousel images into browser cache on mount for instant 4G loading
+  // Dynamically preload only the next upcoming slide into browser cache right before needed
   useEffect(() => {
     const isMobile = typeof window !== "undefined" && window.matchMedia("(max-width: 767px)").matches;
-    const listToPreload = isMobile && homeHero.mobileImages?.length ? homeHero.mobileImages : homeHero.images;
-    if (!listToPreload) return;
-    listToPreload.forEach((src) => {
+    const list = isMobile && homeHero.mobileImages?.length ? homeHero.mobileImages : homeHero.images;
+    if (!list || list.length <= 1) return;
+    const nextIndex = (currentIndex + 1) % list.length;
+    const nextSrc = list[nextIndex];
+    if (nextSrc) {
       const img = new Image();
-      img.src = src;
-    });
-  }, []);
+      img.src = nextSrc;
+    }
+  }, [currentIndex]);
 
   // Advance image every 3 seconds
   useEffect(() => {
@@ -54,7 +56,7 @@ export function HomeHero() {
                 src={src}
                 alt={index === 0 ? homeHero.imageAlt : ""}
                 fetchPriority={index === 0 ? "high" : "low"}
-                loading="eager"
+                loading={index === 0 ? "eager" : "lazy"}
                 decoding="async"
               />
             </picture>
