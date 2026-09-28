@@ -14,7 +14,7 @@ const { labels, placeholders } = startPlanningCopy;
 
 /** The inquiry form. All state is React-controlled via useInquiryForm. */
 export function InquiryForm() {
-  const { values, setField, status, submit } = useInquiryForm();
+  const { values, setField, status, submit, honeypot, setHoneypot } = useInquiryForm();
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -34,6 +34,23 @@ export function InquiryForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-10">
+      {/* Spam protection: visually hidden honeypot field */}
+      <div
+        className="absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0 pointer-events-none"
+        aria-hidden="true"
+      >
+        <label htmlFor="inquiry_company">Leave this field blank</label>
+        <input
+          type="text"
+          id="inquiry_company"
+          name="inquiry_company"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
+
       <div className="grid gap-10 sm:grid-cols-2">
         <TextField
           id="names"
@@ -138,7 +155,7 @@ export function InquiryForm() {
         </button>
         {status === "error" ? (
           <p className="text-sm text-destructive" role="alert">
-            {startPlanningCopy.error} {site.email} instead.
+            Something went wrong sending that. Please try again or contact {site.phone} or {site.email}.
           </p>
         ) : null}
       </div>
