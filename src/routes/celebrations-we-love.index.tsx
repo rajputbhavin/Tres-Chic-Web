@@ -3,7 +3,6 @@ import { useMemo, useState } from "react";
 
 import { PortfolioFilters } from "@/components/portfolio/PortfolioFilters";
 import { PortfolioGallery } from "@/components/portfolio/PortfolioGallery";
-import { SocialCelebrationsBento } from "@/components/sections/portfolio/SocialCelebrationsBento";
 import { CelebrationProjectCard } from "@/components/sections/celebrations/CelebrationProjectCard";
 import { ClosingCta } from "@/components/sections/shared/ClosingCta";
 import { WeddingProjectCard } from "@/components/sections/weddings/WeddingProjectCard";
@@ -12,7 +11,8 @@ import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
 import { celebrationProjects } from "@/data/celebrationProjects";
-import { gallery, media } from "@/data/media";
+import { useLiveGallery } from "@/data/galleryStore";
+import { media } from "@/data/media";
 import { portfolioPageCopy } from "@/data/portfolio";
 import { weddingProjects } from "@/data/weddingProjects";
 
@@ -41,10 +41,11 @@ export const Route = createFileRoute("/celebrations-we-love/")({
 
 function CelebrationsWeLovePage() {
   const [active, setActive] = useState<string>("all");
+  const liveGallery = useLiveGallery();
 
   const items = useMemo(
-    () => (active === "all" ? gallery : gallery.filter((item) => item.category === active)),
-    [active],
+    () => (active === "all" ? liveGallery : liveGallery.filter((item) => item.category === active)),
+    [active, liveGallery],
   );
 
   return (
@@ -99,9 +100,6 @@ function CelebrationsWeLovePage() {
               index={i}
             />
           ))}
-          <div className="pt-6">
-            <SocialCelebrationsBento />
-          </div>
         </div>
       )}
 

@@ -15,6 +15,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as CelebrationsRouteImport } from './routes/celebrations'
 import { Route as DestinationWeddingsRouteImport } from './routes/destination-weddings'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as GalleryAdminRouteImport } from './routes/gallery-admin'
 import { Route as MarianeRouteImport } from './routes/mariane'
 import { Route as MulticulturalWeddingsRouteImport } from './routes/multicultural-weddings'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
@@ -54,6 +55,11 @@ const DestinationWeddingsRoute = DestinationWeddingsRouteImport.update({
 const FaqRoute = FaqRouteImport.update({
   id: '/faq',
   path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryAdminRoute = GalleryAdminRouteImport.update({
+  id: '/gallery-admin',
+  path: '/gallery-admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const MarianeRoute = MarianeRouteImport.update({
@@ -114,6 +120,7 @@ export interface FileRoutesByFullPath {
   '/celebrations': typeof CelebrationsRoute
   '/destination-weddings': typeof DestinationWeddingsRoute
   '/faq': typeof FaqRoute
+  '/gallery-admin': typeof GalleryAdminRoute
   '/mariane': typeof MarianeRoute
   '/multicultural-weddings': typeof MulticulturalWeddingsRoute
   '/portfolio': typeof PortfolioRoute
@@ -132,6 +139,7 @@ export interface FileRoutesByTo {
   '/celebrations': typeof CelebrationsRoute
   '/destination-weddings': typeof DestinationWeddingsRoute
   '/faq': typeof FaqRoute
+  '/gallery-admin': typeof GalleryAdminRoute
   '/mariane': typeof MarianeRoute
   '/multicultural-weddings': typeof MulticulturalWeddingsRoute
   '/portfolio': typeof PortfolioRoute
@@ -151,6 +159,7 @@ export interface FileRoutesById {
   '/celebrations': typeof CelebrationsRoute
   '/destination-weddings': typeof DestinationWeddingsRoute
   '/faq': typeof FaqRoute
+  '/gallery-admin': typeof GalleryAdminRoute
   '/mariane': typeof MarianeRoute
   '/multicultural-weddings': typeof MulticulturalWeddingsRoute
   '/portfolio': typeof PortfolioRoute
@@ -171,6 +180,7 @@ export interface FileRouteTypes {
     | '/celebrations'
     | '/destination-weddings'
     | '/faq'
+    | '/gallery-admin'
     | '/mariane'
     | '/multicultural-weddings'
     | '/portfolio'
@@ -189,6 +199,7 @@ export interface FileRouteTypes {
     | '/celebrations'
     | '/destination-weddings'
     | '/faq'
+    | '/gallery-admin'
     | '/mariane'
     | '/multicultural-weddings'
     | '/portfolio'
@@ -207,6 +218,7 @@ export interface FileRouteTypes {
     | '/celebrations'
     | '/destination-weddings'
     | '/faq'
+    | '/gallery-admin'
     | '/mariane'
     | '/multicultural-weddings'
     | '/portfolio'
@@ -226,6 +238,7 @@ export interface RootRouteChildren {
   CelebrationsRoute: typeof CelebrationsRoute
   DestinationWeddingsRoute: typeof DestinationWeddingsRoute
   FaqRoute: typeof FaqRoute
+  GalleryAdminRoute: typeof GalleryAdminRoute
   MarianeRoute: typeof MarianeRoute
   MulticulturalWeddingsRoute: typeof MulticulturalWeddingsRoute
   PortfolioRoute: typeof PortfolioRoute
@@ -280,6 +293,13 @@ declare module '@tanstack/react-router' {
       path: '/faq'
       fullPath: '/faq'
       preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery-admin': {
+      id: '/gallery-admin'
+      path: '/gallery-admin'
+      fullPath: '/gallery-admin'
+      preLoaderRoute: typeof GalleryAdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/mariane': {
@@ -362,6 +382,7 @@ const rootRouteChildren: RootRouteChildren = {
   CelebrationsRoute: CelebrationsRoute,
   DestinationWeddingsRoute: DestinationWeddingsRoute,
   FaqRoute: FaqRoute,
+  GalleryAdminRoute: GalleryAdminRoute,
   MarianeRoute: MarianeRoute,
   MulticulturalWeddingsRoute: MulticulturalWeddingsRoute,
   PortfolioRoute: PortfolioRoute,
