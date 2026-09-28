@@ -100,17 +100,17 @@ export const portfolioStories: PortfolioStory[] = [
   },
   {
     slug: "candlelight-end-to-end",
-    title: "Candlelight, End to End",
+    title: "The Perfect Beach Wedding",
     location: "South Florida",
-    hook: "One table, five hundred candles, zero shortcuts.",
+    hook: "Sea shore, and love in the air.",
     image: {
       src: media.candlelitHeadTable,
-      alt: "A long head table covered in candlelight, roses and gold flatware",
+      alt: "Outdoor oceanfront wedding celebration on a white dance floor surrounded by palm trees and guests",
     },
     gridSpan: "md:col-span-5",
     gridRatio: "aspect-[4/3]",
     placeholder: true,
-    sections: placeholderSections("CANDLELIGHT, END TO END"),
+    sections: placeholderSections("THE PERFECT BEACH WEDDING"),
     galleryCategory: "reception",
   },
 ];

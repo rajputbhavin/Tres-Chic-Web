@@ -50,12 +50,12 @@ function formatCaption(filename: string, category: string, index: number): strin
     ],
     fusion: [
       "Cultural Fusion Celebration",
-      "Interfaith Ceremony Moment",
+      "Forever begins dining",
       "Traditions United",
       "Fusion Reception Detail",
       "Family & Celebration",
       "Bridging Two Worlds in Style",
-      "Lively Dance Floor",
+      "Eternal fire vows",
     ],
     jewish: [
       "Chuppah Ceremony",
