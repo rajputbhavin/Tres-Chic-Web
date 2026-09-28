@@ -176,7 +176,7 @@ export const gallery: MediaItem[] = [
     src: zaffaProcession,
     alt: "A zaffa procession with drummers leading a bride and groom down a staircase and onto the floor",
     caption: "The zaffa: the grand entrance",
-    category: "ceremony",
+    category: "entertainment",
     tradition: "Middle Eastern",
     orientation: "landscape",
   },

@@ -8,11 +8,10 @@ export const pressMarks: PressMark[] = [
   { name: "Shoutout Miami", note: "Featured" },
   { name: "Wedding Chicks", note: "Featured, 2020" },
   { name: "WeddingWire", note: "Couples' Choice Awards" },
-  { name: "Thumbtack", note: "Top Pro" },
   { name: "Best of Miramar", note: "Award recipient" },
 ];
 
 export const pressStripCopy = {
   heading: "As featured in & recognized by",
-  footnote: "Award years and current press to be confirmed with Mariane before launch.",
+  footnote: "",
 };

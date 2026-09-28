@@ -4,10 +4,13 @@ import { pressMarks, pressStripCopy } from "@/data/press";
 
 /** Restrained press & recognition row. Typographic, no logo boxes. */
 export function PressStrip() {
+  const heading = pressStripCopy?.heading || "As featured in & recognized by";
+  const footnote = pressStripCopy?.footnote || "";
+
   return (
     <Section tone="soft" className="py-16 md:py-20">
       <Reveal>
-        <p className="eyebrow text-center text-taupe">{pressStripCopy.heading}</p>
+        <p className="eyebrow text-center text-taupe">{heading}</p>
         <ul className="mt-10 flex flex-wrap items-start justify-center gap-x-12 gap-y-8">
           {pressMarks.map((mark) => (
             <li key={mark.name} className="group text-center">
@@ -20,9 +23,11 @@ export function PressStrip() {
             </li>
           ))}
         </ul>
-        <p className="mt-10 text-center text-[0.6875rem] tracking-wide text-muted-foreground">
-          {pressStripCopy.footnote}
-        </p>
+        {footnote ? (
+          <p className="mt-10 text-center text-[0.6875rem] tracking-wide text-muted-foreground">
+            {footnote}
+          </p>
+        ) : null}
       </Reveal>
     </Section>
   );

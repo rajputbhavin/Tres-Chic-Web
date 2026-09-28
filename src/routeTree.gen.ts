@@ -22,6 +22,7 @@ import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as StartPlanningRouteImport } from './routes/start-planning'
 import { Route as TheExperienceRouteImport } from './routes/the-experience'
 import { Route as WeddingsRouteImport } from './routes/weddings'
+import { Route as ZaffaEntertainmentRouteImport } from './routes/zaffa-entertainment'
 import { Route as CelebrationsWeLoveIndexRouteImport } from './routes/celebrations-we-love.index'
 import { Route as CelebrationsWeLoveSlugRouteImport } from './routes/celebrations-we-love.$slug'
 
@@ -90,6 +91,11 @@ const WeddingsRoute = WeddingsRouteImport.update({
   path: '/weddings',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ZaffaEntertainmentRoute = ZaffaEntertainmentRouteImport.update({
+  id: '/zaffa-entertainment',
+  path: '/zaffa-entertainment',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CelebrationsWeLoveIndexRoute = CelebrationsWeLoveIndexRouteImport.update({
   id: '/celebrations-we-love/',
   path: '/celebrations-we-love/',
@@ -115,6 +121,7 @@ export interface FileRoutesByFullPath {
   '/start-planning': typeof StartPlanningRoute
   '/the-experience': typeof TheExperienceRoute
   '/weddings': typeof WeddingsRoute
+  '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
   '/celebrations-we-love/$slug': typeof CelebrationsWeLoveSlugRoute
   '/celebrations-we-love/': typeof CelebrationsWeLoveIndexRoute
 }
@@ -132,6 +139,7 @@ export interface FileRoutesByTo {
   '/start-planning': typeof StartPlanningRoute
   '/the-experience': typeof TheExperienceRoute
   '/weddings': typeof WeddingsRoute
+  '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
   '/celebrations-we-love/$slug': typeof CelebrationsWeLoveSlugRoute
   '/celebrations-we-love': typeof CelebrationsWeLoveIndexRoute
 }
@@ -150,6 +158,7 @@ export interface FileRoutesById {
   '/start-planning': typeof StartPlanningRoute
   '/the-experience': typeof TheExperienceRoute
   '/weddings': typeof WeddingsRoute
+  '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
   '/celebrations-we-love/$slug': typeof CelebrationsWeLoveSlugRoute
   '/celebrations-we-love/': typeof CelebrationsWeLoveIndexRoute
 }
@@ -169,6 +178,7 @@ export interface FileRouteTypes {
     | '/start-planning'
     | '/the-experience'
     | '/weddings'
+    | '/zaffa-entertainment'
     | '/celebrations-we-love/$slug'
     | '/celebrations-we-love/'
   fileRoutesByTo: FileRoutesByTo
@@ -186,6 +196,7 @@ export interface FileRouteTypes {
     | '/start-planning'
     | '/the-experience'
     | '/weddings'
+    | '/zaffa-entertainment'
     | '/celebrations-we-love/$slug'
     | '/celebrations-we-love'
   id:
@@ -203,6 +214,7 @@ export interface FileRouteTypes {
     | '/start-planning'
     | '/the-experience'
     | '/weddings'
+    | '/zaffa-entertainment'
     | '/celebrations-we-love/$slug'
     | '/celebrations-we-love/'
   fileRoutesById: FileRoutesById
@@ -221,6 +233,7 @@ export interface RootRouteChildren {
   StartPlanningRoute: typeof StartPlanningRoute
   TheExperienceRoute: typeof TheExperienceRoute
   WeddingsRoute: typeof WeddingsRoute
+  ZaffaEntertainmentRoute: typeof ZaffaEntertainmentRoute
   CelebrationsWeLoveSlugRoute: typeof CelebrationsWeLoveSlugRoute
   CelebrationsWeLoveIndexRoute: typeof CelebrationsWeLoveIndexRoute
 }
@@ -318,6 +331,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WeddingsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/zaffa-entertainment': {
+      id: '/zaffa-entertainment'
+      path: '/zaffa-entertainment'
+      fullPath: '/zaffa-entertainment'
+      preLoaderRoute: typeof ZaffaEntertainmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/celebrations-we-love/': {
       id: '/celebrations-we-love/'
       path: '/celebrations-we-love'
@@ -349,6 +369,7 @@ const rootRouteChildren: RootRouteChildren = {
   StartPlanningRoute: StartPlanningRoute,
   TheExperienceRoute: TheExperienceRoute,
   WeddingsRoute: WeddingsRoute,
+  ZaffaEntertainmentRoute: ZaffaEntertainmentRoute,
   CelebrationsWeLoveSlugRoute: CelebrationsWeLoveSlugRoute,
   CelebrationsWeLoveIndexRoute: CelebrationsWeLoveIndexRoute,
 }

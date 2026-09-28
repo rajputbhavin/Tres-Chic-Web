@@ -11,7 +11,24 @@ const rawSocialImages = import.meta.glob<string>("../../../assets/social-celebra
   import: "default",
 });
 
+// List of images excluded from "Moments We Love" display (kept in code/assets, but hidden from the gallery)
+const EXCLUDED_IMAGE_FILENAMES = new Set([
+  "7.webp",
+  "15.webp",
+  "16.webp",
+  "24.webp",
+  "25.webp",
+  "26.webp",
+  "27.webp",
+  "31.webp",
+  "32.webp",
+]);
+
 const sortedSocialImages: string[] = Object.entries(rawSocialImages)
+  .filter(([path]) => {
+    const filename = path.replace(/\\/g, "/").split("/").pop() || "";
+    return !EXCLUDED_IMAGE_FILENAMES.has(filename);
+  })
   .sort(([pathA], [pathB]) => {
     const matchA = pathA.match(/(\d+)\.webp$/);
     const matchB = pathB.match(/(\d+)\.webp$/);

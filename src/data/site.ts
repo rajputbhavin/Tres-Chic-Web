@@ -39,6 +39,7 @@ export const primaryNav: NavItem[] = [
 export const utilityNav: NavItem[] = [
   { label: "Multicultural & Fusion", to: "/multicultural-weddings" },
   { label: "Destination Weddings", to: "/destination-weddings" },
+  { label: "Zaffa Entertainment", to: "/zaffa-entertainment" },
   { label: "Reviews", to: "/reviews" },
   { label: "FAQs", to: "/faq" },
 ];

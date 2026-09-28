@@ -17,6 +17,8 @@ export type CelebrationProject = {
   highlights: string[];
 };
 
+import vowRenewalsMainImg from "@/assets/gallery/Events/vows renewals/IMG_2020.webp";
+
 // Import all webp images from the new path src/assets/gallery/Events/*/*.webp
 const rawEventImages = import.meta.glob<string>(
   "../assets/gallery/Events/*/*.webp",
@@ -151,7 +153,7 @@ export const celebrationProjects: CelebrationProject[] = [
     overviewParagraph:
       "An intimate recommitment to love and enduring partnership. Set against tranquil coastal vistas, soft organic florals, delicate bridal details, and personalized vows reaffirm a lifetime of shared dreams in the presence of closest family and friends.",
     folderName: "vows renewals",
-    featuredImage: vowRenewals.featuredImage,
+    featuredImage: vowRenewalsMainImg,
     images: vowRenewals.images,
     highlights: [
       "Intimate oceanfront ceremony pergolas dressed in airy ivory drapes and fresh florals",

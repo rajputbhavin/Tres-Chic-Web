@@ -21,10 +21,10 @@ export const portfolioFilters = [
   { id: "jewish", label: "Jewish Weddings" },
   { id: "events", label: "Events" },
   { id: "reception", label: "Receptions" },
-  { id: "ceremony", label: "Ceremonies" },
   { id: "tablescape", label: "Tablescapes" },
   { id: "detail", label: "Details" },
   { id: "entertainment", label: "Entertainment" },
+  { id: "ceremony", label: "Ceremonies" },
 ] as const;
 
 export type PortfolioStorySection = { heading: string; body: string };
@@ -96,7 +96,7 @@ export const portfolioStories: PortfolioStory[] = [
     gridRatio: "aspect-[4/3]",
     placeholder: true,
     sections: placeholderSections("A CULTURAL FUSION CELEBRATION"),
-    galleryCategory: "ceremony",
+    galleryCategory: "entertainment",
   },
   {
     slug: "candlelight-end-to-end",
