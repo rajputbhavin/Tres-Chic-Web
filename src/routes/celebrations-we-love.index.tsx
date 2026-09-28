@@ -30,7 +30,7 @@ export const Route = createFileRoute("/celebrations-we-love/")({
         property: "og:description",
         content:
           "A look at real celebrations, waterfront tents, zaffa entrances, candlelit head tables and the details in between.",
-      },
+      }, 
       { property: "og:url", content: "/celebrations-we-love" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -39,13 +39,20 @@ export const Route = createFileRoute("/celebrations-we-love/")({
   component: CelebrationsWeLovePage,
 });
 
+const EXCLUDED_CATEGORIES = new Set(["reception", "tablescape", "detail", "ceremony"]);
+
 function CelebrationsWeLovePage() {
   const [active, setActive] = useState<string>("all");
   const liveGallery = useLiveGallery();
 
+  const visibleGallery = useMemo(
+    () => liveGallery.filter((item) => !EXCLUDED_CATEGORIES.has(item.category)),
+    [liveGallery]
+  );
+
   const items = useMemo(
-    () => (active === "all" ? liveGallery : liveGallery.filter((item) => item.category === active)),
-    [active, liveGallery],
+    () => (active === "all" ? visibleGallery : visibleGallery.filter((item) => item.category === active)),
+    [active, visibleGallery],
   );
 
   return (

@@ -42,16 +42,12 @@ const DEFAULT_PASSCODE = "treschic2026";
 const AUTH_KEY = "tres_chic_admin_auth_v1";
 
 const CATEGORIES = [
-  { id: "reception", label: "Receptions" },
-  { id: "ceremony", label: "Ceremonies" },
-  { id: "tablescape", label: "Tablescapes" },
-  { id: "detail", label: "Details" },
-  { id: "entertainment", label: "Entertainment" },
   { id: "south-asian", label: "South Asian Weddings" },
   { id: "destination", label: "Destination Weddings" },
   { id: "fusion", label: "Fusion Weddings" },
   { id: "middle-eastern", label: "Middle Eastern Weddings" },
   { id: "jewish", label: "Jewish Weddings" },
+  { id: "entertainment", label: "Entertainment" },
   { id: "celebration", label: "Celebrations & Parties" },
 ] as const;
 
@@ -82,7 +78,7 @@ function GalleryAdminPage() {
 
   // Form Fields for Add / Edit
   const [formCaption, setFormCaption] = useState("");
-  const [formCategory, setFormCategory] = useState<string>("reception");
+  const [formCategory, setFormCategory] = useState<string>("south-asian");
   const [formTradition, setFormTradition] = useState("");
   const [formAlt, setFormAlt] = useState("");
   const [formOrientation, setFormOrientation] = useState<"landscape" | "portrait">("landscape");

@@ -20,11 +20,7 @@ export const portfolioFilters = [
   { id: "middle-eastern", label: "Middle Eastern Weddings" },
   { id: "jewish", label: "Jewish Weddings" },
   { id: "events", label: "Events" },
-  { id: "reception", label: "Receptions" },
-  { id: "tablescape", label: "Tablescapes" },
-  { id: "detail", label: "Details" },
   { id: "entertainment", label: "Entertainment" },
-  { id: "ceremony", label: "Ceremonies" },
 ] as const;
 
 export type PortfolioStorySection = { heading: string; body: string };
