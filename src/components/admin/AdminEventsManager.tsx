@@ -272,14 +272,6 @@ export function AdminEventsManager() {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            onClick={handleReset}
-            className="inline-flex items-center gap-1.5 border border-border/80 bg-background px-3.5 py-3 text-xs text-muted-foreground hover:text-destructive hover:border-destructive/40 transition-colors cursor-pointer"
-            title="Restore original events"
-          >
-            <RotateCcw className="size-3.5" /> Restore Defaults
-          </button>
-          <button
-            type="button"
             onClick={handleOpenAddModal}
             className="inline-flex items-center justify-center gap-2 border border-emerald bg-emerald px-6 py-3.5 text-xs font-semibold uppercase tracking-[0.18em] text-ivory hover:bg-emerald-deep transition-colors cursor-pointer shadow-md"
           >
