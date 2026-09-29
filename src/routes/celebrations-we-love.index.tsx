@@ -10,11 +10,11 @@ import { Eyebrow } from "@/components/ui/Eyebrow";
 import { PageHero } from "@/components/ui/PageHero";
 import { Reveal } from "@/components/ui/Reveal";
 import { Section } from "@/components/ui/Section";
-import { celebrationProjects } from "@/data/celebrationProjects";
+import { useLiveCelebrationProjects } from "@/data/eventsStore";
 import { useLiveGallery } from "@/data/galleryStore";
 import { media } from "@/data/media";
 import { portfolioPageCopy } from "@/data/portfolio";
-import { weddingProjects } from "@/data/weddingProjects";
+import { useLiveWeddingProjects } from "@/data/couplesStore";
 
 export const Route = createFileRoute("/celebrations-we-love/")({
   head: () => ({
@@ -44,6 +44,9 @@ const EXCLUDED_CATEGORIES = new Set(["reception", "tablescape", "detail", "cerem
 function CelebrationsWeLovePage() {
   const [active, setActive] = useState<string>("all");
   const liveGallery = useLiveGallery();
+
+  const liveCouples = useLiveWeddingProjects();
+  const liveEvents = useLiveCelebrationProjects();
 
   const visibleGallery = useMemo(
     () => liveGallery.filter((item) => !EXCLUDED_CATEGORIES.has(item.category)),
@@ -88,25 +91,37 @@ function CelebrationsWeLovePage() {
         )}
       </Section>
 
-      {/* Tab: Couples (6 Wedding Projects) */}
+      {/* Tab: Couples (Wedding Projects) */}
       {active === "couples" && (
         <div className="flex flex-col">
-          {weddingProjects.map((project, i) => (
+          {liveCouples.map((project, i) => (
             <WeddingProjectCard key={project.id} project={project} index={i} />
           ))}
+          {liveCouples.length === 0 && (
+            <div className="py-24 text-center">
+              <p className="font-display text-xl text-emerald">No Couples Published Yet</p>
+              <p className="mt-2 text-sm text-muted-foreground">Couples will appear here once published from the admin studio.</p>
+            </div>
+          )}
         </div>
       )}
 
-      {/* Tab: Events (3 Event Projects + Social Celebrations) */}
+      {/* Tab: Events (Celebration Projects) */}
       {active === "events" && (
         <div className="flex flex-col">
-          {celebrationProjects.map((project, i) => (
+          {liveEvents.map((project, i) => (
             <CelebrationProjectCard
               key={project.id}
               project={project}
               index={i}
             />
           ))}
+          {liveEvents.length === 0 && (
+            <div className="py-24 text-center">
+              <p className="font-display text-xl text-emerald">No Events Published Yet</p>
+              <p className="mt-2 text-sm text-muted-foreground">Celebration events will appear here once published from the admin studio.</p>
+            </div>
+          )}
         </div>
       )}
 

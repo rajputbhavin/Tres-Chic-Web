@@ -14,6 +14,7 @@ export type WeddingProject = {
   featuredImage: string;
   images: string[];
   highlights: string[];
+  status?: "published" | "draft";
 };
 
 // Import all webp images in src/assets/gallery/Couples/*/*.webp

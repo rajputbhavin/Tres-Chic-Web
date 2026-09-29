@@ -15,6 +15,7 @@ export type CelebrationProject = {
   featuredImage: string;
   images: string[];
   highlights: string[];
+  status?: "published" | "draft";
 };
 
 import vowRenewalsMainImg from "@/assets/gallery/Events/vows renewals/IMG_2020.webp";

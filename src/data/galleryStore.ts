@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { gallery, type MediaItem } from "@/data/media";
+import { idbGet, idbSet, idbDelete } from "@/lib/db";
 
 export type GalleryStatus = "published" | "draft";
 
@@ -34,40 +35,45 @@ export function loadStoredGalleryItems(): AdminGalleryItem[] {
 
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return getDefaultGalleryItems();
-    const parsed = JSON.parse(raw);
-    if (Array.isArray(parsed) && parsed.length > 0) {
-      return parsed as AdminGalleryItem[];
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed as AdminGalleryItem[];
+      }
     }
   } catch (err) {
-    console.error("Failed to parse gallery from localStorage:", err);
+    console.warn("Failed to parse gallery from localStorage:", err);
   }
 
   return getDefaultGalleryItems();
 }
 
-/** Persists items to localStorage and dispatches sync events. */
-export function saveStoredGalleryItems(items: AdminGalleryItem[]): void {
+/** Persists items to high-capacity IndexedDB and localStorage. */
+export async function saveStoredGalleryItems(items: AdminGalleryItem[]): Promise<void> {
   if (typeof window === "undefined") return;
+
+  await idbSet(STORAGE_KEY, items);
 
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
-    window.dispatchEvent(new Event(EVENT_NAME));
-  } catch (err) {
-    console.error("Failed to save gallery to localStorage:", err);
+  } catch {
+    // IndexedDB retains the data even if localStorage quota is exceeded
   }
+
+  window.dispatchEvent(new CustomEvent(EVENT_NAME, { detail: items }));
+  window.dispatchEvent(new Event(EVENT_NAME));
 }
 
 /** Resets catalog to initial seed items. */
-export function resetGalleryToDefault(): AdminGalleryItem[] {
+export async function resetGalleryToDefault(): Promise<AdminGalleryItem[]> {
   const defaults = getDefaultGalleryItems();
   if (typeof window !== "undefined") {
+    await idbDelete(STORAGE_KEY);
     try {
       localStorage.removeItem(STORAGE_KEY);
-      window.dispatchEvent(new Event(EVENT_NAME));
-    } catch (err) {
-      console.error("Failed to reset gallery:", err);
-    }
+    } catch {}
+    window.dispatchEvent(new CustomEvent(EVENT_NAME, { detail: defaults }));
+    window.dispatchEvent(new Event(EVENT_NAME));
   }
   return defaults;
 }
@@ -80,8 +86,24 @@ export function useLiveGallery(): MediaItem[] {
   const [items, setItems] = useState<AdminGalleryItem[]>(() => loadStoredGalleryItems());
 
   useEffect(() => {
-    const handleUpdate = () => {
-      setItems(loadStoredGalleryItems());
+    idbGet<AdminGalleryItem[]>(STORAGE_KEY).then((dbItems) => {
+      if (dbItems && Array.isArray(dbItems) && dbItems.length > 0) {
+        setItems(dbItems);
+      }
+    });
+
+    const handleUpdate = (e?: Event) => {
+      if (e instanceof CustomEvent && e.detail && Array.isArray(e.detail)) {
+        setItems(e.detail);
+        return;
+      }
+      idbGet<AdminGalleryItem[]>(STORAGE_KEY).then((dbItems) => {
+        if (dbItems && Array.isArray(dbItems) && dbItems.length > 0) {
+          setItems(dbItems);
+        } else {
+          setItems(loadStoredGalleryItems());
+        }
+      });
     };
 
     window.addEventListener(EVENT_NAME, handleUpdate);
@@ -103,8 +125,24 @@ export function useAdminGalleryStore() {
   const [items, setItems] = useState<AdminGalleryItem[]>(() => loadStoredGalleryItems());
 
   useEffect(() => {
-    const handleUpdate = () => {
-      setItems(loadStoredGalleryItems());
+    idbGet<AdminGalleryItem[]>(STORAGE_KEY).then((dbItems) => {
+      if (dbItems && Array.isArray(dbItems) && dbItems.length > 0) {
+        setItems(dbItems);
+      }
+    });
+
+    const handleUpdate = (e?: Event) => {
+      if (e instanceof CustomEvent && e.detail && Array.isArray(e.detail)) {
+        setItems(e.detail);
+        return;
+      }
+      idbGet<AdminGalleryItem[]>(STORAGE_KEY).then((dbItems) => {
+        if (dbItems && Array.isArray(dbItems) && dbItems.length > 0) {
+          setItems(dbItems);
+        } else {
+          setItems(loadStoredGalleryItems());
+        }
+      });
     };
 
     window.addEventListener(EVENT_NAME, handleUpdate);
@@ -118,7 +156,7 @@ export function useAdminGalleryStore() {
 
   const save = (updated: AdminGalleryItem[]) => {
     setItems(updated);
-    saveStoredGalleryItems(updated);
+    void saveStoredGalleryItems(updated);
   };
 
   const addItem = (
@@ -165,8 +203,8 @@ export function useAdminGalleryStore() {
     save(updated);
   };
 
-  const reset = () => {
-    const defaults = resetGalleryToDefault();
+  const reset = async () => {
+    const defaults = await resetGalleryToDefault();
     setItems(defaults);
   };
 
