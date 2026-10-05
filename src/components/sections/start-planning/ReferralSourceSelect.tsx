@@ -48,9 +48,9 @@ export function ReferralSourceSelect({
   const containerRef = useRef<HTMLDivElement>(null);
   const aiOptionRef = useRef<HTMLDivElement>(null);
 
-  // Close dropdown on outside click
+  // Close dropdown on outside click or tap
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    function handleClickOutside(event: MouseEvent | TouchEvent) {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
         setIsOpen(false);
         setIsAiHovered(false);
@@ -58,7 +58,11 @@ export function ReferralSourceSelect({
       }
     }
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside, { passive: true });
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
   }, []);
 
   const handleSelect = (selectedValue: string) => {
@@ -69,7 +73,7 @@ export function ReferralSourceSelect({
   };
 
   return (
-    <div ref={containerRef} className="relative">
+    <div ref={containerRef} className={cn("relative", isOpen && "z-30")}>
       <FieldLabel htmlFor={id}>
         {label} {required && !label.includes("*") ? "*" : ""}
       </FieldLabel>
@@ -129,9 +133,9 @@ export function ReferralSourceSelect({
         </p>
       )}
 
-      {/* Dropdown Menu */}
+      {/* Dropdown Menu - In-flow relative on mobile so it expands cleanly without covering anything, floating absolute on desktop */}
       {isOpen && (
-        <div className="absolute left-0 top-full mt-2 w-full sm:min-w-[280px] rounded-xs border border-gold/40 bg-neutral-soft/98 backdrop-blur-md shadow-2xl py-1.5 z-50 animate-in fade-in-50 zoom-in-95 duration-150">
+        <div className="relative sm:absolute sm:left-0 sm:top-full mt-3 w-full sm:min-w-[280px] rounded-xs border border-gold/40 bg-neutral-soft/98 backdrop-blur-md shadow-lg sm:shadow-2xl py-1.5 z-50 animate-in fade-in-50 zoom-in-95 duration-150">
           {MAIN_OPTIONS.map((option) => {
             if (option.isParent) {
               return (
@@ -143,13 +147,17 @@ export function ReferralSourceSelect({
                   onMouseLeave={() => setIsAiHovered(false)}
                 >
                   {/* AI Parent Row */}
-                  <div
-                    onClick={() => setIsAiMobileExpanded((prev) => !prev)}
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setIsAiMobileExpanded((prev) => !prev);
+                    }}
                     className={cn(
-                      "flex items-center justify-between px-4 py-2.5 text-xs uppercase tracking-wider transition-colors cursor-pointer group",
+                      "w-full flex items-center justify-between px-4 py-3 text-xs uppercase tracking-wider transition-colors cursor-pointer group text-left",
                       value.startsWith("AI")
                         ? "bg-emerald/10 text-emerald font-semibold"
-                        : "text-foreground hover:bg-neutral-soft hover:text-emerald"
+                        : "text-foreground hover:bg-neutral-soft hover:text-emerald active:bg-gold/10"
                     )}
                   >
                     <span className="flex items-center gap-2">
@@ -162,7 +170,7 @@ export function ReferralSourceSelect({
                         (isAiHovered || isAiMobileExpanded) && "translate-x-0.5 text-gold rotate-90 sm:rotate-0"
                       )}
                     />
-                  </div>
+                  </button>
 
                   {/* Desktop Side Flyout Submenu */}
                   {isAiHovered && (
@@ -178,7 +186,7 @@ export function ReferralSourceSelect({
                             type="button"
                             onClick={() => handleSelect(sub.fullValue)}
                             className={cn(
-                              "w-full flex items-center justify-between px-4 py-2 text-xs uppercase tracking-wider text-left transition-colors cursor-pointer",
+                              "w-full flex items-center justify-between px-4 py-2.5 text-xs uppercase tracking-wider text-left transition-colors cursor-pointer",
                               isSelected
                                 ? "bg-emerald text-ivory font-semibold"
                                 : "text-foreground hover:bg-neutral-soft hover:text-emerald"
@@ -203,7 +211,7 @@ export function ReferralSourceSelect({
                             type="button"
                             onClick={() => handleSelect(sub.fullValue)}
                             className={cn(
-                              "w-full flex items-center justify-between px-4 py-2 text-xs uppercase tracking-wider text-left transition-colors cursor-pointer",
+                              "w-full flex items-center justify-between px-4 py-3 text-xs uppercase tracking-wider text-left transition-colors cursor-pointer active:bg-gold/20",
                               isSelected
                                 ? "bg-emerald text-ivory font-semibold"
                                 : "text-foreground hover:text-emerald"
@@ -227,7 +235,7 @@ export function ReferralSourceSelect({
                 type="button"
                 onClick={() => handleSelect(option.label)}
                 className={cn(
-                  "w-full flex items-center justify-between px-4 py-2.5 text-xs uppercase tracking-wider text-left transition-colors cursor-pointer",
+                  "w-full flex items-center justify-between px-4 py-3 text-xs uppercase tracking-wider text-left transition-colors cursor-pointer active:bg-gold/10",
                   isSelected
                     ? "bg-emerald/15 text-emerald font-semibold"
                     : "text-foreground hover:bg-neutral-soft hover:text-emerald"

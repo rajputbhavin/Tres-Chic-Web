@@ -156,7 +156,7 @@ export function InquiryForm() {
         placeholder={placeholders.select}
       />
 
-      <div className="flex flex-wrap items-center gap-6">
+      <div className="pt-4 mt-2 flex flex-wrap items-center gap-6">
         <button
           type="submit"
           disabled={status === "sending"}

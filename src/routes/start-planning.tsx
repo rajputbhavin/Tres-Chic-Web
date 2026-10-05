@@ -41,11 +41,14 @@ function StartPlanningPage() {
       />
 
       <Section>
-        <div className="grid gap-14 md:grid-cols-[1.4fr_1fr] md:gap-20">
-          <Reveal>
+        <div className="grid gap-16 md:grid-cols-[1.4fr_1fr] md:gap-20">
+          <Reveal className="relative z-20">
             <InquiryForm />
           </Reveal>
-          <Reveal delay={150} className="md:border-l md:border-border md:pl-12">
+          <Reveal
+            delay={150}
+            className="relative z-0 border-t border-border/40 pt-12 md:border-t-0 md:border-l md:border-border md:pt-0 md:pl-12"
+          >
             <InquiryAside />
           </Reveal>
         </div>
