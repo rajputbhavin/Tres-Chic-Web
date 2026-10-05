@@ -27,6 +27,39 @@ export function getDefaultGalleryItems(): AdminGalleryItem[] {
   }));
 }
 
+/** Heals imported single photos so that production /assets/ URLs resolve back to local imports */
+export function healGalleryItems(items: AdminGalleryItem[]): AdminGalleryItem[] {
+  const defaults = getDefaultGalleryItems();
+
+  return items.map((item) => {
+    const defaultMatch = defaults.find(
+      (d) =>
+        d.id === item.id ||
+        (item.slug && d.slug === item.slug) ||
+        (item.caption && d.caption?.trim().toLowerCase() === item.caption?.trim().toLowerCase())
+    );
+
+    if (defaultMatch) {
+      const isCustomBase64 =
+        typeof item.src === "string" &&
+        (item.src.startsWith("data:") || item.src.startsWith("blob:"));
+
+      const isBrokenOrProd =
+        !item.src ||
+        !isCustomBase64 ||
+        item.src.includes("assets/") ||
+        item.src.includes("treschiceventplanning.com");
+
+      return {
+        ...item,
+        src: isBrokenOrProd ? defaultMatch.src : item.src,
+      };
+    }
+
+    return item;
+  });
+}
+
 /** Loads stored items or falls back to default seed. Safe for SSR. */
 export function loadStoredGalleryItems(): AdminGalleryItem[] {
   if (typeof window === "undefined") {
@@ -38,7 +71,7 @@ export function loadStoredGalleryItems(): AdminGalleryItem[] {
     if (raw) {
       const parsed = JSON.parse(raw);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed as AdminGalleryItem[];
+        return healGalleryItems(parsed as AdminGalleryItem[]);
       }
     }
   } catch (err) {
@@ -52,15 +85,16 @@ export function loadStoredGalleryItems(): AdminGalleryItem[] {
 export async function saveStoredGalleryItems(items: AdminGalleryItem[]): Promise<void> {
   if (typeof window === "undefined") return;
 
-  await idbSet(STORAGE_KEY, items);
+  const healed = healGalleryItems(items);
+  await idbSet(STORAGE_KEY, healed);
 
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(healed));
   } catch {
     // IndexedDB retains the data even if localStorage quota is exceeded
   }
 
-  window.dispatchEvent(new CustomEvent(EVENT_NAME, { detail: items }));
+  window.dispatchEvent(new CustomEvent(EVENT_NAME, { detail: healed }));
   window.dispatchEvent(new Event(EVENT_NAME));
 }
 
@@ -88,18 +122,18 @@ export function useLiveGallery(): MediaItem[] {
   useEffect(() => {
     idbGet<AdminGalleryItem[]>(STORAGE_KEY).then((dbItems) => {
       if (dbItems && Array.isArray(dbItems) && dbItems.length > 0) {
-        setItems(dbItems);
+        setItems(healGalleryItems(dbItems));
       }
     });
 
     const handleUpdate = (e?: Event) => {
       if (e instanceof CustomEvent && e.detail && Array.isArray(e.detail)) {
-        setItems(e.detail);
+        setItems(healGalleryItems(e.detail));
         return;
       }
       idbGet<AdminGalleryItem[]>(STORAGE_KEY).then((dbItems) => {
         if (dbItems && Array.isArray(dbItems) && dbItems.length > 0) {
-          setItems(dbItems);
+          setItems(healGalleryItems(dbItems));
         } else {
           setItems(loadStoredGalleryItems());
         }
@@ -127,18 +161,20 @@ export function useAdminGalleryStore() {
   useEffect(() => {
     idbGet<AdminGalleryItem[]>(STORAGE_KEY).then((dbItems) => {
       if (dbItems && Array.isArray(dbItems) && dbItems.length > 0) {
-        setItems(dbItems);
+        const healed = healGalleryItems(dbItems);
+        setItems(healed);
+        void idbSet(STORAGE_KEY, healed);
       }
     });
 
     const handleUpdate = (e?: Event) => {
       if (e instanceof CustomEvent && e.detail && Array.isArray(e.detail)) {
-        setItems(e.detail);
+        setItems(healGalleryItems(e.detail));
         return;
       }
       idbGet<AdminGalleryItem[]>(STORAGE_KEY).then((dbItems) => {
         if (dbItems && Array.isArray(dbItems) && dbItems.length > 0) {
-          setItems(dbItems);
+          setItems(healGalleryItems(dbItems));
         } else {
           setItems(loadStoredGalleryItems());
         }

@@ -21,6 +21,60 @@ export function getDefaultCelebrationProjects(): AdminCelebrationProject[] {
   }));
 }
 
+/**
+ * Heals imported events so that production asset URLs resolve back to local Vite imports
+ */
+export function healCelebrationProjects(items: AdminCelebrationProject[]): AdminCelebrationProject[] {
+  const defaults = getDefaultCelebrationProjects();
+
+  return items.map((item) => {
+    const defaultMatch = defaults.find(
+      (d) =>
+        d.id === item.id ||
+        d.title.trim().toLowerCase() === item.title?.trim().toLowerCase() ||
+        (item.folderName && d.folderName.trim().toLowerCase() === item.folderName?.trim().toLowerCase())
+    );
+
+    if (defaultMatch) {
+      const isCustomBase64Cover =
+        typeof item.featuredImage === "string" &&
+        (item.featuredImage.startsWith("data:") || item.featuredImage.startsWith("blob:"));
+
+      const isBrokenOrProdCover =
+        !item.featuredImage ||
+        !isCustomBase64Cover ||
+        item.featuredImage.includes("assets/") ||
+        item.featuredImage.includes("treschiceventplanning.com");
+
+      const featuredImage = isBrokenOrProdCover ? defaultMatch.featuredImage : item.featuredImage;
+
+      const customUploadedImages = (item.images || []).filter(
+        (img) => typeof img === "string" && (img.startsWith("data:") || img.startsWith("blob:"))
+      );
+
+      const baseImages =
+        defaultMatch.images && defaultMatch.images.length > 0
+          ? defaultMatch.images
+          : [defaultMatch.featuredImage];
+
+      const images =
+        customUploadedImages.length > 0
+          ? [...baseImages, ...customUploadedImages]
+          : baseImages;
+
+      return {
+        ...item,
+        id: defaultMatch.id,
+        folderName: defaultMatch.folderName,
+        featuredImage,
+        images,
+      };
+    }
+
+    return item;
+  });
+}
+
 export function loadStoredCelebrationProjects(): AdminCelebrationProject[] {
   if (typeof window === "undefined") {
     return getDefaultCelebrationProjects();
@@ -30,7 +84,7 @@ export function loadStoredCelebrationProjects(): AdminCelebrationProject[] {
     if (raw) {
       const parsed = JSON.parse(raw);
       if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed as AdminCelebrationProject[];
+        return healCelebrationProjects(parsed as AdminCelebrationProject[]);
       }
     }
   } catch (err) {
@@ -42,18 +96,20 @@ export function loadStoredCelebrationProjects(): AdminCelebrationProject[] {
 export async function saveStoredCelebrationProjects(items: AdminCelebrationProject[]): Promise<void> {
   if (typeof window === "undefined") return;
 
-  // 1. High-capacity IndexedDB (unlimited quota for photos)
-  await idbSet(STORAGE_KEY, items);
+  const healed = healCelebrationProjects(items);
 
-  // 2. Best-effort localStorage for instant sync across tabs
+  // 1. High-capacity IndexedDB
+  await idbSet(STORAGE_KEY, healed);
+
+  // 2. Best-effort localStorage
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(items));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(healed));
   } catch {
-    // If localStorage quota exceeded, IndexedDB still holds full data
+    // IndexedDB holds full data
   }
 
   // 3. Dispatch reactive events
-  window.dispatchEvent(new CustomEvent(EVENT_NAME, { detail: items }));
+  window.dispatchEvent(new CustomEvent(EVENT_NAME, { detail: healed }));
   window.dispatchEvent(new Event(EVENT_NAME));
 }
 
@@ -77,21 +133,20 @@ export function useLiveCelebrationProjects(): AdminCelebrationProject[] {
   const [projects, setProjects] = useState<AdminCelebrationProject[]>(() => loadStoredCelebrationProjects());
 
   useEffect(() => {
-    // Load persisted data from IndexedDB
     idbGet<AdminCelebrationProject[]>(STORAGE_KEY).then((dbItems) => {
       if (dbItems && Array.isArray(dbItems) && dbItems.length > 0) {
-        setProjects(dbItems);
+        setProjects(healCelebrationProjects(dbItems));
       }
     });
 
     const handleUpdate = (e?: Event) => {
       if (e instanceof CustomEvent && e.detail && Array.isArray(e.detail)) {
-        setProjects(e.detail);
+        setProjects(healCelebrationProjects(e.detail));
         return;
       }
       idbGet<AdminCelebrationProject[]>(STORAGE_KEY).then((dbItems) => {
         if (dbItems && Array.isArray(dbItems) && dbItems.length > 0) {
-          setProjects(dbItems);
+          setProjects(healCelebrationProjects(dbItems));
         } else {
           setProjects(loadStoredCelebrationProjects());
         }
@@ -116,21 +171,22 @@ export function useAdminEventsStore() {
   const [projects, setProjects] = useState<AdminCelebrationProject[]>(() => loadStoredCelebrationProjects());
 
   useEffect(() => {
-    // Load persisted data from IndexedDB
     idbGet<AdminCelebrationProject[]>(STORAGE_KEY).then((dbItems) => {
       if (dbItems && Array.isArray(dbItems) && dbItems.length > 0) {
-        setProjects(dbItems);
+        const healed = healCelebrationProjects(dbItems);
+        setProjects(healed);
+        void idbSet(STORAGE_KEY, healed);
       }
     });
 
     const handleUpdate = (e?: Event) => {
       if (e instanceof CustomEvent && e.detail && Array.isArray(e.detail)) {
-        setProjects(e.detail);
+        setProjects(healCelebrationProjects(e.detail));
         return;
       }
       idbGet<AdminCelebrationProject[]>(STORAGE_KEY).then((dbItems) => {
         if (dbItems && Array.isArray(dbItems) && dbItems.length > 0) {
-          setProjects(dbItems);
+          setProjects(healCelebrationProjects(dbItems));
         } else {
           setProjects(loadStoredCelebrationProjects());
         }

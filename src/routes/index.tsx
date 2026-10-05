@@ -14,20 +14,20 @@ import { homeHero } from "@/data/home";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Très CHIC Event Planning & Design | Miami Wedding Planner" },
+      { title: "Miami Wedding Planner & Designer | Très CHIC Event Planning" },
       {
         name: "description",
         content:
-          "South Florida and destination wedding planning and design for elevated, culturally rich celebrations, so you experience your wedding instead of managing it.",
+          "Elevated, culturally rich weddings in Miami and South Florida, planned and designed start to finish. 5.0 stars on Google. Book a free consultation.",
       },
       {
         property: "og:title",
-        content: "Très CHIC Event Planning & Design | Miami Wedding Planner",
+        content: "Miami Wedding Planner & Designer | Très CHIC Event Planning",
       },
       {
         property: "og:description",
         content:
-          "Elevated, culturally rich weddings across South Florida and worldwide. Multicultural, interfaith and multi-day celebrations, planned and executed by Mariane Fahmy.",
+          "Elevated, culturally rich weddings in Miami and South Florida, planned and designed start to finish. 5.0 stars on Google. Book a free consultation.",
       },
       { property: "og:url", content: "/" },
       {

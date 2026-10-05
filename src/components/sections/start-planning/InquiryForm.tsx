@@ -1,4 +1,4 @@
-import type { FormEvent } from "react";
+import { useState, type FormEvent } from "react";
 
 import { 
   CheckboxField,
@@ -9,15 +9,22 @@ import {
 import { formOptions, startPlanningCopy } from "@/data/forms";
 import { site } from "@/data/site";
 import { useInquiryForm } from "@/hooks/useInquiryForm";
+import { ReferralSourceSelect } from "./ReferralSourceSelect";
 
 const { labels, placeholders } = startPlanningCopy;
 
 /** The inquiry form. All state is React-controlled via useInquiryForm. */
 export function InquiryForm() {
   const { values, setField, status, submit, honeypot, setHoneypot } = useInquiryForm();
+  const [referralError, setReferralError] = useState(false);
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (!values.referral_source || values.referral_source.trim() === "") {
+      setReferralError(true);
+      return;
+    }
+    setReferralError(false);
     void submit();
   }
 
@@ -136,12 +143,16 @@ export function InquiryForm() {
         onChange={(value) => setField("notes", value)}
       />
 
-      <SelectField
+      <ReferralSourceSelect
         id="referral_source"
         label={labels.referralSource}
         value={values.referral_source}
-        onChange={(value) => setField("referral_source", value)}
-        options={formOptions.referral}
+        onChange={(value) => {
+          setField("referral_source", value);
+          setReferralError(false);
+        }}
+        required
+        hasError={referralError}
         placeholder={placeholders.select}
       />
 

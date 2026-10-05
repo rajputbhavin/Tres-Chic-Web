@@ -18,6 +18,7 @@ import { toast } from "sonner";
 import {
   type AdminGalleryItem,
   type GalleryStatus,
+  getDefaultGalleryItems,
   useAdminGalleryStore,
 } from "@/data/galleryStore";
 import { compressImageFile } from "@/lib/imageCompressor";
@@ -47,6 +48,7 @@ export function AdminGalleryPhotosManager() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [selectedStatus, setSelectedStatus] = useState<"all" | "published" | "draft">("all");
+  const defaultPhotos = useMemo(() => getDefaultGalleryItems(), []);
 
   // Pagination State
   const [currentPage, setCurrentPage] = useState(1);
@@ -240,7 +242,7 @@ export function AdminGalleryPhotosManager() {
           </button>
         </div>
       </div>
-
+   
       {/* Stats Strip */}
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div className="border border-border/70 bg-neutral-soft/40 p-4 rounded-xs">
@@ -356,6 +358,17 @@ export function AdminGalleryPhotosManager() {
                   alt={item.alt}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
+                  onError={(e) => {
+                    const fb = defaultPhotos.find(
+                      (d) =>
+                        d.id === item.id ||
+                        (item.slug && d.slug === item.slug) ||
+                        (item.caption && d.caption?.toLowerCase() === item.caption?.toLowerCase())
+                    );
+                    if (fb?.src && e.currentTarget.src !== fb.src) {
+                      e.currentTarget.src = fb.src;
+                    }
+                  }}
                 />
 
                 {/* Status Badge */}

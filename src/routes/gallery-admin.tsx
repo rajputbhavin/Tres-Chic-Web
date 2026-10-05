@@ -6,7 +6,9 @@ import {
   KeyRound,
   Lock,
   LogOut,
+  RotateCcw,
   Sparkles,
+  Upload,
 } from "lucide-react";
 import { useState } from "react";
 import { toast } from "sonner";
@@ -14,9 +16,25 @@ import { toast } from "sonner";
 import { AdminCouplesManager } from "@/components/admin/AdminCouplesManager";
 import { AdminEventsManager } from "@/components/admin/AdminEventsManager";
 import { AdminGalleryPhotosManager } from "@/components/admin/AdminGalleryPhotosManager";
-import { loadStoredCoupleProjects } from "@/data/couplesStore";
-import { loadStoredCelebrationProjects } from "@/data/eventsStore";
-import { loadStoredGalleryItems } from "@/data/galleryStore";
+import {
+  type AdminCoupleProject,
+  loadStoredCoupleProjects,
+  resetCouplesToDefault,
+  saveStoredCoupleProjects,
+} from "@/data/couplesStore";
+import {
+  type AdminCelebrationProject,
+  loadStoredCelebrationProjects,
+  resetEventsToDefault,
+  saveStoredCelebrationProjects,
+} from "@/data/eventsStore";
+import {
+  type AdminGalleryItem,
+  loadStoredGalleryItems,
+  resetGalleryToDefault,
+  saveStoredGalleryItems,
+} from "@/data/galleryStore";
+import { idbGet } from "@/lib/db";
 import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/gallery-admin")({
@@ -64,27 +82,112 @@ function GalleryAdminPage() {
   };
 
   // Export all 3 datasets into a comprehensive JSON backup
-  const handleExportFullJSON = () => {
-    const couples = loadStoredCoupleProjects();
-    const events = loadStoredCelebrationProjects();
-    const galleryPhotos = loadStoredGalleryItems();
+  const handleExportFullJSON = async () => {
+    try {
+      const couples =
+        (await idbGet<AdminCoupleProject[]>("tres_chic_couples_v1")) || loadStoredCoupleProjects();
+      const events =
+        (await idbGet<AdminCelebrationProject[]>("tres_chic_events_v1")) || loadStoredCelebrationProjects();
+      const galleryPhotos =
+        (await idbGet<AdminGalleryItem[]>("tres_chic_gallery_v1")) || loadStoredGalleryItems();
 
-    const fullExport = {
-      couples,
-      events,
-      galleryPhotos,
-      exportedAt: new Date().toISOString(),
+      const fullExport = {
+        couples,
+        events,
+        galleryPhotos,
+        exportedAt: new Date().toISOString(),
+      };
+
+      const jsonStr = JSON.stringify(fullExport, null, 2);
+      const blob = new Blob([jsonStr], { type: "application/json" });
+      const downloadUrl = URL.createObjectURL(blob);
+
+      const downloadAnchor = document.createElement("a");
+      downloadAnchor.href = downloadUrl;
+      downloadAnchor.download = `tres_chic_portfolio_backup_${Date.now()}.json`;
+      document.body.appendChild(downloadAnchor);
+      downloadAnchor.click();
+      downloadAnchor.remove();
+      URL.revokeObjectURL(downloadUrl);
+
+      toast.success("Complete Portfolio & Gallery JSON backup exported");
+    } catch (err) {
+      console.error("Export failed:", err);
+      toast.error("Failed to export backup JSON");
+    }
+  };
+
+  // Import full JSON dataset from client backup
+  const handleImportFullJSON = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = async (event) => {
+      try {
+        const text = event.target?.result as string;
+        const data = JSON.parse(text);
+
+        let importedCouples = 0;
+        let importedEvents = 0;
+        let importedPhotos = 0;
+
+        if (Array.isArray(data.couples) && data.couples.length > 0) {
+          await saveStoredCoupleProjects(data.couples);
+          importedCouples = data.couples.length;
+        }
+
+        if (Array.isArray(data.events) && data.events.length > 0) {
+          await saveStoredCelebrationProjects(data.events);
+          importedEvents = data.events.length;
+        }
+
+        if (Array.isArray(data.galleryPhotos) && data.galleryPhotos.length > 0) {
+          await saveStoredGalleryItems(data.galleryPhotos);
+          importedPhotos = data.galleryPhotos.length;
+        }
+
+        // Direct array fallback
+        if (Array.isArray(data) && data.length > 0) {
+          if ("category" in data[0] && ("overviewParagraph" in data[0] || "categoryLabel" in data[0])) {
+            await saveStoredCelebrationProjects(data);
+            importedEvents = data.length;
+          } else if ("caption" in data[0]) {
+            await saveStoredGalleryItems(data);
+            importedPhotos = data.length;
+          } else if ("title" in data[0] && "highlights" in data[0]) {
+            await saveStoredCoupleProjects(data);
+            importedCouples = data.length;
+          }
+        }
+
+        toast.success(
+          `Import complete! Synced ${importedCouples} couples, ${importedEvents} events, and ${importedPhotos} photos.`
+        );
+
+        window.dispatchEvent(new Event("tres_chic_couples_updated"));
+        window.dispatchEvent(new Event("tres_chic_events_updated"));
+        window.dispatchEvent(new Event("tres_chic_gallery_updated"));
+      } catch (err) {
+        console.error("Failed to parse imported JSON:", err);
+        toast.error("Failed to read JSON. Please make sure it is a valid backup file.");
+      }
     };
+    reader.readAsText(file);
+    e.target.value = "";
+  };
 
-    const dataStr =
-      "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(fullExport, null, 2));
-    const downloadAnchor = document.createElement("a");
-    downloadAnchor.setAttribute("href", dataStr);
-    downloadAnchor.setAttribute("download", `tres_chic_portfolio_backup_${Date.now()}.json`);
-    document.body.appendChild(downloadAnchor);
-    downloadAnchor.click();
-    downloadAnchor.remove();
-    toast.success("Complete Portfolio & Gallery JSON backup exported");
+  const handleRestoreLocalPhotos = async () => {
+    if (
+      window.confirm(
+        "Bhai, kya aap apne disk se sare original photos aur built-in projects restore karna chahte hain? Isse local ke sare original photos wapas aa jayenge."
+      )
+    ) {
+      await resetCouplesToDefault();
+      await resetEventsToDefault();
+      await resetGalleryToDefault();
+      toast.success("Sare original local photos aur projects successfully restore ho gaye!");
+    }
   };
 
   // Password Lock Screen
@@ -166,6 +269,26 @@ function GalleryAdminPage() {
             >
               <Eye className="size-3.5" /> View Live Page
             </Link>
+            <button
+              type="button"
+              onClick={handleRestoreLocalPhotos}
+              className="inline-flex items-center gap-1.5 border border-gold/70 bg-gold/15 text-gold-deep hover:bg-gold hover:text-charcoal-deep px-3 py-1.5 text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer shadow-xs"
+              title="Restore all original local photos from disk and fix any broken images"
+            >
+              <RotateCcw className="size-3.5" /> Restore Local Images
+            </button>
+            <label
+              className="inline-flex items-center gap-1.5 border border-emerald bg-emerald/10 text-emerald hover:bg-emerald hover:text-ivory px-3 py-1.5 text-xs font-semibold uppercase tracking-wider transition-colors cursor-pointer"
+              title="Upload JSON file sent by client to sync all photos and projects"
+            >
+              <Upload className="size-3.5" /> Import Data (JSON)
+              <input
+                type="file"
+                accept=".json,application/json"
+                onChange={handleImportFullJSON}
+                className="hidden"
+              />
+            </label>
             <button
               type="button"
               onClick={handleExportFullJSON}

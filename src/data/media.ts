@@ -85,7 +85,7 @@ export type MediaItem = {
     | "fusion"
     | "middle-eastern"
     | "jewish";
-  tradition?: string;
+  tradition?: string | undefined;
   orientation: "landscape" | "portrait";
 };
 

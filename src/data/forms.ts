@@ -37,7 +37,7 @@ export const startPlanningCopy = {
     guestRange: "Estimated guests",
     traditions: "Cultures, faiths or traditions you'd like honored",
     notes: "What matters most to you about this day?",
-    referralSource: "How did you find us?",
+    referralSource: "How did you find us? *",
   },
   placeholders: {
     traditions: "Optional, and welcome",

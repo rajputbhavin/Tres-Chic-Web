@@ -17,6 +17,7 @@ import { toast } from "sonner";
 
 import {
   type AdminCelebrationProject,
+  getDefaultCelebrationProjects,
   useAdminEventsStore,
 } from "@/data/eventsStore";
 import { compressImageFile } from "@/lib/imageCompressor";
@@ -44,6 +45,7 @@ export function AdminEventsManager() {
   const [searchQuery, setSearchQuery] = useState("");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
   const [statusFilter, setStatusFilter] = useState<"all" | "published" | "draft">("all");
+  const defaultEvents = useMemo(() => getDefaultCelebrationProjects(), []);
 
   // Modal State
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -163,11 +165,13 @@ export function AdminEventsManager() {
     try {
       const newUrls: string[] = [];
       for (let i = 0; i < files.length; i++) {
-        const url = await compressImageFile(files[i]);
+        const file = files[i];
+        if (!file) continue;
+        const url = await compressImageFile(file);
         newUrls.push(url);
       }
       setFormImages((prev) => [...prev, ...newUrls]);
-      if (!formFeaturedImage && newUrls.length > 0) {
+      if (!formFeaturedImage && newUrls[0]) {
         setFormFeaturedImage(newUrls[0]);
       }
       toast.success(`Optimized and added ${newUrls.length} photos to album`);
@@ -359,6 +363,17 @@ export function AdminEventsManager() {
                     alt={event.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    onError={(e) => {
+                      const fb = defaultEvents.find(
+                        (d) =>
+                          d.id === event.id ||
+                          d.title.toLowerCase() === event.title.toLowerCase() ||
+                          (event.folderName && d.folderName.toLowerCase() === event.folderName.toLowerCase())
+                      );
+                      if (fb?.featuredImage && e.currentTarget.src !== fb.featuredImage) {
+                        e.currentTarget.src = fb.featuredImage;
+                      }
+                    }}
                   />
                   <div className="absolute top-3 left-3 flex items-center gap-2">
                     <span className="rounded-xs bg-emerald px-2 py-0.5 text-[0.625rem] font-semibold uppercase tracking-wider text-ivory shadow">
@@ -431,6 +446,17 @@ export function AdminEventsManager() {
                             alt=""
                             className="w-full h-full object-cover"
                             loading="lazy"
+                            onError={(e) => {
+                              const fb = defaultEvents.find(
+                                (d) =>
+                                  d.id === event.id ||
+                                  d.title.toLowerCase() === event.title.toLowerCase() ||
+                                  (event.folderName && d.folderName.toLowerCase() === event.folderName.toLowerCase())
+                              );
+                              if (fb?.images?.[iIdx] && e.currentTarget.src !== fb.images[iIdx]) {
+                                e.currentTarget.src = fb.images[iIdx];
+                              }
+                            }}
                           />
                         </div>
                       ))}
