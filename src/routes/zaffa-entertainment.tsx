@@ -31,7 +31,7 @@ export const Route = createFileRoute("/zaffa-entertainment")({
       },
       { property: "og:url", content: "/zaffa-entertainment" },
     ],
-    links: [{ rel: "canonical", href: "/zaffa-entertainment" }],
+    links: [{ rel: "canonical", href: "https://treschiceventplanning.com/zaffa-entertainment" }],
   }),
   component: ZaffaEntertainmentPage,
 });

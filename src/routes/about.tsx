@@ -23,7 +23,7 @@ export const Route = createFileRoute("/about")({
       },
       { property: "og:url", content: "/about" },
     ],
-    links: [{ rel: "canonical", href: "/about" }],
+    links: [{ rel: "canonical", href: "https://treschiceventplanning.com/about" }],
   }),
   component: AboutPage,
 });

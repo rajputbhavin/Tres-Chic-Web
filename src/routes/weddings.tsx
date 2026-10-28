@@ -36,7 +36,7 @@ export const Route = createFileRoute("/weddings")({
       },
       { property: "og:url", content: "/weddings" },
     ],
-    links: [{ rel: "canonical", href: "/weddings" }],
+    links: [{ rel: "canonical", href: "https://treschiceventplanning.com/weddings" }],
     scripts: [
       {
         type: "application/ld+json",

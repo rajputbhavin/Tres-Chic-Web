@@ -24,7 +24,7 @@ export const Route = createFileRoute("/start-planning")({
       },
       { property: "og:url", content: "/start-planning" },
     ],
-    links: [{ rel: "canonical", href: "/start-planning" }],
+    links: [{ rel: "canonical", href: "https://treschiceventplanning.com/start-planning" }],
   }),
   component: StartPlanningPage,
 });

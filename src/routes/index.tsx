@@ -44,7 +44,7 @@ export const Route = createFileRoute("/")({
         content: homeHero.image,
       },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: "https://treschiceventplanning.com/" }],
     scripts: [
       {
         type: "application/ld+json",

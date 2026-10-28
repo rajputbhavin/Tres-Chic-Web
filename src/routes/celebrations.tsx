@@ -36,7 +36,7 @@ export const Route = createFileRoute("/celebrations")({
       { property: "og:url", content: "/celebrations" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/celebrations" }],
+    links: [{ rel: "canonical", href: "https://treschiceventplanning.com/celebrations" }],
     scripts: [
       {
         type: "application/ld+json",

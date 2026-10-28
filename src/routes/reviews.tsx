@@ -26,7 +26,7 @@ export const Route = createFileRoute("/reviews")({
       },
       { property: "og:url", content: "/reviews" },
     ],
-    links: [{ rel: "canonical", href: "/reviews" }],
+    links: [{ rel: "canonical", href: "https://treschiceventplanning.com/reviews" }],
   }),
   component: ReviewsPage,
 });

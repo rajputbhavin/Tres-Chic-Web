@@ -24,7 +24,7 @@ export const Route = createFileRoute("/faq")({
       },
       { property: "og:url", content: "/faq" },
     ],
-    links: [{ rel: "canonical", href: "/faq" }],
+    links: [{ rel: "canonical", href: "https://treschiceventplanning.com/faq" }],
     scripts: [
       {
         type: "application/ld+json",

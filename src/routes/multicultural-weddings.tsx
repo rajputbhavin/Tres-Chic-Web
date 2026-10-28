@@ -28,7 +28,7 @@ export const Route = createFileRoute("/multicultural-weddings")({
       },
       { property: "og:url", content: "/multicultural-weddings" },
     ],
-    links: [{ rel: "canonical", href: "/multicultural-weddings" }],
+    links: [{ rel: "canonical", href: "https://treschiceventplanning.com/multicultural-weddings" }],
   }),
   component: MulticulturalPage,
 });

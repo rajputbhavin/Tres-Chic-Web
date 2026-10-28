@@ -34,7 +34,7 @@ export const Route = createFileRoute("/celebrations-we-love/")({
       { property: "og:url", content: "/celebrations-we-love" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "canonical", href: "/celebrations-we-love" }],
+    links: [{ rel: "canonical", href: "https://treschiceventplanning.com/celebrations-we-love" }],
   }),
   component: CelebrationsWeLovePage,
 });
