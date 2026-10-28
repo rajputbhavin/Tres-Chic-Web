@@ -32,6 +32,7 @@ function ExperiencePage() {
     <>
       <PageHero
         eyebrow="How We Work Together"
+        seoH1="Bespoke Wedding Planning in Miami"
         headline="Heard. Understood. Guided. Present."
         body="Here's exactly what working with Très CHIC looks like, from our first conversation to the morning after."
         image={media.fireworksCouplePalms}

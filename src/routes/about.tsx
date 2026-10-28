@@ -33,6 +33,7 @@ function AboutPage() {
     <>
       <PageHero
         eyebrow="Meet the Founder"
+        seoH1="Luxury Wedding Planner in Miami"
         headline="I used to be the bride who couldn't stop being the planner."
         body="That day changed how I think about every celebration I've planned since."
         image={media.aboutHero}

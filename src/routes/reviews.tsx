@@ -36,6 +36,7 @@ function ReviewsPage() {
     <>
       <PageHero
         eyebrow="Client Testimonials"
+        seoH1="Best Wedding Planner Miami &  Fort laudredal"
         headline="The same thing, over and over: they were present."
         body="Real experiences from couples and families who trusted Mariane Fahmy and the Très CHIC team with their most meaningful celebrations."
         image={media.clientTestimonialsHero}

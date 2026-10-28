@@ -62,6 +62,7 @@ function CelebrationsWeLovePage() {
     <>
       <PageHero
         eyebrow={portfolioPageCopy.eyebrow}
+        seoH1="Miami Wedding & Event planner"
         headline={portfolioPageCopy.headline}
         body={portfolioPageCopy.body}
         image={media.portfolioHero}

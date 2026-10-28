@@ -37,6 +37,7 @@ function DestinationPage() {
     <>
       <PageHero
         eyebrow="Destination Weddings"
+        seoH1="Destination Wedding Planner Miami & South Florida"
         headline="Local to South Florida. At home wherever your celebration takes us."
         body="Whether you're flying your whole world into Miami, Fort Lauderdale, Coral Gables or Boca, or asking Très CHIC to travel with you somewhere else entirely, the process stays just as organized, just as personal."
         image={media.destinationHero}

@@ -38,6 +38,7 @@ function MulticulturalPage() {
     <>
       <PageHero
         eyebrow="Multicultural & Fusion Weddings"
+        seoH1="Multicultural Wedding Planner in Miami Florida"
         headline="Your families don't need to choose. Neither does your wedding."
         body="I have a particular passion for South Asian, Middle Eastern, Jewish, interfaith and fusion celebrations, weddings where multiple cultures, families and traditions come together in one story."
         image={media.multiculturalHero}

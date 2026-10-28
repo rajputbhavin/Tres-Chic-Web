@@ -101,12 +101,15 @@ function ZaffaEntertainmentPage() {
 
         <div className="mx-auto max-w-7xl px-6 md:px-12 lg:px-16 text-center">
           <Reveal>
+            <h1 className="sr-only" aria-hidden="false">
+              Zaffa Band Miami & Middle Eastern Wedding Entertainment South Florida
+            </h1>
             <p className="eyebrow text-gold uppercase tracking-[0.24em]">
               In-House Cultural Entertainment
             </p>
-            <h1 className="display-xl mt-4 text-balance text-emerald">
+            <p className="display-xl mt-4 text-balance text-emerald">
               Zaffa & Middle Eastern Entertainment
-            </h1>
+            </p>
             <p className="mx-auto mt-6 max-w-2xl text-base md:text-lg leading-relaxed text-muted-foreground">
               The thunderous beats of the drum, the soul of authentic melodies, and the
               unbridled joy of a grand entrance. We bring Miami&apos;s premier Zaffa ensemble

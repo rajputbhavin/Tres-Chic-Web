@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 export function PageHero({
   eyebrow,
   headline,
+  seoH1,
   body,
   image,
   imageAlt,
@@ -17,6 +18,8 @@ export function PageHero({
 }: {
   eyebrow: string;
   headline: string;
+  /** Hidden crawler-first H1 for exact-match SEO and Geo-targeting */
+  seoH1?: string;
   body?: string;
   image?: string;
   imageAlt?: string;
@@ -74,9 +77,20 @@ export function PageHero({
             </span>
           </div>
 
-          <h1 className="display-xl mt-6 max-w-3xl text-balance text-white drop-shadow-sm font-normal">
-            {headline}
-          </h1>
+          {seoH1 ? (
+            <>
+              <h1 className="sr-only" aria-hidden="false">
+                {seoH1}
+              </h1>
+              <p className="display-xl mt-6 max-w-3xl text-balance text-white drop-shadow-sm font-normal">
+                {headline}
+              </p>
+            </>
+          ) : (
+            <h1 className="display-xl mt-6 max-w-3xl text-balance text-white drop-shadow-sm font-normal">
+              {headline}
+            </h1>
+          )}
           {body ? (
             <p className="lede mt-6 max-w-2xl text-ivory/90 font-light drop-shadow-xs">
               {body}

@@ -67,12 +67,17 @@ export function HomeHero() {
       <div className="hero-scrim pointer-events-none absolute inset-0 z-10" aria-hidden />
 
       <div className="relative z-20 mx-auto w-full max-w-6xl px-6 pt-36 pb-20 text-center md:px-10 md:pb-28">
+        {/* 1. Crawler-First Exact-Match SEO H1 (0px on screen, 100% parsed first by Google & AI) */}
+        <h1 className="sr-only" aria-hidden="false">
+          Luxury Wedding Planner in Miami
+        </h1>
+
         <Reveal className="mx-auto w-full">
-          <h1 className="display-2xl mx-auto max-w-5xl text-ivory drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
+          <p className="display-2xl mx-auto max-w-5xl text-ivory drop-shadow-[0_2px_12px_rgba(0,0,0,0.85)]">
             {homeHero.headline}
             <br />
             {homeHero.headlineSecond}
-          </h1>
+          </p>
           <p className="hero-body-delay lede mx-auto mt-7 max-w-xl text-ivory drop-shadow-[0_1px_8px_rgba(0,0,0,0.85)]">{homeHero.body}</p>
         </Reveal>
       </div>

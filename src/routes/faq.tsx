@@ -48,6 +48,7 @@ function FaqPage() {
     <>
       <PageHero
         eyebrow="Questions"
+        seoH1="Miami Wedding Planner FAQs · Pricing, Packages & Timelines"
         headline="The things couples ask us most."
         body="If your question isn't here, ask it directly, you'll hear back from Mariane."
         image={media.questionsHero}

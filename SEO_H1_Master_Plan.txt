@@ -1,0 +1,182 @@
+====================================================================================================
+TRÈS CHIC EVENT PLANNING & DESIGN — MASTER H1 SEO & GEO RANKING BLUEPRINT (ALL PAGES)
+====================================================================================================
+Strategy:
+1. Crawler First (Hidden via .sr-only): 100% crawlable by Google, Bing, and AI Search Engines.
+2. Human Visitors First: 100% luxury editorial copy preserved visually on screen (0% visual keyword stuffing).
+3. Exact-Match SEO Ranking Signals for Miami, South Florida, and Nationwide US Searches.
+====================================================================================================
+
+PAGE 1: Home Page
+Route: /
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "You planned this forever. You deserve to live it."
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1> Luxury Wedding Planner in Miami</h1>
+Target Focus Keywords:
+  - Event Planner in Miami
+  - Wedding Planner in Miami
+  - Luxury Wedding Planner Miami FL
+  - South Florida Event Designer
+
+----------------------------------------------------------------------------------------------------
+
+PAGE 2: Weddings Page
+Route: /weddings
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "Full and partial planning, design and coordination, built around how much you actually want to hold."
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1>Wedding Planner in Miami & Luxury Wedding Design South Florida</h1>
+Target Focus Keywords:
+  - Wedding Planner in Miami
+  - Luxury Wedding Planner in Miami
+  - Wedding Planner Miami FL
+  - Full Service Wedding Planner Florida
+  - Day of Wedding Coordinator Miami Beach
+
+----------------------------------------------------------------------------------------------------
+
+PAGE 3: Celebrations & Events Page
+Route: /celebrations
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "Life's other meaningful moments deserve the same care."
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1>Event Planner in Miami</h1>
+Target Focus Keywords:
+  - Event Planner in Miami
+  - Best Event Planner in Miami
+  - Corporate Event Planner Florida
+  - Luxury Baby Shower Planner Florida
+  - Bar Mitzvah Planner South Florida
+
+----------------------------------------------------------------------------------------------------
+
+PAGE 4: Meet Mariane (About Page)
+Route: /about (and /mariane)
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "I used to be the bride who couldn't stop being the planner."
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1> Luxury Wedding Planner in Miami</h1>
+Target Focus Keywords:
+  - Mariane Fahmy
+  - Mariane Fahmy Wedding Planner
+  - Luxury Miami Wedding Planner Founder
+  - High-End Florida Event Coordinator
+
+----------------------------------------------------------------------------------------------------
+
+PAGE 5: Multicultural & Fusion Weddings Page
+Route: /multicultural-weddings
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "Your families don't need to choose. Neither does your wedding."
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1>Multicultural Wedding Planner in Miami Florida</h1>
+Target Focus Keywords:
+  - Multicultural Wedding Planner Miami
+  - Indian Wedding Planner in Florida
+  - Nigerian Wedding Planner South Florida
+  - Jewish Wedding Planner Miami
+  - Middle Eastern Wedding Planner Florida
+
+----------------------------------------------------------------------------------------------------
+
+PAGE 6: Destination Weddings Page
+Route: /destination-weddings
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "Local to South Florida. At home wherever your celebration takes us."
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1>Destination Wedding Planner Miami & South Florida</h1>
+Target Focus Keywords:
+  - Destination Wedding Planner Miami
+  - Destination Wedding Planner Florida
+  - Beach Wedding Planner in Florida
+  - Oceanfront Wedding Planner Miami Beach
+
+----------------------------------------------------------------------------------------------------
+
+PAGE 7: Zaffa & Middle Eastern Entertainment Page
+Route: /zaffa-entertainment
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "Miami Based Zaffa Group Providing Middle Eastern Zaffa & Live Entertainment"
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1>Zaffa Band Miami & Middle Eastern Wedding Entertainment South Florida</h1>
+Target Focus Keywords:
+  - Zaffa Band Miami
+  - Middle Eastern Wedding Entertainment Florida
+  - Arabic Wedding Band Miami
+  - Dabke Dance Troupe Florida
+
+----------------------------------------------------------------------------------------------------
+
+PAGE 8: Celebrations We Love (Portfolio / Gallery)
+Route: /celebrations-we-love
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "Celebrations We Love"
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1>Miami Wedding & Event planner</h1>
+Target Focus Keywords:
+  - Miami Wedding Photo Gallery
+  - Vizcaya Wedding Photos
+  - Luxury South Florida Wedding Ideas
+  - Florida Event Planning Portfolio
+
+----------------------------------------------------------------------------------------------------
+
+PAGE 9: The Experience (Our Process)
+Route: /the-experience
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "Heard. Understood. Guided. Present."
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1>Bespoke Wedding Planning in Miami</h1>
+Target Focus Keywords:
+  - Wedding Planning Process Miami
+  - Full-Service Event Experience Florida
+  - How to Plan a Luxury Wedding in Miami
+
+----------------------------------------------------------------------------------------------------
+
+PAGE 10: Client Reviews & Testimonials Page
+Route: /reviews
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "The same thing, over and over: they were present."
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1>Best Wedding Planner Miami &  Fort laudredal</h1>
+Target Focus Keywords:
+  - Wedding Planner Miami Reviews
+  - Best Wedding Planner in Miami Reviews
+  - Très CHIC Reviews Google 5 Stars
+
+----------------------------------------------------------------------------------------------------
+
+PAGE 11: Frequently Asked Questions Page
+Route: /faq
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "Frequently Asked Questions"
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1>Miami Wedding Planner FAQs · Pricing, Packages & Timelines</h1>
+Target Focus Keywords:
+  - Wedding Planner Cost Miami
+  - Event Planner Packages Florida
+  - Miami Wedding Planning FAQ
+
+----------------------------------------------------------------------------------------------------
+
+PAGE 12: Start Planning (Contact & Inquiry Page)
+Route: /start-planning
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "Tell me about your celebration."
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1>Hire a Wedding Planner in Miami · Contact Très CHIC Event Planning</h1>
+Target Focus Keywords:
+  - Hire Wedding Planner Miami
+  - Book Event Planner Miami FL
+  - Miami Luxury Wedding Consultation
+
+====================================================================================================
+TECHNICAL IMPLEMENTATION SUMMARY
+====================================================================================================
+• Every single page has exactly ONE primary <h1> tag placed at the top of the body/hero.
+• Class used: className="sr-only" aria-hidden="false"
+• Visual footprint: 0px height, 0px width, 100% invisible on desktop and mobile screens.
+• Crawler footprint: Highest-weight semantic H1 signal parsed first by Googlebot, Bingbot, and AI Search.
+====================================================================================================

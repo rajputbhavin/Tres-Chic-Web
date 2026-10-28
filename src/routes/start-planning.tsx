@@ -34,6 +34,7 @@ function StartPlanningPage() {
     <>
       <PageHero
         eyebrow="Start Planning"
+        seoH1="Hire a Wedding Planner in Miami · Contact Très CHIC Event Planning"
         headline="Tell me about your celebration."
         body="A few details are enough to begin. I read every inquiry personally and usually reply within one business day."
         image={media.floralDetail}
