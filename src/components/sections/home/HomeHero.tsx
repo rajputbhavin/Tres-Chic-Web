@@ -54,7 +54,22 @@ export function HomeHero() {
               <img
                 className="size-full object-cover object-center"
                 src={src}
-                alt={index === 0 ? homeHero.imageAlt : ""}
+                alt={
+                  [
+                    "Luxury wedding celebration and floral design in Miami by Très CHIC",
+                    "Bespoke wedding planning and ballroom design in South Florida",
+                    "Miami luxury wedding couple celebration and grand reception decor",
+                    "Multicultural wedding celebration and traditional ceremonial design in Florida",
+                    "Elegant wedding party portrait under palm trees in Miami Beach",
+                    "High-end wedding reception tablescape and candelabra lighting in Miami",
+                    "Private estate luxury wedding planning and coordination in South Florida",
+                    "Destination wedding couple portrait in Miami Florida",
+                    "Middle Eastern zaffa wedding entrance and live entertainment Miami",
+                    "Romantic candlelit wedding head table styling in Coral Gables",
+                    "Bespoke celebration design and event coordination in South Florida",
+                    "Full-service luxury wedding planning experience in Miami",
+                  ][index] ?? homeHero.imageAlt
+                }
                 fetchPriority={index === 0 ? "high" : "low"}
                 loading={index === 0 ? "eager" : "lazy"}
                 decoding="async"
