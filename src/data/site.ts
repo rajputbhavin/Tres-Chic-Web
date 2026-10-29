@@ -37,6 +37,7 @@ export const primaryNav: NavItem[] = [
  * Weddings page rather than the header, so they surface here and in the footer.
  */
 export const utilityNav: NavItem[] = [
+  { label: "Wedding Planner Miami", to: "/wedding-planner-miami" },
   { label: "Multicultural & Fusion", to: "/multicultural-weddings" },
   { label: "Destination Weddings", to: "/destination-weddings" },
   { label: "Zaffa Entertainment", to: "/zaffa-entertainment" },

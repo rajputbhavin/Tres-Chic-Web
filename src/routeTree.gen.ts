@@ -22,6 +22,7 @@ import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as StartPlanningRouteImport } from './routes/start-planning'
 import { Route as TheExperienceRouteImport } from './routes/the-experience'
+import { Route as WeddingPlannerMiamiRouteImport } from './routes/wedding-planner-miami'
 import { Route as WeddingsRouteImport } from './routes/weddings'
 import { Route as ZaffaEntertainmentRouteImport } from './routes/zaffa-entertainment'
 import { Route as CelebrationsWeLoveIndexRouteImport } from './routes/celebrations-we-love.index'
@@ -92,6 +93,11 @@ const TheExperienceRoute = TheExperienceRouteImport.update({
   path: '/the-experience',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WeddingPlannerMiamiRoute = WeddingPlannerMiamiRouteImport.update({
+  id: '/wedding-planner-miami',
+  path: '/wedding-planner-miami',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const WeddingsRoute = WeddingsRouteImport.update({
   id: '/weddings',
   path: '/weddings',
@@ -127,6 +133,7 @@ export interface FileRoutesByFullPath {
   '/reviews': typeof ReviewsRoute
   '/start-planning': typeof StartPlanningRoute
   '/the-experience': typeof TheExperienceRoute
+  '/wedding-planner-miami': typeof WeddingPlannerMiamiRoute
   '/weddings': typeof WeddingsRoute
   '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
   '/celebrations-we-love/$slug': typeof CelebrationsWeLoveSlugRoute
@@ -146,6 +153,7 @@ export interface FileRoutesByTo {
   '/reviews': typeof ReviewsRoute
   '/start-planning': typeof StartPlanningRoute
   '/the-experience': typeof TheExperienceRoute
+  '/wedding-planner-miami': typeof WeddingPlannerMiamiRoute
   '/weddings': typeof WeddingsRoute
   '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
   '/celebrations-we-love/$slug': typeof CelebrationsWeLoveSlugRoute
@@ -166,6 +174,7 @@ export interface FileRoutesById {
   '/reviews': typeof ReviewsRoute
   '/start-planning': typeof StartPlanningRoute
   '/the-experience': typeof TheExperienceRoute
+  '/wedding-planner-miami': typeof WeddingPlannerMiamiRoute
   '/weddings': typeof WeddingsRoute
   '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
   '/celebrations-we-love/$slug': typeof CelebrationsWeLoveSlugRoute
@@ -187,6 +196,7 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/start-planning'
     | '/the-experience'
+    | '/wedding-planner-miami'
     | '/weddings'
     | '/zaffa-entertainment'
     | '/celebrations-we-love/$slug'
@@ -206,6 +216,7 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/start-planning'
     | '/the-experience'
+    | '/wedding-planner-miami'
     | '/weddings'
     | '/zaffa-entertainment'
     | '/celebrations-we-love/$slug'
@@ -225,6 +236,7 @@ export interface FileRouteTypes {
     | '/reviews'
     | '/start-planning'
     | '/the-experience'
+    | '/wedding-planner-miami'
     | '/weddings'
     | '/zaffa-entertainment'
     | '/celebrations-we-love/$slug'
@@ -245,6 +257,7 @@ export interface RootRouteChildren {
   ReviewsRoute: typeof ReviewsRoute
   StartPlanningRoute: typeof StartPlanningRoute
   TheExperienceRoute: typeof TheExperienceRoute
+  WeddingPlannerMiamiRoute: typeof WeddingPlannerMiamiRoute
   WeddingsRoute: typeof WeddingsRoute
   ZaffaEntertainmentRoute: typeof ZaffaEntertainmentRoute
   CelebrationsWeLoveSlugRoute: typeof CelebrationsWeLoveSlugRoute
@@ -344,6 +357,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TheExperienceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/wedding-planner-miami': {
+      id: '/wedding-planner-miami'
+      path: '/wedding-planner-miami'
+      fullPath: '/wedding-planner-miami'
+      preLoaderRoute: typeof WeddingPlannerMiamiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/weddings': {
       id: '/weddings'
       path: '/weddings'
@@ -389,6 +409,7 @@ const rootRouteChildren: RootRouteChildren = {
   ReviewsRoute: ReviewsRoute,
   StartPlanningRoute: StartPlanningRoute,
   TheExperienceRoute: TheExperienceRoute,
+  WeddingPlannerMiamiRoute: WeddingPlannerMiamiRoute,
   WeddingsRoute: WeddingsRoute,
   ZaffaEntertainmentRoute: ZaffaEntertainmentRoute,
   CelebrationsWeLoveSlugRoute: CelebrationsWeLoveSlugRoute,
