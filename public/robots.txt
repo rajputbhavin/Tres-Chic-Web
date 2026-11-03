@@ -1,17 +1,19 @@
 # ====================================================================
 # Robots.txt for Très CHIC Event Planning & Design
 # Domain: https://treschiceventplanning.com
-# Luxury Wedding & Event Planning in Miami & South Florida
+# Founder: Mariane Fahmy (20+ Years Executive Operations & Luxury Event Design)
+# Premier Wedding Planner & Event Planner in Miami, Fort Lauderdale & Florida
 # ====================================================================
 
 # Default rules for all web crawlers
 User-agent: *
 Allow: /
+Allow: /llms.txt
 Disallow: /gallery-admin
 Disallow: /gallery-admin/
 
 # --------------------------------------------------------------------
-# Major Search Engines
+# Major Search Engines (Google, Bing, Apple, DuckDuckGo)
 # --------------------------------------------------------------------
 User-agent: Googlebot
 Allow: /
@@ -38,7 +40,7 @@ User-agent: YandexBot
 Allow: /
 
 # --------------------------------------------------------------------
-# Next-Gen AI Search & Answer Engines
+# Next-Gen AI Search & Answer Engines (AEO & GEO)
 # --------------------------------------------------------------------
 User-agent: GPTBot
 Allow: /
@@ -65,7 +67,7 @@ User-agent: Cohere-ai
 Allow: /
 
 # --------------------------------------------------------------------
-# Social Media Sharing & Previews
+# Social Media Sharing & Authority Previews
 # --------------------------------------------------------------------
 User-agent: Twitterbot
 Allow: /
@@ -83,7 +85,7 @@ User-agent: WhatsApp
 Allow: /
 
 # --------------------------------------------------------------------
-# Authoritative Sitemaps & Host Declaration
+# Knowledge Directives & Sitemaps
 # --------------------------------------------------------------------
 Host: https://treschiceventplanning.com
 Sitemap: https://treschiceventplanning.com/sitemap.xml
