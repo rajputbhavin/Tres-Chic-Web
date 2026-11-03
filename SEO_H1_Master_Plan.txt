@@ -179,15 +179,13 @@ Route: /wedding-planner-miami
 Human Visitors Ko Dikhne Wala Text (Luxury):
   "You Planned for This Forever. We Bring Your Miami Dream to Life."
 Google Crawler Ko Milne Wala First <h1> (Hidden):
-  <h1>Wedding Planner Miami · Luxury Wedding Planning & Design</h1>
+  <h1>Wedding Planner in Miami</h1>
 Target Focus Keywords (Tier 1 High Priority):
-  - Wedding Planner Miami
   - Wedding Planner in Miami
-  - Luxury Wedding Planner Miami
-  - Best Wedding Planner Miami
+  - Best Wedding Planner in Miami
+  - Luxury Wedding Planner in Miami
   - Wedding Planner Miami FL
-  - Miami Wedding Coordinator
-  - Vizcaya Wedding Planner
+  - Miami Wedding Planner
   - Full-Service Wedding Planner Miami
 
 ====================================================================================================

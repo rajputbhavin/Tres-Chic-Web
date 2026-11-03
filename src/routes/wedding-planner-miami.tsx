@@ -145,7 +145,7 @@ export const Route = createFileRoute("/wedding-planner-miami")({
   head: () => ({
     meta: [
       {
-        title: "Wedding Planner Miami | Luxury Miami Wedding Planner · Très CHIC",
+        title: "Wedding Planner in Miami | Luxury Wedding Planning & Design · Très CHIC",
       },
       {
         name: "description",
@@ -155,11 +155,11 @@ export const Route = createFileRoute("/wedding-planner-miami")({
       {
         name: "keywords",
         content:
-          "wedding planner miami, wedding planner in miami, luxury wedding planner miami, best wedding planner in miami, wedding planner miami fl, miami wedding planner, wedding coordinator miami, wedding designer miami, vizcaya wedding planner, miami beach wedding planner, south florida wedding planner, wedding planner coral gables",
+          "wedding planner in miami, wedding planner miami, luxury wedding planner in miami, best wedding planner in miami, wedding planner miami fl, miami wedding planner, full service wedding planner miami, wedding coordinator miami, wedding designer miami, vizcaya wedding planner, miami beach wedding planner, south florida wedding planner, wedding planner coral gables",
       },
       {
         property: "og:title",
-        content: "Wedding Planner Miami | Luxury Miami Wedding Planner · Très CHIC",
+        content: "Wedding Planner in Miami | Luxury Wedding Planning & Design · Très CHIC",
       },
       {
         property: "og:description",
@@ -180,7 +180,7 @@ export const Route = createFileRoute("/wedding-planner-miami")({
       },
       {
         name: "twitter:title",
-        content: "Wedding Planner Miami | Luxury Miami Wedding Planner · Très CHIC",
+        content: "Wedding Planner in Miami | Luxury Wedding Planning & Design · Très CHIC",
       },
       {
         name: "twitter:description",
@@ -207,9 +207,11 @@ export const Route = createFileRoute("/wedding-planner-miami")({
             {
               "@type": ["EventPlanner", "WeddingService", "LocalBusiness"],
               "@id": "https://treschiceventplanning.com/wedding-planner-miami#business",
-              name: "Très CHIC Event Planning & Design - Wedding Planner Miami",
+              name: "Très CHIC Event Planning & Design - Wedding Planner in Miami",
               alternateName: [
-                "Wedding Planner Miami",
+                "Wedding Planner in Miami",
+                "Best Wedding Planner in Miami",
+                "Luxury Wedding Planner in Miami",
                 "Très CHIC Miami Wedding Planner",
                 "Luxury Wedding Planner Miami FL",
                 "Miami Wedding Coordinator",
@@ -340,7 +342,7 @@ function WeddingPlannerMiamiPage() {
       {/* Editorial Inner Page Hero */}
       <PageHero
         eyebrow="MIAMI WEDDING PLANNER & DESIGNER"
-        seoH1="Wedding Planner Miami · Luxury Wedding Planning & Design"
+        seoH1="Wedding Planner in Miami"
         headline="You Planned for This Forever. We Bring Your Miami Dream to Life."
         body="From sunset vows overlooking Biscayne Bay to grand ballroom galas at historic Miami estates, Très CHIC delivers bespoke luxury wedding planning, visionary design, and unflappable coordination across Miami, Florida. Led by Mariane Fahmy, we carry every logistical detail so you can simply be present."
         image={media.tentedWaterfrontReception}
@@ -802,39 +804,33 @@ function WeddingPlannerMiamiPage() {
         </Reveal>
       </Section>
 
-      {/* Section 8: Hidden Semantic SEO Footprint (Exact-match H2s for crawler authority) */}
+      {/* Section 8: Hidden Semantic SEO Footprint (Exact-match H2s for crawler, GEO & AEO authority) */}
       <div className="sr-only" aria-hidden="false">
-        <h2>Wedding Planner Miami</h2>
         <h2>Wedding Planner in Miami</h2>
-        <h2>Best Wedding Planner Miami</h2>
         <h2>Best Wedding Planner in Miami</h2>
-        <h2>Luxury Wedding Planner Miami</h2>
         <h2>Luxury Wedding Planner in Miami</h2>
-        <h2>Wedding Planner Miami FL</h2>
+        <h2>Top Rated Wedding Planner in Miami</h2>
+        <h2>Wedding Planner in Miami FL</h2>
         <h2>Miami Wedding Planner</h2>
-        <h2>Wedding Coordinator Miami</h2>
-        <h2>Miami Wedding Coordinator</h2>
-        <h2>Wedding Designer Miami</h2>
-        <h2>Miami Wedding Designer</h2>
-        <h2>Day of Wedding Coordinator Miami</h2>
-        <h2>Full Service Wedding Planner Miami</h2>
-        <h2>Vizcaya Wedding Planner</h2>
-        <h2>Biltmore Coral Gables Wedding Planner</h2>
-        <h2>Faena Miami Beach Wedding Planner</h2>
-        <h2>Wedding Planner Miami Beach</h2>
-        <h2>Wedding Planner Coral Gables</h2>
-        <h2>Wedding Planner Coconut Grove</h2>
-        <h2>Wedding Planner Brickell</h2>
-        <h2>Wedding Planner Key Biscayne</h2>
-        <h2>Multicultural Wedding Planner Miami</h2>
-        <h2>Destination Wedding Planner Miami</h2>
-        <h2>South Florida Luxury Wedding Planner</h2>
+        <h2>Full Service Wedding Planner in Miami</h2>
+        <h2>Day of Wedding Coordinator in Miami</h2>
+        <h2>Wedding Designer in Miami</h2>
+        <h2>Destination Wedding Planner in Miami</h2>
+        <h2>Multicultural Wedding Planner in Miami</h2>
+        <h2>Wedding Planner in Miami Beach</h2>
+        <h2>Wedding Planner in Coral Gables Miami</h2>
+        <h2>Wedding Planner in Coconut Grove Miami</h2>
+        <h2>Wedding Planner in Brickell Miami</h2>
+        <h2>Wedding Planner in Key Biscayne Miami</h2>
+        <h2>Vizcaya Wedding Planner in Miami</h2>
+        <h2>Biltmore Hotel Wedding Planner in Miami</h2>
+        <h2>South Florida Luxury Wedding Planner in Miami</h2>
         <p>
-          Très CHIC Event Planning & Design is a premier luxury wedding planner in Miami, FL,
+          Très CHIC Event Planning & Design is the premier luxury wedding planner in Miami, FL,
           orchestrating elevated celebrations at Vizcaya Museum & Gardens, The Biltmore Coral
           Gables, Faena Miami Beach, The Miami Beach EDITION, Four Seasons Hotel at The Surf Club,
           Fisher Island Club, Villa Woodbine, and private waterfront estates across South Florida.
-          Services include bespoke full-service wedding planning, partial planning, month-of
+          Services include bespoke full-service wedding planning in Miami, partial planning, month-of
           wedding coordination, event design, and multi-day multicultural wedding management.
         </p>
       </div>
