@@ -43,53 +43,136 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": ["EventPlanner", "WeddingService", "LocalBusiness"],
-          "@id": "https://treschiceventplanning.com/#business",
-          name: site.name,
-          alternateName: [
-            "Très CHIC Miami",
-            "Très CHIC Wedding & Event Planning",
-            "Tres Chic Events FL",
-          ],
-          description:
-            "Premier luxury wedding planner and event planner in Miami and South Florida, designing and executing elevated, culturally authentic celebrations worldwide.",
-          url: "https://treschiceventplanning.com",
-          logo: "https://treschiceventplanning.com/favicon.png",
-          image: "https://treschiceventplanning.com/favicon.png",
-          telephone: site.phone,
-          email: site.email,
-          priceRange: "$$$$",
-          address: {
-            "@type": "PostalAddress",
-            addressLocality: "Miami",
-            addressRegion: "FL",
-            addressCountry: "US",
-          },
-          geo: {
-            "@type": "GeoCoordinates",
-            latitude: 25.7617,
-            longitude: -80.1918,
-          },
-          areaServed: [
-            { "@type": "City", name: "Miami" },
-            { "@type": "City", name: "Coral Gables" },
-            { "@type": "City", name: "Coconut Grove" },
-            { "@type": "City", name: "Brickell" },
-            { "@type": "City", name: "Miami Beach" },
-            { "@type": "City", name: "Key Biscayne" },
-            { "@type": "City", name: "Fort Lauderdale" },
-            { "@type": "City", name: "Boca Raton" },
-            { "@type": "City", name: "Palm Beach" },
-            { "@type": "AdministrativeArea", name: "South Florida" },
-            { "@type": "Place", name: "Worldwide" },
-          ],
-          founder: {
-            "@type": "Person",
-            name: "Mariane Fahmy",
-            jobTitle: "Founder & Lead Luxury Wedding & Event Designer",
-            sameAs: site.instagram,
-          },
-          sameAs: [site.instagram, site.facebook, site.pinterest, site.youtube],
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "https://treschiceventplanning.com/#website",
+              url: "https://treschiceventplanning.com",
+              name: "Très CHIC Event Planning & Design",
+              description:
+                "Premier luxury wedding planner and event designer in Miami and South Florida.",
+              publisher: {
+                "@id": "https://treschiceventplanning.com/#business",
+              },
+            },
+            {
+              "@type": "ItemList",
+              "@id": "https://treschiceventplanning.com/#site-navigation",
+              name: "Main Site Navigation",
+              itemListElement: [
+                {
+                  "@type": "SiteNavigationElement",
+                  position: 1,
+                  name: "Weddings",
+                  description:
+                    "Luxury full-service wedding planning & bespoke design in Miami & South Florida.",
+                  url: "https://treschiceventplanning.com/weddings",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  position: 2,
+                  name: "Celebrations",
+                  description:
+                    "Corporate galas, milestone birthdays, Bar Mitzvahs & luxury private events.",
+                  url: "https://treschiceventplanning.com/celebrations",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  position: 3,
+                  name: "Meet Mariane",
+                  description:
+                    "Founder story, philosophy, and 20+ years of high-stakes event operations.",
+                  url: "https://treschiceventplanning.com/about",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  position: 4,
+                  name: "Celebrations We Love",
+                  description:
+                    "Photo gallery and real wedding portfolio across South Florida.",
+                  url: "https://treschiceventplanning.com/celebrations-we-love",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  position: 5,
+                  name: "Client Reviews",
+                  description:
+                    "Verified 5.0-star reviews from real couples and families.",
+                  url: "https://treschiceventplanning.com/reviews",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  position: 6,
+                  name: "The Experience",
+                  description:
+                    "Our structured 6-step bespoke wedding planning process.",
+                  url: "https://treschiceventplanning.com/the-experience",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  position: 7,
+                  name: "Start Planning",
+                  description:
+                    "Inquire with Mariane Fahmy to begin planning your celebration.",
+                  url: "https://treschiceventplanning.com/start-planning",
+                },
+              ],
+            },
+            {
+              "@type": ["EventPlanner", "WeddingService", "LocalBusiness"],
+              "@id": "https://treschiceventplanning.com/#business",
+              name: site.name,
+              alternateName: [
+                "Très CHIC Miami",
+                "Très CHIC Wedding & Event Planning",
+                "Tres Chic Events FL",
+                "Wedding Planner in Miami",
+              ],
+              description:
+                "Premier luxury wedding planner and event planner in Miami and South Florida, designing and executing elevated, culturally authentic celebrations worldwide.",
+              url: "https://treschiceventplanning.com",
+              logo: "https://treschiceventplanning.com/favicon.png",
+              image: "https://treschiceventplanning.com/favicon.png",
+              telephone: site.phone,
+              email: site.email,
+              priceRange: "$$$$",
+              address: {
+                "@type": "PostalAddress",
+                addressLocality: "Miami",
+                addressRegion: "FL",
+                addressCountry: "US",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 25.7617,
+                longitude: -80.1918,
+              },
+              areaServed: [
+                { "@type": "City", name: "Miami" },
+                { "@type": "City", name: "Coral Gables" },
+                { "@type": "City", name: "Coconut Grove" },
+                { "@type": "City", name: "Brickell" },
+                { "@type": "City", name: "Miami Beach" },
+                { "@type": "City", name: "Key Biscayne" },
+                { "@type": "City", name: "Fort Lauderdale" },
+                { "@type": "City", name: "Boca Raton" },
+                { "@type": "City", name: "Palm Beach" },
+                { "@type": "AdministrativeArea", name: "South Florida" },
+                { "@type": "Place", name: "Worldwide" },
+              ],
+              founder: {
+                "@type": "Person",
+                name: "Mariane Fahmy",
+                jobTitle: "Founder & Lead Luxury Wedding & Event Designer",
+                sameAs: site.instagram,
+              },
+              sameAs: [
+                "https://maps.google.com/?cid=109278798882227478119",
+                site.instagram,
+                site.facebook,
+                site.pinterest,
+                site.youtube,
+              ],
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: "5.0",
