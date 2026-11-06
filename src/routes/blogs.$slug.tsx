@@ -181,6 +181,11 @@ function BlogPostDetailPage() {
     rawLines.forEach((line, index) => {
       const trimmed = line.trim();
 
+      // Skip duplicate H1 title if it matches top of markdown
+      if (trimmed.startsWith("# ") && index < 3) {
+        return;
+      }
+
       // Table line detection
       if (trimmed.startsWith("|") && trimmed.endsWith("|")) {
         flushList(`list-before-table-${index}`);
@@ -258,7 +263,7 @@ function BlogPostDetailPage() {
             <span>Back to All Editorial Guides</span>
           </Link>
 
-          <Reveal>
+          <div>
             <div className="flex flex-wrap items-center gap-3 text-xs tracking-widest text-muted-foreground uppercase mb-4">
               <span className="font-semibold text-gold bg-emerald px-3 py-1 text-[0.6875rem] font-bold">
                 {post.category}
@@ -304,10 +309,10 @@ function BlogPostDetailPage() {
                 <span>Verified Miami Planning Authority</span>
               </div>
             </div>
-          </Reveal>
+          </div>
 
           {/* Featured Image */}
-          <Reveal delay={100} className="mb-14">
+          <div className="mb-14">
             <div className="overflow-hidden rounded-xs border border-border/80 shadow-xl">
               <img
                 src={post.image}
@@ -318,17 +323,15 @@ function BlogPostDetailPage() {
             <p className="mt-3 text-xs text-muted-foreground italic text-center">
               {post.imageAlt} &bull; Photo courtesy of Très CHIC Event Planning & Design
             </p>
-          </Reveal>
+          </div>
 
           {/* Article Body Content */}
-          <Reveal delay={150}>
-            <div className="prose prose-lg max-w-none text-foreground border-b border-border/70 pb-16">
-              {renderedContent}
-            </div>
-          </Reveal>
+          <div className="max-w-none text-foreground border-b border-border/70 pb-16">
+            {renderedContent}
+          </div>
 
           {/* Author Bio Box */}
-          <Reveal className="mt-14 p-8 rounded-xs border border-gold/30 bg-card shadow-md">
+          <div className="mt-14 p-8 rounded-xs border border-gold/30 bg-card shadow-md">
             <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
               <img
                 src={media.marianePortrait}
@@ -364,7 +367,7 @@ function BlogPostDetailPage() {
                 </div>
               </div>
             </div>
-          </Reveal>
+          </div>
         </div>
       </article>
 
