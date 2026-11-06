@@ -95,6 +95,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 {
                   "@type": "SiteNavigationElement",
                   position: 5,
+                  name: "Blog",
+                  description:
+                    "Luxury wedding planning guides, venue spotlights & editorial advice.",
+                  url: "https://treschiceventplanning.com/blogs",
+                },
+                {
+                  "@type": "SiteNavigationElement",
+                  position: 6,
                   name: "Client Reviews",
                   description:
                     "Verified 5.0-star reviews from real couples and families.",
@@ -102,7 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 },
                 {
                   "@type": "SiteNavigationElement",
-                  position: 6,
+                  position: 7,
                   name: "The Experience",
                   description:
                     "Our structured 6-step bespoke wedding planning process.",
@@ -110,7 +118,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
                 },
                 {
                   "@type": "SiteNavigationElement",
-                  position: 7,
+                  position: 8,
                   name: "Start Planning",
                   description:
                     "Inquire with Mariane Fahmy to begin planning your celebration.",

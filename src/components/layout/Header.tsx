@@ -48,14 +48,14 @@ export function Header() {
 
         {/* Center Navigation Tabs */}
         <nav
-          className="hidden items-center gap-5 lg:flex lg:absolute lg:left-1/2 lg:-translate-x-1/2 xl:gap-8 z-10"
+          className="hidden items-center gap-3.5 lg:flex lg:absolute lg:left-1/2 lg:-translate-x-1/2 xl:gap-6 2xl:gap-8 z-10"
           aria-label="Primary"
         >
           {primaryNav.map((item) => (
             <Link
               key={item.to}
               to={item.to}
-              className="text-[0.72rem] xl:text-[0.75rem] font-medium tracking-[0.15em] xl:tracking-[0.16em] uppercase text-ivory/85 hover:text-gold transition-colors whitespace-nowrap"
+              className="text-[0.6875rem] xl:text-[0.75rem] font-medium tracking-[0.14em] xl:tracking-[0.16em] uppercase text-ivory/85 hover:text-gold transition-colors whitespace-nowrap"
               activeOptions={{ exact: item.to === "/" }}
               activeProps={{ className: "text-gold font-semibold" }}
             >

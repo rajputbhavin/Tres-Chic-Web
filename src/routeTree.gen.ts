@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as SplatRouteImport } from './routes/$'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BlogRouteImport } from './routes/blog'
+import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as CelebrationsRouteImport } from './routes/celebrations'
 import { Route as DestinationWeddingsRouteImport } from './routes/destination-weddings'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -25,6 +27,9 @@ import { Route as TheExperienceRouteImport } from './routes/the-experience'
 import { Route as WeddingPlannerMiamiRouteImport } from './routes/wedding-planner-miami'
 import { Route as WeddingsRouteImport } from './routes/weddings'
 import { Route as ZaffaEntertainmentRouteImport } from './routes/zaffa-entertainment'
+import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as BlogsIndexRouteImport } from './routes/blogs.index'
+import { Route as BlogsSlugRouteImport } from './routes/blogs.$slug'
 import { Route as CelebrationsWeLoveIndexRouteImport } from './routes/celebrations-we-love.index'
 import { Route as CelebrationsWeLoveSlugRouteImport } from './routes/celebrations-we-love.$slug'
 
@@ -41,6 +46,16 @@ const SplatRoute = SplatRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogRoute = BlogRouteImport.update({
+  id: '/blog',
+  path: '/blog',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BlogsRoute = BlogsRouteImport.update({
+  id: '/blogs',
+  path: '/blogs',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CelebrationsRoute = CelebrationsRouteImport.update({
@@ -108,6 +123,21 @@ const ZaffaEntertainmentRoute = ZaffaEntertainmentRouteImport.update({
   path: '/zaffa-entertainment',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogRoute,
+} as any)
+const BlogsIndexRoute = BlogsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => BlogsRoute,
+} as any)
+const BlogsSlugRoute = BlogsSlugRouteImport.update({
+  id: '/$slug',
+  path: '/$slug',
+  getParentRoute: () => BlogsRoute,
+} as any)
 const CelebrationsWeLoveIndexRoute = CelebrationsWeLoveIndexRouteImport.update({
   id: '/celebrations-we-love/',
   path: '/celebrations-we-love/',
@@ -123,6 +153,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/blogs': typeof BlogsRouteWithChildren
   '/celebrations': typeof CelebrationsRoute
   '/destination-weddings': typeof DestinationWeddingsRoute
   '/faq': typeof FaqRoute
@@ -136,13 +168,17 @@ export interface FileRoutesByFullPath {
   '/wedding-planner-miami': typeof WeddingPlannerMiamiRoute
   '/weddings': typeof WeddingsRoute
   '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blogs/$slug': typeof BlogsSlugRoute
   '/celebrations-we-love/$slug': typeof CelebrationsWeLoveSlugRoute
+  '/blogs/': typeof BlogsIndexRoute
   '/celebrations-we-love/': typeof CelebrationsWeLoveIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
   '/celebrations': typeof CelebrationsRoute
   '/destination-weddings': typeof DestinationWeddingsRoute
   '/faq': typeof FaqRoute
@@ -156,7 +192,10 @@ export interface FileRoutesByTo {
   '/wedding-planner-miami': typeof WeddingPlannerMiamiRoute
   '/weddings': typeof WeddingsRoute
   '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blogs/$slug': typeof BlogsSlugRoute
   '/celebrations-we-love/$slug': typeof CelebrationsWeLoveSlugRoute
+  '/blogs': typeof BlogsIndexRoute
   '/celebrations-we-love': typeof CelebrationsWeLoveIndexRoute
 }
 export interface FileRoutesById {
@@ -164,6 +203,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$': typeof SplatRoute
   '/about': typeof AboutRoute
+  '/blog': typeof BlogRouteWithChildren
+  '/blogs': typeof BlogsRouteWithChildren
   '/celebrations': typeof CelebrationsRoute
   '/destination-weddings': typeof DestinationWeddingsRoute
   '/faq': typeof FaqRoute
@@ -177,7 +218,10 @@ export interface FileRoutesById {
   '/wedding-planner-miami': typeof WeddingPlannerMiamiRoute
   '/weddings': typeof WeddingsRoute
   '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
+  '/blog/$slug': typeof BlogSlugRoute
+  '/blogs/$slug': typeof BlogsSlugRoute
   '/celebrations-we-love/$slug': typeof CelebrationsWeLoveSlugRoute
+  '/blogs/': typeof BlogsIndexRoute
   '/celebrations-we-love/': typeof CelebrationsWeLoveIndexRoute
 }
 export interface FileRouteTypes {
@@ -186,6 +230,8 @@ export interface FileRouteTypes {
     | '/'
     | '/$'
     | '/about'
+    | '/blog'
+    | '/blogs'
     | '/celebrations'
     | '/destination-weddings'
     | '/faq'
@@ -199,13 +245,17 @@ export interface FileRouteTypes {
     | '/wedding-planner-miami'
     | '/weddings'
     | '/zaffa-entertainment'
+    | '/blog/$slug'
+    | '/blogs/$slug'
     | '/celebrations-we-love/$slug'
+    | '/blogs/'
     | '/celebrations-we-love/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/$'
     | '/about'
+    | '/blog'
     | '/celebrations'
     | '/destination-weddings'
     | '/faq'
@@ -219,13 +269,18 @@ export interface FileRouteTypes {
     | '/wedding-planner-miami'
     | '/weddings'
     | '/zaffa-entertainment'
+    | '/blog/$slug'
+    | '/blogs/$slug'
     | '/celebrations-we-love/$slug'
+    | '/blogs'
     | '/celebrations-we-love'
   id:
     | '__root__'
     | '/'
     | '/$'
     | '/about'
+    | '/blog'
+    | '/blogs'
     | '/celebrations'
     | '/destination-weddings'
     | '/faq'
@@ -239,7 +294,10 @@ export interface FileRouteTypes {
     | '/wedding-planner-miami'
     | '/weddings'
     | '/zaffa-entertainment'
+    | '/blog/$slug'
+    | '/blogs/$slug'
     | '/celebrations-we-love/$slug'
+    | '/blogs/'
     | '/celebrations-we-love/'
   fileRoutesById: FileRoutesById
 }
@@ -247,6 +305,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   SplatRoute: typeof SplatRoute
   AboutRoute: typeof AboutRoute
+  BlogRoute: typeof BlogRouteWithChildren
+  BlogsRoute: typeof BlogsRouteWithChildren
   CelebrationsRoute: typeof CelebrationsRoute
   DestinationWeddingsRoute: typeof DestinationWeddingsRoute
   FaqRoute: typeof FaqRoute
@@ -285,6 +345,20 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blog': {
+      id: '/blog'
+      path: '/blog'
+      fullPath: '/blog'
+      preLoaderRoute: typeof BlogRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blogs': {
+      id: '/blogs'
+      path: '/blogs'
+      fullPath: '/blogs'
+      preLoaderRoute: typeof BlogsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/celebrations': {
@@ -378,6 +452,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ZaffaEntertainmentRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/blog/$slug': {
+      id: '/blog/$slug'
+      path: '/$slug'
+      fullPath: '/blog/$slug'
+      preLoaderRoute: typeof BlogSlugRouteImport
+      parentRoute: typeof BlogRoute
+    }
+    '/blogs/': {
+      id: '/blogs/'
+      path: '/'
+      fullPath: '/blogs/'
+      preLoaderRoute: typeof BlogsIndexRouteImport
+      parentRoute: typeof BlogsRoute
+    }
+    '/blogs/$slug': {
+      id: '/blogs/$slug'
+      path: '/$slug'
+      fullPath: '/blogs/$slug'
+      preLoaderRoute: typeof BlogsSlugRouteImport
+      parentRoute: typeof BlogsRoute
+    }
     '/celebrations-we-love/': {
       id: '/celebrations-we-love/'
       path: '/celebrations-we-love'
@@ -395,10 +490,34 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface BlogRouteChildren {
+  BlogSlugRoute: typeof BlogSlugRoute
+}
+
+const BlogRouteChildren: BlogRouteChildren = {
+  BlogSlugRoute: BlogSlugRoute,
+}
+
+const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
+
+interface BlogsRouteChildren {
+  BlogsSlugRoute: typeof BlogsSlugRoute
+  BlogsIndexRoute: typeof BlogsIndexRoute
+}
+
+const BlogsRouteChildren: BlogsRouteChildren = {
+  BlogsSlugRoute: BlogsSlugRoute,
+  BlogsIndexRoute: BlogsIndexRoute,
+}
+
+const BlogsRouteWithChildren = BlogsRoute._addFileChildren(BlogsRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   SplatRoute: SplatRoute,
   AboutRoute: AboutRoute,
+  BlogRoute: BlogRouteWithChildren,
+  BlogsRoute: BlogsRouteWithChildren,
   CelebrationsRoute: CelebrationsRoute,
   DestinationWeddingsRoute: DestinationWeddingsRoute,
   FaqRoute: FaqRoute,

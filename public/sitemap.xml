@@ -56,6 +56,36 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://treschiceventplanning.com/blogs</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://treschiceventplanning.com/blogs/luxury-wedding-planner-miami</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://treschiceventplanning.com/blogs/multicultural-wedding-planner-miami</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://treschiceventplanning.com/blogs/destination-wedding-miami-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://treschiceventplanning.com/blogs/full-service-vs-partial-wedding-planning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://treschiceventplanning.com/blogs/luxury-private-celebrations-miami</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://treschiceventplanning.com/the-experience</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

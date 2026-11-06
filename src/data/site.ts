@@ -30,6 +30,7 @@ export const primaryNav: NavItem[] = [
   { label: "Weddings", to: "/weddings" },
   { label: "Events", to: "/celebrations" },
   { label: "Gallery", to: "/celebrations-we-love" },
+  { label: "Blog", to: "/blogs" },
 ];
 
 /**
