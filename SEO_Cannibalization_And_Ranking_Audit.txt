@@ -1,0 +1,176 @@
+====================================================================================================
+TRÈS CHIC EVENT PLANNING & DESIGN — COMPREHENSIVE SEO & KEYWORD CANNIBALIZATION AUDIT
+Target Money Keywords: "Wedding Planner in Miami" | "Best Wedding Planner Miami"
+Audit Date: November 2026
+====================================================================================================
+
+EXECUTIVE SUMMARY
+-----------------
+Bhai, Google me #1 rank na aane ka sabse bada reason "Keyword Cannibalization" (ek hi keyword ke liye 
+apni hi 3-4 pages ka aapas me ladna) hota hai. 
+Jab Googlebot aapki site par aata hai aur use 3-4 pages par same H1 ya same Title milta hai, 
+toh Google confuse ho jata hai ki kaunsa page #1 dikhana hai. Result ye hota hai ki Google 
+kisi bhi page ko top 3 me rank nahi karta!
+
+Humne aapki poori website ke har ek route aur 5 naye blogs ka deep technical audit kiya hai. 
+Niche detailed report hai: kahan clash ho raha hai, kahan galti hai, aur kaise solve karke 
+"wedding planner in miami" aur "best wedding planner miami" par Google me #1 aana hai.
+
+====================================================================================================
+PART 1: CURRENT LIVE STATUS & DETECTED CANNIBALIZATION CONFLICTS
+====================================================================================================
+
+⚠️ CONFLICT #1: "Luxury Wedding Planner in Miami" Clash (Homepage vs About Page)
+--------------------------------------------------------------------------------
+• Route 1: Homepage (/)
+  - Current Title: Event Planner in Miami | Wedding Planner in Miami | Très CHIC
+  - Current H1: Luxury Wedding Planner in Miami
+• Route 2: About Page (/about)
+  - Current Title: Meet Mariane Fahmy | Founder, Très CHIC Event Planning & Design
+  - Current H1: Luxury Wedding Planner in Miami  <-- [CRITICAL ISSUE!]
+• Risk: 
+  About page par exact same H1 hone ki wajah se Google About page aur Homepage dono ko aapas me 
+  compete karwa raha hai. About page ko personal brand aur author E-E-A-T signal banna chahiye, 
+  na ki commercial money keyword par homepage se compete karna.
+• Solution:
+  Change /about H1 to: "Mariane Fahmy · Founder & Luxury Wedding Director Miami"
+
+----------------------------------------------------------------------------------------------------
+
+⚠️ CONFLICT #2: /weddings vs /wedding-planner-miami Duplicate Targeting
+--------------------------------------------------------------------------------
+• Route 1: /weddings (Main Navigation Service Page)
+  - Current Title: Wedding Planner in Miami | Luxury Wedding Design South Florida | Très CHIC
+  - Current H1: Wedding Planner in Miami & Luxury Wedding Design South Florida
+• Route 2: /wedding-planner-miami (Dedicated Keyword Landing Page)
+  - Current Title: Full-Service Miami Wedding Planning & Design
+  - Current H1: Wedding Planner in Miami
+• Risk:
+  Dono pages exact same query "Wedding Planner in Miami" target kar rahe hain. 
+  Isse Google dono pages ka link juice divide kar deta hai.
+• Solution:
+  Dono pages ki intent (maqsad) alag-alag karo:
+  - /wedding-planner-miami ko exact target banao: "Best Wedding Planner in Miami" aur "Wedding Planner in Miami"
+  - /weddings ko service packages target banao: "Luxury Wedding Planning Services & Packages Miami" (Full-service, Partial, Month-of)
+
+----------------------------------------------------------------------------------------------------
+
+  ⚠️ CONFLICT #3: Reviews Page H1 Spelling Typo & Cannibalization
+  --------------------------------------------------------------------------------
+  • Route: /reviews
+    - Current Title: Client Reviews & Testimonials | Très CHIC Event Planning & Design
+    - Current H1: Best Wedding Planner Miami &  Fort laudredal  <-- [SPELLING ERROR & CLASH]
+  • Risk:
+    - "Fort laudredal" me spelling mistake hai ("Lauderdale" hona chahiye).
+    - Ye H1 seedha "Best Wedding Planner Miami" target kar raha hai, jisse ye /wedding-planner-miami se compete kar raha hai.
+  • Solution:
+    Change /reviews H1 to: "Verified 5-Star Client Reviews · Top Wedding Planner in Miami"
+
+----------------------------------------------------------------------------------------------------
+
+⚠️ CONFLICT #4: Portfolio / Celebrations We Love H1 Misalignment
+--------------------------------------------------------------------------------
+• Route: /celebrations-we-love
+  - Current Title: Celebrations We Love | Weddings by Très CHIC
+  - Current H1: Miami Wedding & Event planner
+• Risk:
+  Gallery page ka H1 broad commercial keyword le raha hai ("Miami Wedding & Event planner"), jabki 
+  visitors yahan wedding photos, ideas, aur real portfolio dhoondte hain.
+• Solution:
+  Change /celebrations-we-love H1 to: "Real Miami Weddings & Luxury Event Design Portfolio"
+
+----------------------------------------------------------------------------------------------------
+
+✅ WHAT IS WORKING 100% PERFECTLY (NO CLASH):
+--------------------------------------------------------------------------------
+• 5 New Blogs:
+  Sabhi 5 blogs long-tail informational / guide keywords target kar rahe hain:
+  - Blog 1: "The Ultimate Guide to Choosing a Luxury Wedding Planner in Miami" (Educational)
+  - Blog 2: "Multicultural Wedding Planner in Miami: Blending Cultures, Faiths & Traditions"
+  - Blog 3: "Planning a Destination Wedding in Miami: A Complete Guide for Couples"
+  - Blog 4: "Full-Service vs. Partial Wedding Planning: Which Is Right for You?"
+  - Blog 5: "Beyond Weddings: Luxury Private Celebrations and Milestone Events in Miami"
+  Ye 5 blogs kisi bhi main page se compete nahi kar rahe, balki internal links ke zariye 
+  /wedding-planner-miami aur /weddings ko power supply kar rahe hain!
+
+====================================================================================================
+PART 2: EXACT MASTER BLUEPRINT FOR NO CANNIBALIZATION (CLEAN SILO ARCHITECTURE)
+====================================================================================================
+
+Har ek page ka ek unique kingmaker role hona chahiye:
+
+1. HOMEPAGE (/) — Brand & Overall Miami Luxury Authority
+   • Title: Très CHIC | Luxury Wedding Planner in Miami & South Florida
+   • H1: Luxury Wedding Planner in Miami
+   • Role: Site ka main pillar jo overall brand power banata hai.
+
+2. DEDICATED LANDING PAGE (/wedding-planner-miami) — Exact Match Money Page
+   • Title: Best Wedding Planner in Miami | Top Luxury Wedding Planning · Très CHIC
+   • H1: Wedding Planner in Miami · Best Luxury Wedding Planning & Design
+   • Role: Ye page specifically Google me #1 aayega jab koi search karega:
+     - "wedding planner in miami"
+     - "best wedding planner miami"
+     - "wedding planner miami fl"
+
+3. SERVICES PAGE (/weddings) — Service Tiers & Packages (Commercial Intent)
+   • Title: Luxury Wedding Planning Services & Packages Miami | Très CHIC
+   • H1: Full-Service, Partial & Month-Of Wedding Planning Services Miami
+   • Role: Ranked for "wedding planning packages miami", "full service wedding planner florida".
+
+4. ABOUT PAGE (/about) — E-E-A-T & Founder Credibility
+   • Title: Meet Mariane Fahmy | Founder & Lead Designer · Très CHIC
+   • H1: Mariane Fahmy · Executive Luxury Wedding & Event Director Miami
+   • Role: Builds trust and Google author entity without stealing keyword juice from homepage.
+
+5. REVIEWS PAGE (/reviews) — Social Proof & Ratings
+   • Title: Client Reviews & 5-Star Testimonials | Très CHIC Event Planning
+   • H1: Verified 5-Star Client Reviews · Top Wedding Planner in Miami
+   • Role: Captures "tres chic wedding reviews", "best wedding planner miami reviews".
+
+6. PORTFOLIO PAGE (/celebrations-we-love) — Visual Gallery Search Intent
+   • Title: Celebrations We Love | Luxury Wedding & Event Portfolio · Très CHIC
+   • H1: Real Miami Weddings & Luxury Event Design Portfolio
+   • Role: Captures image searches, "miami wedding gallery", "vizcaya wedding ideas".
+
+7. MULTICULTURAL PAGE (/multicultural-weddings) — Cultural Specialist Intent
+   • Title: Multicultural & Fusion Wedding Planner | Miami | Très CHIC
+   • H1: Multicultural Wedding Planner in Miami Florida
+   • Role: Captures Indian, Jewish, Middle Eastern, and Fusion wedding queries.
+
+8. DESTINATION PAGE (/destination-weddings) — Travel & Destination Intent
+   • Title: Destination Wedding Planner | South Florida & Worldwide | Très CHIC
+   • H1: Destination Wedding Planner Miami & South Florida
+   • Role: Captures couples planning from NY, UK, California into Miami.
+
+9. CELEBRATIONS PAGE (/celebrations) — Non-Wedding Private Parties & Galas
+   • Title: Event Planner in Miami | Luxury Celebrations & Galas | Très CHIC
+   • H1: Event Planner in Miami · Luxury Celebrations & Galas
+   • Role: Captures birthdays, anniversaries, corporate galas.
+
+====================================================================================================
+PART 3: HOW TO RANK #1 FOR "WEDDING PLANNER IN MIAMI" & "BEST WEDDING PLANNER MIAMI"
+====================================================================================================
+
+Step 1: Fix Keyword Cannibalization (Clean H1 & Title boundaries as shown above).
+Step 2: Google My Business (GMB) Entity Connection:
+        Aapka CID and LocalBusiness Schema already root me inject ho chuka hai. 
+        GMB profile par exact same business name aur category "Wedding Planner" honi chahiye.
+Step 3: Internal Link Power:
+        Humne jo 5 blogs dale hain, unke anchor texts /wedding-planner-miami aur /weddings 
+        ko point kar rahe hain. Isse Google ko clear signal milta hai ki ye page main authority hai.
+Step 4: Local Reviews Velocity:
+        Google Reviews me clients se "best wedding planner in Miami" likhwayein. 
+        Google reviews ke text me keywords dekhkar organic ranking boost karta hai.
+
+====================================================================================================
+PART 4: SUMMARY OF RECOMMENDED ACTION ITEMS
+====================================================================================================
+1. Fix About Page H1 (from "Luxury Wedding Planner in Miami" -> "Mariane Fahmy · Founder & Luxury Wedding Director Miami").
+2. Fix Reviews Page H1 (remove typo "laudredal" and set to "Verified 5-Star Client Reviews · Top Wedding Planner in Miami").
+3. Fix Portfolio Page H1 (from "Miami Wedding & Event planner" -> "Real Miami Weddings & Luxury Event Design Portfolio").
+4. Fine-tune /wedding-planner-miami Title & H1 to be the undisputable #1 champion for "Best Wedding Planner in Miami".
+5. Fine-tune /weddings Title & H1 to focus on "Wedding Planning Services & Packages".
+
+All changes are safe, clean, preserve 100% of the luxury frontend design, and eliminate all technical SEO conflicts.
+====================================================================================================
+

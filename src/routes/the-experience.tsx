@@ -4,6 +4,9 @@ import { ClosingCta } from "@/components/sections/shared/ClosingCta";
 import { PageHero } from "@/components/ui/PageHero";
 import { ExperienceProcessStack } from "@/components/sections/experience/ExperienceProcessStack";
 import { media } from "@/data/media";
+import { appendFile } from "fs";
+import { findPackageJSON } from "module";
+import { AuthInvalidJwtError } from "@supabase/supabase-js";
 
 export const Route = createFileRoute("/the-experience")({
   head: () => ({

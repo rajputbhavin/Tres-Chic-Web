@@ -145,7 +145,7 @@ export const Route = createFileRoute("/wedding-planner-miami")({
   head: () => ({
     meta: [
       {
-        title: "Wedding Planner in Miami | Luxury Wedding Planning & Design · Très CHIC",
+        title: "Best Wedding Planner in Miami | Top Luxury Wedding Planning · Très CHIC",
       },
       {
         name: "description",
@@ -159,7 +159,7 @@ export const Route = createFileRoute("/wedding-planner-miami")({
       },
       {
         property: "og:title",
-        content: "Wedding Planner in Miami | Luxury Wedding Planning & Design · Très CHIC",
+        content: "Best Wedding Planner in Miami | Top Luxury Wedding Planning · Très CHIC",
       },
       {
         property: "og:description",
@@ -180,7 +180,7 @@ export const Route = createFileRoute("/wedding-planner-miami")({
       },
       {
         name: "twitter:title",
-        content: "Wedding Planner in Miami | Luxury Wedding Planning & Design · Très CHIC",
+        content: "Best Wedding Planner in Miami | Top Luxury Wedding Planning · Très CHIC",
       },
       {
         name: "twitter:description",
@@ -342,7 +342,7 @@ function WeddingPlannerMiamiPage() {
       {/* Editorial Inner Page Hero */}
       <PageHero
         eyebrow="MIAMI WEDDING PLANNER & DESIGNER"
-        seoH1="Wedding Planner in Miami"
+        seoH1="Wedding Planner in Miami · Best Luxury Wedding Planning & Design"
         headline="You Planned for This Forever. We Bring Your Miami Dream to Life."
         body="From sunset vows overlooking Biscayne Bay to grand ballroom galas at historic Miami estates, Très CHIC delivers bespoke luxury wedding planning, visionary design, and unflappable coordination across Miami, Florida. Led by Mariane Fahmy, we carry every logistical detail so you can simply be present."
         image={media.tentedWaterfrontReception}

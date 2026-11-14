@@ -17,13 +17,16 @@ import { Route as BlogsRouteImport } from './routes/blogs'
 import { Route as CelebrationsRouteImport } from './routes/celebrations'
 import { Route as DestinationWeddingsRouteImport } from './routes/destination-weddings'
 import { Route as FaqRouteImport } from './routes/faq'
+import { Route as FullPlanningRouteImport } from './routes/full-planning'
 import { Route as GalleryAdminRouteImport } from './routes/gallery-admin'
 import { Route as MarianeRouteImport } from './routes/mariane'
 import { Route as MulticulturalWeddingsRouteImport } from './routes/multicultural-weddings'
+import { Route as PartialPlanningRouteImport } from './routes/partial-planning'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as StartPlanningRouteImport } from './routes/start-planning'
 import { Route as TheExperienceRouteImport } from './routes/the-experience'
+import { Route as WeddingCoordinationRouteImport } from './routes/wedding-coordination'
 import { Route as WeddingPlannerMiamiRouteImport } from './routes/wedding-planner-miami'
 import { Route as WeddingsRouteImport } from './routes/weddings'
 import { Route as ZaffaEntertainmentRouteImport } from './routes/zaffa-entertainment'
@@ -73,6 +76,11 @@ const FaqRoute = FaqRouteImport.update({
   path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FullPlanningRoute = FullPlanningRouteImport.update({
+  id: '/full-planning',
+  path: '/full-planning',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GalleryAdminRoute = GalleryAdminRouteImport.update({
   id: '/gallery-admin',
   path: '/gallery-admin',
@@ -86,6 +94,11 @@ const MarianeRoute = MarianeRouteImport.update({
 const MulticulturalWeddingsRoute = MulticulturalWeddingsRouteImport.update({
   id: '/multicultural-weddings',
   path: '/multicultural-weddings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartialPlanningRoute = PartialPlanningRouteImport.update({
+  id: '/partial-planning',
+  path: '/partial-planning',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioRoute = PortfolioRouteImport.update({
@@ -106,6 +119,11 @@ const StartPlanningRoute = StartPlanningRouteImport.update({
 const TheExperienceRoute = TheExperienceRouteImport.update({
   id: '/the-experience',
   path: '/the-experience',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WeddingCoordinationRoute = WeddingCoordinationRouteImport.update({
+  id: '/wedding-coordination',
+  path: '/wedding-coordination',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WeddingPlannerMiamiRoute = WeddingPlannerMiamiRouteImport.update({
@@ -158,13 +176,16 @@ export interface FileRoutesByFullPath {
   '/celebrations': typeof CelebrationsRoute
   '/destination-weddings': typeof DestinationWeddingsRoute
   '/faq': typeof FaqRoute
+  '/full-planning': typeof FullPlanningRoute
   '/gallery-admin': typeof GalleryAdminRoute
   '/mariane': typeof MarianeRoute
   '/multicultural-weddings': typeof MulticulturalWeddingsRoute
+  '/partial-planning': typeof PartialPlanningRoute
   '/portfolio': typeof PortfolioRoute
   '/reviews': typeof ReviewsRoute
   '/start-planning': typeof StartPlanningRoute
   '/the-experience': typeof TheExperienceRoute
+  '/wedding-coordination': typeof WeddingCoordinationRoute
   '/wedding-planner-miami': typeof WeddingPlannerMiamiRoute
   '/weddings': typeof WeddingsRoute
   '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
@@ -182,13 +203,16 @@ export interface FileRoutesByTo {
   '/celebrations': typeof CelebrationsRoute
   '/destination-weddings': typeof DestinationWeddingsRoute
   '/faq': typeof FaqRoute
+  '/full-planning': typeof FullPlanningRoute
   '/gallery-admin': typeof GalleryAdminRoute
   '/mariane': typeof MarianeRoute
   '/multicultural-weddings': typeof MulticulturalWeddingsRoute
+  '/partial-planning': typeof PartialPlanningRoute
   '/portfolio': typeof PortfolioRoute
   '/reviews': typeof ReviewsRoute
   '/start-planning': typeof StartPlanningRoute
   '/the-experience': typeof TheExperienceRoute
+  '/wedding-coordination': typeof WeddingCoordinationRoute
   '/wedding-planner-miami': typeof WeddingPlannerMiamiRoute
   '/weddings': typeof WeddingsRoute
   '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
@@ -208,13 +232,16 @@ export interface FileRoutesById {
   '/celebrations': typeof CelebrationsRoute
   '/destination-weddings': typeof DestinationWeddingsRoute
   '/faq': typeof FaqRoute
+  '/full-planning': typeof FullPlanningRoute
   '/gallery-admin': typeof GalleryAdminRoute
   '/mariane': typeof MarianeRoute
   '/multicultural-weddings': typeof MulticulturalWeddingsRoute
+  '/partial-planning': typeof PartialPlanningRoute
   '/portfolio': typeof PortfolioRoute
   '/reviews': typeof ReviewsRoute
   '/start-planning': typeof StartPlanningRoute
   '/the-experience': typeof TheExperienceRoute
+  '/wedding-coordination': typeof WeddingCoordinationRoute
   '/wedding-planner-miami': typeof WeddingPlannerMiamiRoute
   '/weddings': typeof WeddingsRoute
   '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
@@ -235,13 +262,16 @@ export interface FileRouteTypes {
     | '/celebrations'
     | '/destination-weddings'
     | '/faq'
+    | '/full-planning'
     | '/gallery-admin'
     | '/mariane'
     | '/multicultural-weddings'
+    | '/partial-planning'
     | '/portfolio'
     | '/reviews'
     | '/start-planning'
     | '/the-experience'
+    | '/wedding-coordination'
     | '/wedding-planner-miami'
     | '/weddings'
     | '/zaffa-entertainment'
@@ -259,13 +289,16 @@ export interface FileRouteTypes {
     | '/celebrations'
     | '/destination-weddings'
     | '/faq'
+    | '/full-planning'
     | '/gallery-admin'
     | '/mariane'
     | '/multicultural-weddings'
+    | '/partial-planning'
     | '/portfolio'
     | '/reviews'
     | '/start-planning'
     | '/the-experience'
+    | '/wedding-coordination'
     | '/wedding-planner-miami'
     | '/weddings'
     | '/zaffa-entertainment'
@@ -284,13 +317,16 @@ export interface FileRouteTypes {
     | '/celebrations'
     | '/destination-weddings'
     | '/faq'
+    | '/full-planning'
     | '/gallery-admin'
     | '/mariane'
     | '/multicultural-weddings'
+    | '/partial-planning'
     | '/portfolio'
     | '/reviews'
     | '/start-planning'
     | '/the-experience'
+    | '/wedding-coordination'
     | '/wedding-planner-miami'
     | '/weddings'
     | '/zaffa-entertainment'
@@ -310,13 +346,16 @@ export interface RootRouteChildren {
   CelebrationsRoute: typeof CelebrationsRoute
   DestinationWeddingsRoute: typeof DestinationWeddingsRoute
   FaqRoute: typeof FaqRoute
+  FullPlanningRoute: typeof FullPlanningRoute
   GalleryAdminRoute: typeof GalleryAdminRoute
   MarianeRoute: typeof MarianeRoute
   MulticulturalWeddingsRoute: typeof MulticulturalWeddingsRoute
+  PartialPlanningRoute: typeof PartialPlanningRoute
   PortfolioRoute: typeof PortfolioRoute
   ReviewsRoute: typeof ReviewsRoute
   StartPlanningRoute: typeof StartPlanningRoute
   TheExperienceRoute: typeof TheExperienceRoute
+  WeddingCoordinationRoute: typeof WeddingCoordinationRoute
   WeddingPlannerMiamiRoute: typeof WeddingPlannerMiamiRoute
   WeddingsRoute: typeof WeddingsRoute
   ZaffaEntertainmentRoute: typeof ZaffaEntertainmentRoute
@@ -382,6 +421,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/full-planning': {
+      id: '/full-planning'
+      path: '/full-planning'
+      fullPath: '/full-planning'
+      preLoaderRoute: typeof FullPlanningRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gallery-admin': {
       id: '/gallery-admin'
       path: '/gallery-admin'
@@ -401,6 +447,13 @@ declare module '@tanstack/react-router' {
       path: '/multicultural-weddings'
       fullPath: '/multicultural-weddings'
       preLoaderRoute: typeof MulticulturalWeddingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partial-planning': {
+      id: '/partial-planning'
+      path: '/partial-planning'
+      fullPath: '/partial-planning'
+      preLoaderRoute: typeof PartialPlanningRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio': {
@@ -429,6 +482,13 @@ declare module '@tanstack/react-router' {
       path: '/the-experience'
       fullPath: '/the-experience'
       preLoaderRoute: typeof TheExperienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wedding-coordination': {
+      id: '/wedding-coordination'
+      path: '/wedding-coordination'
+      fullPath: '/wedding-coordination'
+      preLoaderRoute: typeof WeddingCoordinationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/wedding-planner-miami': {
@@ -521,13 +581,16 @@ const rootRouteChildren: RootRouteChildren = {
   CelebrationsRoute: CelebrationsRoute,
   DestinationWeddingsRoute: DestinationWeddingsRoute,
   FaqRoute: FaqRoute,
+  FullPlanningRoute: FullPlanningRoute,
   GalleryAdminRoute: GalleryAdminRoute,
   MarianeRoute: MarianeRoute,
   MulticulturalWeddingsRoute: MulticulturalWeddingsRoute,
+  PartialPlanningRoute: PartialPlanningRoute,
   PortfolioRoute: PortfolioRoute,
   ReviewsRoute: ReviewsRoute,
   StartPlanningRoute: StartPlanningRoute,
   TheExperienceRoute: TheExperienceRoute,
+  WeddingCoordinationRoute: WeddingCoordinationRoute,
   WeddingPlannerMiamiRoute: WeddingPlannerMiamiRoute,
   WeddingsRoute: WeddingsRoute,
   ZaffaEntertainmentRoute: ZaffaEntertainmentRoute,

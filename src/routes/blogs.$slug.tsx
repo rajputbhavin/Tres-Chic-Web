@@ -145,7 +145,7 @@ function BlogPostDetailPage() {
             .slice(1, -1)
             .map((cell) => cell.trim());
 
-        const headerCells = parseRow(tableLines[0]);
+        const headerCells = parseRow(tableLines[0] ?? "");
         const bodyRows = tableLines.slice(2).map(parseRow);
 
         elements.push(
@@ -457,8 +457,8 @@ function renderInlineText(text: string): React.ReactNode {
     // Check if it's a markdown link [anchorText](url)
     const linkMatch = part.match(/^\[(.*?)\]\((.*?)\)$/);
     if (linkMatch) {
-      const rawText = linkMatch[1];
-      const rawUrl = linkMatch[2].replace(/\\/g, "").trim();
+      const rawText = linkMatch[1] ?? "";
+      const rawUrl = (linkMatch[2] ?? "").replace(/\\/g, "").trim();
       const cleanText = rawText.replace(/\*\*/g, "").replace(/\*/g, "");
 
       // Normalize internal URLs (convert https://treschiceventplanning.com/... to relative /...)

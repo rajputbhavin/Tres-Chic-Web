@@ -90,7 +90,6 @@ function BlogsPage() {
     <>
       <PageHero
         eyebrow="Editorial & Insights"
-        title="Journal & Editorial Guides"
         seoH1="Miami Wedding & Luxury Event Planning Blog"
         headline="Behind the Celebrations: Design, Logistics & Inspiration."
         body="Expert guidance, venue spotlights, and cultural wisdom from 20+ years of high-stakes wedding planning and bespoke event design in Miami and South Florida."

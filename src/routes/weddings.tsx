@@ -12,7 +12,7 @@ export const Route = createFileRoute("/weddings")({
     meta: [
       {
         title:
-          "Wedding Planner in Miami | Luxury Wedding Design South Florida | Très CHIC",
+          "Luxury Wedding Planning Services & Packages Miami | Très CHIC",
       },
       {
         name: "description",
@@ -22,12 +22,12 @@ export const Route = createFileRoute("/weddings")({
       {
         name: "keywords",
         content:
-          "wedding planner in miami, luxury wedding planner miami, south florida wedding planner, vizcaya wedding planner, miami wedding designer, multicultural wedding planner miami, biltmore wedding planner, wedding coordinator miami",
+          "wedding planning services miami, wedding planning packages miami, full service wedding planner florida, partial wedding planning miami, month of wedding coordination miami, luxury wedding designer south florida",
       },
       {
         property: "og:title",
         content:
-          "Wedding Planner in Miami | Luxury Wedding Design South Florida | Très CHIC",
+          "Luxury Wedding Planning Services & Packages Miami | Très CHIC",
       },
       {
         property: "og:description",
@@ -115,7 +115,7 @@ function WeddingsPage() {
     <>
       <PageHero
         eyebrow="Wedding Planning & Design"
-        seoH1="Wedding Planner in Miami & Luxury Wedding Design South Florida"
+        seoH1="Full-Service, Partial & Month-Of Wedding Planning Services Miami"
         headline="Full and partial planning, design and coordination, built around how much you actually want to hold."
         body="However involved you want to be, the outcome is the same: a wedding that feels entirely yours, and a day you're actually present for."
         image={media.weddingHero}

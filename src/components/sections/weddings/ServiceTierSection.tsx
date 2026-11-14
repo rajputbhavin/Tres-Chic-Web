@@ -1,3 +1,6 @@
+import { Link } from "@tanstack/react-router";
+import { ArrowRight } from "lucide-react";
+
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Reveal } from "@/components/ui/Reveal";
 import type { Service } from "@/data/services";
@@ -6,6 +9,15 @@ import { cn } from "@/lib/utils";
 /** One wedding service section with natural, smooth scroll flow. */
 export function ServiceTierSection({ service, index }: { service: Service; index: number }) {
   const flipped = index % 2 === 1;
+
+  const detailPageHref =
+    service.slug === "full-service-planning"
+      ? "/full-planning"
+      : service.slug === "partial-planning"
+        ? "/partial-planning"
+        : service.slug === "coordination"
+          ? "/wedding-coordination"
+          : null;
 
   return (
     <section
@@ -44,6 +56,18 @@ export function ServiceTierSection({ service, index }: { service: Service; index
             <p className="mt-6 border-l border-gold pl-5 text-sm text-foreground/80">
               {service.prefixBuiltFor ? `Built for: ${service.builtFor}` : service.builtFor}
             </p>
+
+            {detailPageHref && (
+              <div className="mt-8 pt-4">
+                <Link
+                  to={detailPageHref}
+                  className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-emerald hover:text-gold transition-colors group"
+                >
+                  <span>Explore {service.label} Scope & Details</span>
+                  <ArrowRight className="size-3.5 text-gold transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            )}
           </Reveal>
       </article>
     </section>
