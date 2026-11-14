@@ -20,6 +20,7 @@ import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FullPlanningRouteImport } from './routes/full-planning'
 import { Route as GalleryAdminRouteImport } from './routes/gallery-admin'
 import { Route as MarianeRouteImport } from './routes/mariane'
+import { Route as MulticulturalWeddingPlanningRouteImport } from './routes/multicultural-wedding-planning'
 import { Route as MulticulturalWeddingsRouteImport } from './routes/multicultural-weddings'
 import { Route as PartialPlanningRouteImport } from './routes/partial-planning'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
@@ -91,6 +92,12 @@ const MarianeRoute = MarianeRouteImport.update({
   path: '/mariane',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MulticulturalWeddingPlanningRoute =
+  MulticulturalWeddingPlanningRouteImport.update({
+    id: '/multicultural-wedding-planning',
+    path: '/multicultural-wedding-planning',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const MulticulturalWeddingsRoute = MulticulturalWeddingsRouteImport.update({
   id: '/multicultural-weddings',
   path: '/multicultural-weddings',
@@ -179,6 +186,7 @@ export interface FileRoutesByFullPath {
   '/full-planning': typeof FullPlanningRoute
   '/gallery-admin': typeof GalleryAdminRoute
   '/mariane': typeof MarianeRoute
+  '/multicultural-wedding-planning': typeof MulticulturalWeddingPlanningRoute
   '/multicultural-weddings': typeof MulticulturalWeddingsRoute
   '/partial-planning': typeof PartialPlanningRoute
   '/portfolio': typeof PortfolioRoute
@@ -206,6 +214,7 @@ export interface FileRoutesByTo {
   '/full-planning': typeof FullPlanningRoute
   '/gallery-admin': typeof GalleryAdminRoute
   '/mariane': typeof MarianeRoute
+  '/multicultural-wedding-planning': typeof MulticulturalWeddingPlanningRoute
   '/multicultural-weddings': typeof MulticulturalWeddingsRoute
   '/partial-planning': typeof PartialPlanningRoute
   '/portfolio': typeof PortfolioRoute
@@ -235,6 +244,7 @@ export interface FileRoutesById {
   '/full-planning': typeof FullPlanningRoute
   '/gallery-admin': typeof GalleryAdminRoute
   '/mariane': typeof MarianeRoute
+  '/multicultural-wedding-planning': typeof MulticulturalWeddingPlanningRoute
   '/multicultural-weddings': typeof MulticulturalWeddingsRoute
   '/partial-planning': typeof PartialPlanningRoute
   '/portfolio': typeof PortfolioRoute
@@ -265,6 +275,7 @@ export interface FileRouteTypes {
     | '/full-planning'
     | '/gallery-admin'
     | '/mariane'
+    | '/multicultural-wedding-planning'
     | '/multicultural-weddings'
     | '/partial-planning'
     | '/portfolio'
@@ -292,6 +303,7 @@ export interface FileRouteTypes {
     | '/full-planning'
     | '/gallery-admin'
     | '/mariane'
+    | '/multicultural-wedding-planning'
     | '/multicultural-weddings'
     | '/partial-planning'
     | '/portfolio'
@@ -320,6 +332,7 @@ export interface FileRouteTypes {
     | '/full-planning'
     | '/gallery-admin'
     | '/mariane'
+    | '/multicultural-wedding-planning'
     | '/multicultural-weddings'
     | '/partial-planning'
     | '/portfolio'
@@ -349,6 +362,7 @@ export interface RootRouteChildren {
   FullPlanningRoute: typeof FullPlanningRoute
   GalleryAdminRoute: typeof GalleryAdminRoute
   MarianeRoute: typeof MarianeRoute
+  MulticulturalWeddingPlanningRoute: typeof MulticulturalWeddingPlanningRoute
   MulticulturalWeddingsRoute: typeof MulticulturalWeddingsRoute
   PartialPlanningRoute: typeof PartialPlanningRoute
   PortfolioRoute: typeof PortfolioRoute
@@ -440,6 +454,13 @@ declare module '@tanstack/react-router' {
       path: '/mariane'
       fullPath: '/mariane'
       preLoaderRoute: typeof MarianeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/multicultural-wedding-planning': {
+      id: '/multicultural-wedding-planning'
+      path: '/multicultural-wedding-planning'
+      fullPath: '/multicultural-wedding-planning'
+      preLoaderRoute: typeof MulticulturalWeddingPlanningRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/multicultural-weddings': {
@@ -584,6 +605,7 @@ const rootRouteChildren: RootRouteChildren = {
   FullPlanningRoute: FullPlanningRoute,
   GalleryAdminRoute: GalleryAdminRoute,
   MarianeRoute: MarianeRoute,
+  MulticulturalWeddingPlanningRoute: MulticulturalWeddingPlanningRoute,
   MulticulturalWeddingsRoute: MulticulturalWeddingsRoute,
   PartialPlanningRoute: PartialPlanningRoute,
   PortfolioRoute: PortfolioRoute,
