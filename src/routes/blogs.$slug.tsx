@@ -206,6 +206,33 @@ function BlogPostDetailPage() {
         return;
       }
 
+      if (trimmed.startsWith("> ")) {
+        elements.push(
+          <blockquote
+            key={`quote-${index}`}
+            className="my-7 border-l-2 border-gold bg-emerald/5 p-5 rounded-xs text-base md:text-lg italic text-foreground/90 leading-relaxed shadow-2xs"
+          >
+            {renderInlineText(trimmed.replace(/^>\s+/, ""))}
+          </blockquote>
+        );
+        return;
+      }
+
+      const numMatch = trimmed.match(/^(\d+)\.\s+(.*)/);
+      if (numMatch) {
+        elements.push(
+          <div key={`num-${index}`} className="my-4 flex items-start gap-4 pl-1">
+            <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-gold/20 text-xs font-bold text-emerald border border-gold/40">
+              {numMatch[1]}
+            </span>
+            <div className="text-base md:text-lg leading-relaxed text-muted-foreground/90 pt-0.5">
+              {renderInlineText(numMatch[2] ?? "")}
+            </div>
+          </div>
+        );
+        return;
+      }
+
       if (trimmed.startsWith("### ")) {
         elements.push(
           <h3
