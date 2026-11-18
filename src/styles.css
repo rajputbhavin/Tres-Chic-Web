@@ -420,3 +420,18 @@
   -webkit-appearance: none;
   appearance: none;
 }
+
+/* Chatbot mascot floating bounce animation */
+@keyframes botBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-bot-bounce {
+  animation: botBounce 2s ease-in-out infinite;
+}
+

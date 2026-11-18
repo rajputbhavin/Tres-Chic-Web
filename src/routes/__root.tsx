@@ -12,6 +12,7 @@ import appCss from "@/styles.css?url";
 import { ErrorScreen } from "@/components/layout/ErrorScreen";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { JotformChatWidget } from "@/components/layout/JotformChatWidget";
 import { NotFoundScreen } from "@/components/layout/NotFoundScreen";
 import { ScrollRevealManager } from "@/components/layout/ScrollRevealManager";
 import { Toaster } from "@/components/ui/sonner";
@@ -271,6 +272,7 @@ function RootComponent() {
         <Outlet />
       </main>
       {!isAdmin && <Footer />}
+      {!isAdmin && <JotformChatWidget />}
       <Toaster />
     </QueryClientProvider>
   );
