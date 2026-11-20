@@ -14,6 +14,16 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://treschiceventplanning.com/wedding-planner-palm-beach</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://treschiceventplanning.com/wedding-planner-coral-gables</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
     <loc>https://treschiceventplanning.com/weddings</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

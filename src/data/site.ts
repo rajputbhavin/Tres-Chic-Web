@@ -39,6 +39,8 @@ export const primaryNav: NavItem[] = [
  */
 export const utilityNav: NavItem[] = [
   { label: "Wedding Planner Miami", to: "/wedding-planner-miami" },
+  { label: "Wedding Planner Palm Beach", to: "/wedding-planner-palm-beach" },
+  { label: "Wedding Planner Coral Gables", to: "/wedding-planner-coral-gables" },
   { label: "Multicultural & Fusion", to: "/multicultural-weddings" },
   { label: "Destination Weddings", to: "/destination-weddings" },
   { label: "Zaffa Entertainment", to: "/zaffa-entertainment" },

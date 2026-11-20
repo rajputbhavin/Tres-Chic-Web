@@ -28,7 +28,9 @@ import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as StartPlanningRouteImport } from './routes/start-planning'
 import { Route as TheExperienceRouteImport } from './routes/the-experience'
 import { Route as WeddingCoordinationRouteImport } from './routes/wedding-coordination'
+import { Route as WeddingPlannerCoralGablesRouteImport } from './routes/wedding-planner-coral-gables'
 import { Route as WeddingPlannerMiamiRouteImport } from './routes/wedding-planner-miami'
+import { Route as WeddingPlannerPalmBeachRouteImport } from './routes/wedding-planner-palm-beach'
 import { Route as WeddingsRouteImport } from './routes/weddings'
 import { Route as ZaffaEntertainmentRouteImport } from './routes/zaffa-entertainment'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
@@ -133,9 +135,20 @@ const WeddingCoordinationRoute = WeddingCoordinationRouteImport.update({
   path: '/wedding-coordination',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WeddingPlannerCoralGablesRoute =
+  WeddingPlannerCoralGablesRouteImport.update({
+    id: '/wedding-planner-coral-gables',
+    path: '/wedding-planner-coral-gables',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const WeddingPlannerMiamiRoute = WeddingPlannerMiamiRouteImport.update({
   id: '/wedding-planner-miami',
   path: '/wedding-planner-miami',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WeddingPlannerPalmBeachRoute = WeddingPlannerPalmBeachRouteImport.update({
+  id: '/wedding-planner-palm-beach',
+  path: '/wedding-planner-palm-beach',
   getParentRoute: () => rootRouteImport,
 } as any)
 const WeddingsRoute = WeddingsRouteImport.update({
@@ -194,7 +207,9 @@ export interface FileRoutesByFullPath {
   '/start-planning': typeof StartPlanningRoute
   '/the-experience': typeof TheExperienceRoute
   '/wedding-coordination': typeof WeddingCoordinationRoute
+  '/wedding-planner-coral-gables': typeof WeddingPlannerCoralGablesRoute
   '/wedding-planner-miami': typeof WeddingPlannerMiamiRoute
+  '/wedding-planner-palm-beach': typeof WeddingPlannerPalmBeachRoute
   '/weddings': typeof WeddingsRoute
   '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -222,7 +237,9 @@ export interface FileRoutesByTo {
   '/start-planning': typeof StartPlanningRoute
   '/the-experience': typeof TheExperienceRoute
   '/wedding-coordination': typeof WeddingCoordinationRoute
+  '/wedding-planner-coral-gables': typeof WeddingPlannerCoralGablesRoute
   '/wedding-planner-miami': typeof WeddingPlannerMiamiRoute
+  '/wedding-planner-palm-beach': typeof WeddingPlannerPalmBeachRoute
   '/weddings': typeof WeddingsRoute
   '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -252,7 +269,9 @@ export interface FileRoutesById {
   '/start-planning': typeof StartPlanningRoute
   '/the-experience': typeof TheExperienceRoute
   '/wedding-coordination': typeof WeddingCoordinationRoute
+  '/wedding-planner-coral-gables': typeof WeddingPlannerCoralGablesRoute
   '/wedding-planner-miami': typeof WeddingPlannerMiamiRoute
+  '/wedding-planner-palm-beach': typeof WeddingPlannerPalmBeachRoute
   '/weddings': typeof WeddingsRoute
   '/zaffa-entertainment': typeof ZaffaEntertainmentRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -283,7 +302,9 @@ export interface FileRouteTypes {
     | '/start-planning'
     | '/the-experience'
     | '/wedding-coordination'
+    | '/wedding-planner-coral-gables'
     | '/wedding-planner-miami'
+    | '/wedding-planner-palm-beach'
     | '/weddings'
     | '/zaffa-entertainment'
     | '/blog/$slug'
@@ -311,7 +332,9 @@ export interface FileRouteTypes {
     | '/start-planning'
     | '/the-experience'
     | '/wedding-coordination'
+    | '/wedding-planner-coral-gables'
     | '/wedding-planner-miami'
+    | '/wedding-planner-palm-beach'
     | '/weddings'
     | '/zaffa-entertainment'
     | '/blog/$slug'
@@ -340,7 +363,9 @@ export interface FileRouteTypes {
     | '/start-planning'
     | '/the-experience'
     | '/wedding-coordination'
+    | '/wedding-planner-coral-gables'
     | '/wedding-planner-miami'
+    | '/wedding-planner-palm-beach'
     | '/weddings'
     | '/zaffa-entertainment'
     | '/blog/$slug'
@@ -370,7 +395,9 @@ export interface RootRouteChildren {
   StartPlanningRoute: typeof StartPlanningRoute
   TheExperienceRoute: typeof TheExperienceRoute
   WeddingCoordinationRoute: typeof WeddingCoordinationRoute
+  WeddingPlannerCoralGablesRoute: typeof WeddingPlannerCoralGablesRoute
   WeddingPlannerMiamiRoute: typeof WeddingPlannerMiamiRoute
+  WeddingPlannerPalmBeachRoute: typeof WeddingPlannerPalmBeachRoute
   WeddingsRoute: typeof WeddingsRoute
   ZaffaEntertainmentRoute: typeof ZaffaEntertainmentRoute
   CelebrationsWeLoveSlugRoute: typeof CelebrationsWeLoveSlugRoute
@@ -512,11 +539,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WeddingCoordinationRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/wedding-planner-coral-gables': {
+      id: '/wedding-planner-coral-gables'
+      path: '/wedding-planner-coral-gables'
+      fullPath: '/wedding-planner-coral-gables'
+      preLoaderRoute: typeof WeddingPlannerCoralGablesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/wedding-planner-miami': {
       id: '/wedding-planner-miami'
       path: '/wedding-planner-miami'
       fullPath: '/wedding-planner-miami'
       preLoaderRoute: typeof WeddingPlannerMiamiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/wedding-planner-palm-beach': {
+      id: '/wedding-planner-palm-beach'
+      path: '/wedding-planner-palm-beach'
+      fullPath: '/wedding-planner-palm-beach'
+      preLoaderRoute: typeof WeddingPlannerPalmBeachRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/weddings': {
@@ -613,7 +654,9 @@ const rootRouteChildren: RootRouteChildren = {
   StartPlanningRoute: StartPlanningRoute,
   TheExperienceRoute: TheExperienceRoute,
   WeddingCoordinationRoute: WeddingCoordinationRoute,
+  WeddingPlannerCoralGablesRoute: WeddingPlannerCoralGablesRoute,
   WeddingPlannerMiamiRoute: WeddingPlannerMiamiRoute,
+  WeddingPlannerPalmBeachRoute: WeddingPlannerPalmBeachRoute,
   WeddingsRoute: WeddingsRoute,
   ZaffaEntertainmentRoute: ZaffaEntertainmentRoute,
   CelebrationsWeLoveSlugRoute: CelebrationsWeLoveSlugRoute,

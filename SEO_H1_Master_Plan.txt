@@ -188,6 +188,38 @@ Target Focus Keywords (Tier 1 High Priority):
   - Miami Wedding Planner
   - Full-Service Wedding Planner Miami
 
+----------------------------------------------------------------------------------------------------
+
+PAGE 14: Dedicated Location Landing Page - Wedding Planner Palm Beach
+Route: /wedding-planner-palm-beach
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "Gilded Age Grandeur. Oceanfront Grace. Flawlessly Planned."
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1>Luxury Wedding Planner Palm Beach · Best Palm Beach Wedding Designer</h1>
+Target Focus Keywords (High Intent & High Value):
+  - Luxury Wedding Planner Palm Beach
+  - Wedding Planner Palm Beach
+  - Best Wedding Planner in Palm Beach
+  - The Breakers Wedding Planner
+  - Flagler Museum Wedding Planner
+  - Palm Beach Wedding Coordinator
+
+----------------------------------------------------------------------------------------------------
+
+PAGE 15: Dedicated Location Landing Page - Wedding Planner Coral Gables
+Route: /wedding-planner-coral-gables
+Human Visitors Ko Dikhne Wala Text (Luxury):
+  "Mediterranean Romance. Historic Grandeur. Masterfully Planned."
+Google Crawler Ko Milne Wala First <h1> (Hidden):
+  <h1>Wedding Planner Coral Gables · Best Luxury Wedding Planning & Design</h1>
+Target Focus Keywords (High Intent & High Value):
+  - Wedding Planner Coral Gables
+  - Luxury Wedding Planner Coral Gables
+  - Best Wedding Planner in Coral Gables
+  - The Biltmore Wedding Planner
+  - Coral Gables Country Club Wedding Planner
+  - Coral Gables Wedding Coordinator
+
 ====================================================================================================
 TECHNICAL IMPLEMENTATION SUMMARY
 ====================================================================================================
