@@ -22,6 +22,7 @@ import { Section } from "@/components/ui/Section";
 import { media } from "@/data/media";
 import { reviews } from "@/data/reviews";
 import { site } from "@/data/site";
+import fairchildGardenImage from "@/assets/gallery/Fairchild Tropical Botanic Garden.jpg";
 
 const coralGablesFaqs = [
   {
@@ -78,7 +79,7 @@ const coralGablesVenues = [
     location: "Old Cutler Road, Coral Gables",
     description:
       "An 83-acre subtropical paradise. Ideal for couples seeking romantic garden ceremonies beneath towering banyan trees, lakeside marquee tenting, and verdant botanical backdrops.",
-    image: media.gardenReceptionTallFlorals,
+    image: fairchildGardenImage,
     highlight: "Botanical Canopy & Lakeside Marquee",
   },
   {
